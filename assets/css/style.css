@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 .mail{
@@ -25,6 +26,8 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid whitesmoke;
+  color: white;
+  background-color: #111111;
 }
 
 .header__left {
@@ -41,7 +44,8 @@
   display: flex;
   flex: 0.7;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #222424;
+  color: white;
   padding: 2px;
   padding-left: 10px;
   padding-right: 10px;
@@ -76,6 +80,7 @@
   flex: 0.3;
   max-width: 300px;
   padding-right: 20px;
+  background-color: #111111;
 }
 
 .sidebar__compose {
@@ -83,10 +88,10 @@
   margin-left: 10px;
   margin-bottom: 15px;
   text-transform: capitalize;
-  color: gray;
+  color: white;
   padding: 15px;
   border-radius: 30px;
-  background-color: white;
+  background-color: #222424;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -157,6 +162,7 @@ body {
 .emailList {
   flex: 1;
   overflow: scroll;
+  background-color: #111111;
 }
 
 .emailList__settings {
@@ -165,7 +171,7 @@ body {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid whitesmoke;
-  background-color: white;
+  background-color: #111111;
   z-index: 999;
   padding: 8px;
 }
