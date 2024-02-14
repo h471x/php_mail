@@ -86,13 +86,14 @@
 
 .sidebar__compose {
   margin-top: 15px;
-  margin-left: 10px;
+  margin-left: 25px;
   margin-bottom: 15px;
   text-transform: capitalize;
   color: white;
-  padding: 15px;
-  border-radius: 30px;
-  background-color: #222424;
+  padding: 10px;
+  border-radius: 8px;
+  /* background-color: #222424; */
+  background-color: #238636;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -103,7 +104,7 @@
 
 .sidebar__compose:hover{
   background-color: #28a745;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 .sidebar__compose span {
@@ -113,7 +114,7 @@
 }
 
 .sidebar__compose span:hover{
-  font-weight: bold;
+  /* font-weight: bold; */
   transition-delay: 2s;
 }
 
@@ -122,8 +123,8 @@
   align-items: center;
   height: 40px;
   padding: 0 10px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  /* border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
   cursor: pointer;
   color: #818181;
 }
@@ -134,9 +135,10 @@
 
 .sidebarOption h3 {
   flex: 1;
-  margin-left: 10px;
-  font-size: 14px;
-  font-weight: 400;
+  margin-left: 15px;
+  font-size: 16px;
+  text-transform: capitalize;
+  /* font-weight: 400; */
 }
 
 .sidebarOption:hover,
@@ -146,7 +148,7 @@
 .sidebarOption__active h3,
 .sidebarOption__active .material-icons {
   background-color: #202020;
-  color: #22afff;
+  color: #2f81f7;
   /* font-weight: 800; */
 }
 
