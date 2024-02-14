@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid #373a3a;
   color: white;
   background-color: #111111;
 }
@@ -132,9 +132,9 @@
 .sidebarOption__active,
 .sidebarOption__active h3,
 .sidebarOption__active .material-icons {
-  background-color: #fcecec;
-  color: #c04b37;
-  font-weight: 800;
+  background-color: #202020;
+  color: #22afff;
+  /* font-weight: 800; */
 }
 
 .sidebar__footer {
@@ -165,12 +165,103 @@ body {
   background-color: #111111;
 }
 
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333; /* Set the color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555; /* Set the color of the scrollbar handle */
+  border-radius: 5px; /* Set the rounded corners of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777; /* Set the color of the scrollbar handle on hover */
+}
+
+
+/* Dark mode scrollbar */
+/* For webkit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333; /* Set the color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555; /* Set the color of the scrollbar handle */
+  border-radius: 5px; /* Set the rounded corners of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777; /* Set the color of the scrollbar handle on hover */
+}
+
+/* Dark mode checkboxes */
+input[type="checkbox"] {
+  appearance: none; /* Remove default appearance */
+  -webkit-appearance: none; /* Remove default appearance for WebKit-based browsers */
+  -moz-appearance: none; /* Remove default appearance for Firefox */
+  width: 15px; /* Set width of the checkbox */
+  height: 15px; /* Set height of the checkbox */
+  background-color: #555; /* Set background color of the checkbox */
+  border-radius: 2px; /* Set border radius for rounded corners */
+  /* border: 1px solid #555; Set border */
+  outline: none; /* Remove outline */
+  cursor: pointer; /* Add pointer cursor */
+  position: relative; /* Position for pseudo-element */
+}
+
+/* Checked icon */
+input[type="checkbox"]::before {
+  content: "\2713"; /* Unicode character for checkmark */
+  font-size: 16px; /* Adjust size of the checkmark */
+  color: #000; /* Color of the checkmark */
+  position: absolute; /* Position within the checkbox */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the checkmark */
+  opacity: 0; /* Initially hidden */
+}
+
+/* Dark mode checkbox label */
+input[type="checkbox"] + label {
+  color: #fff; /* Set text color */
+  margin-left: 5px; /* Add some space between checkbox and label */
+}
+
+/* Dark mode checkbox when checked */
+input[type="checkbox"]:checked {
+  background-color: #22afff; /* Change background color when checked */
+}
+
+/* Dark mode checkbox when checked and hovered */
+input[type="checkbox"]:checked:hover {
+  background-color: #999; /* Change background color when checked and hovered */
+}
+
+/* Show checked icon when checkbox is checked */
+input[type="checkbox"]:checked::before {
+  opacity: 1; /* Show the checkmark */
+}
+
 .emailList__settings {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid #373a3a;
   background-color: #111111;
   z-index: 999;
   padding: 8px;
@@ -241,14 +332,13 @@ input {
   display: flex;
   align-items: center;
   height: 50px;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid #373a3a;
   cursor: pointer;
   z-index: 999;
 }
 
-.emailRow:hover {
-  border-top: 1px solid whitesmoke;
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24);
+.emailRow:hover {background-color: #222424;  /* border-top: 1px solid whitesmoke; */
+  /* box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24); */
 }
 
 .emailRow__message {
