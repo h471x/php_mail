@@ -312,6 +312,10 @@ input[type="checkbox"]:checked::before {
   z-index: 999;
 }
 
+.checked-star {
+  color: gold;
+}
+
 .section__selected {
   background-color: whitesmoke;
   border-width: 3px;
