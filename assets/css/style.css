@@ -258,12 +258,12 @@ input[type="checkbox"] + label {
 
 /* Dark mode checkbox when checked */
 input[type="checkbox"]:checked {
-  background-color: #22afff; /* Change background color when checked */
+  background-color: #227aff; /* Change background color when checked */
 }
 
 /* Dark mode checkbox when checked and hovered */
 input[type="checkbox"]:checked:hover {
-  background-color: #999; /* Change background color when checked and hovered */
+  background-color: #227aff; /* Change background color when checked and hovered */
 }
 
 /* Show checked icon when checkbox is checked */
@@ -308,7 +308,7 @@ input[type="checkbox"]:checked::before {
   top: 0;
   display: flex;
   background-color: white;
-  border-bottom: 1px solid whitesmoke;
+  /* border-bottom: 1px solid whitesmoke; */
   z-index: 999;
 }
 
@@ -352,7 +352,10 @@ input {
   z-index: 999;
 }
 
-.emailRow:hover {background-color: #222424;  /* border-top: 1px solid whitesmoke; */
+.emailRow:hover {
+  background-color: #222424;
+  border-bottom: 1px solid #373a3a;  
+  /* border-top: 1px solid whitesmoke; */
   /* box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24); */
 }
 
