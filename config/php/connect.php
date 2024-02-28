@@ -15,6 +15,18 @@ try {
   // Set PDO error mode to exception
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+  // Create the database if it doesn't exist
+  $pdo->exec("CREATE DATABASE IF NOT EXISTS mail");
+
+  // Select the database
+  $pdo->exec("USE mail");
+
+  // Create users table
+  $pdo->exec("CREATE TABLE IF NOT EXISTS users (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              userame VARCHAR(50) NOT NULL,
+              password VARCHAR(255) NOT NULL)");
+
   // Set the message if connected successfully
   $message = '<h1>Connected</h1>';
 } catch (PDOException $e) {
