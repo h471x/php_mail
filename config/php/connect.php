@@ -1,7 +1,7 @@
 <?php
 // Database credentials
 $host = 'localhost';
-$dbname = 'mysql';
+$dbname = 'mail';
 $username = 'emailAdmin';
 $password = 'rootemail';
 
