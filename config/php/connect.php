@@ -18,9 +18,6 @@ try {
   // Create the database if it doesn't exist
   $pdo->exec("CREATE DATABASE IF NOT EXISTS mail");
 
-  // Select the database
-  $pdo->exec("USE mail");
-
   // Create users table
   $pdo->exec("CREATE TABLE IF NOT EXISTS users (
               id INT AUTO_INCREMENT PRIMARY KEY,
