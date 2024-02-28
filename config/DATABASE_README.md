@@ -92,4 +92,14 @@ MariaDB [mysql]>FLUSH PRIVILEGES;
 - This will reload the MySQL privileges database
 so that parameter we set before is applied
 
+
+## NOTES:
+
+# Show all MySQL Users
+SELECT User, Host FROM mysql.user;
+
+# Delete a User
+DROP USER 'emailAdmin'@'%';
+Here the % is the scope
+
 ## That's you can now login with new user !!
