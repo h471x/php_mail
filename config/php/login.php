@@ -1,5 +1,7 @@
 <?php
 require_once "./connect.php";
+require_once "../../login.php";
+/*Class user */
 
 try {
     // Data from the form

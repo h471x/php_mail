@@ -21,19 +21,16 @@ try {
   $pdo->new PDO($DB_DSN,$username,$password,$option);
 
   // Create the database if it doesn't exist
-  $request=$pdo->prepare("CREATE DATABASE IF NOT EXISTS mail");
-  $request->execute();
+  $pdo->exec("CREATE DATABASE IF NOT EXISTS mail");
 
   // Select the database
-  $request=$pdo->prepare("USE mail");
-  $request->execute();
+  $pdo->exec("USE mail");
 
   // Create users table
-  $request=$pdo->prepare("CREATE TABLE IF NOT EXISTS users (
+  $pdo->exec("CREATE TABLE IF NOT EXISTS users (
               id INT AUTO_INCREMENT PRIMARY KEY,
               userame VARCHAR(50) NOT NULL,
               password VARCHAR(255) NOT NULL)");
-  $request->execute();
 
   // Set the message if connected successfully
   $message = '<h1>Connected</h1>';
