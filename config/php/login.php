@@ -21,7 +21,7 @@ try {
     // print_r($stmt->fetch(PDO::FETCH_ASSOC));
     $resut=$stmt->fetch(PDO::FETCH_ASSOC);
     echo "</pre>";
-    echo $result;
+    echo $result['mail'];
     //
     // // Redirect back to index.php with success message
     // // header("Location: ../../index.php?success=true");
