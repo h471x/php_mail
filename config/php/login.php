@@ -6,17 +6,17 @@ try {
     // Data from the form
     $mail = $_POST['username'];
     $password = $_POST['password'];
-    echo $mail.$password;
+    // echo $mail.$password;
 
     // // Prepare SQL statement
-    // $stmt = $pdo->prepare("SELECT mail FROM user WHERE password=:password");
-    //
-    // // Bind parameters
-    // // $stmt->bindParam(':username', $mail);
-    // $stmt->bindParam(':password', $password);
+    $stmt = $pdo->prepare("SELECT mail FROM user WHERE password=:password");
+
+    // Bind parameters
+    // $stmt->bindParam(':username', $mail);
+    $stmt->bindParam(':password', $password);
     //
     // // Execute the statement
-    // $stmt->execute();
+    $stmt->execute();
     // echo "<pre>";
     // print_r($stmt->fetch(PDO::FETCH_ASSOC))
     // echo "</pre>";
