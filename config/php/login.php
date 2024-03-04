@@ -18,8 +18,10 @@ try {
     // // Execute the statement
     $stmt->execute();
     echo "<pre>";
-    print_r($stmt->fetch(PDO::FETCH_ASSOC));
+    // print_r($stmt->fetch(PDO::FETCH_ASSOC));
+    $resut=$stmt->fetch(PDO::FETCH_ASSOC);
     echo "</pre>";
+    echo $result;
     //
     // // Redirect back to index.php with success message
     // // header("Location: ../../index.php?success=true");
