@@ -24,10 +24,10 @@ try {
     // echo $result['mail'];
   if(isset($result['mail']) && !is_empty($result['mail'])){
     // Redirect back to index.php with success message
-    header("Location: ../../index.php?success=true");
+    header("Location: ../../index.php");
   }
   else{
-    echo "<h1>mot de passe ou mail incorrect</h1>";
+    echo "<script langage='Javascript' type='text/javascript'>alert('Mot de passe incorect')</script>";
   }
     
     // // exit; // Ensure script stops here to prevent further output
