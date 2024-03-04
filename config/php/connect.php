@@ -34,7 +34,7 @@ try {
 
   // Create users table
   $pdo->exec("CREATE TABLE IF NOT EXISTS user (
-              user_id INTEGER PRIMARY KEY AUTO_INCREMENT 
+              user_id INTEGER PRIMARY KEY AUTO_INCREMENT, 
               name VARCHAR(50) NOT NULL, 
               firstName VARCHAR(60), 
               mail VARCHAR(100) NOT NULL, 
