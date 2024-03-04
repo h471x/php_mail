@@ -19,7 +19,7 @@ try {
     $stmt->execute();
     echo "<pre>";
     // print_r($stmt->fetch(PDO::FETCH_ASSOC));
-    $resut=$stmt->fetch(PDO::FETCH_ASSOC);
+    $result=$stmt->fetch(PDO::FETCH_ASSOC);
     echo "</pre>";
     echo $result['mail'];
     //
