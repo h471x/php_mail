@@ -33,10 +33,12 @@ try {
   $pdo->exec("USE mail");
 
   // Create users table
-  $pdo->exec("CREATE TABLE IF NOT EXISTS users (
-              id INT AUTO_INCREMENT PRIMARY KEY,
-              userame VARCHAR(50) NOT NULL,
-              password VARCHAR(255) NOT NULL)");
+  $pdo->exec("CREATE TABLE IF NOT EXISTS user (
+              user_id INTEGER PRIMARY KEY AUTO_INCREMENT 
+              name VARCHAR(50) NOT NULL, 
+              firstName VARCHAR(60), 
+              mail VARCHAR(100) NOT NULL, 
+              password VARCHAR(20) NOT NULL)");
 
   // // Set the message if connected successfully
   $message = '<h1>Connected</h1>';
