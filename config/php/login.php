@@ -22,12 +22,14 @@ try {
     //Catch them all data
     $result=$stmt->fetch(PDO::FETCH_ASSOC);
     // echo $result['mail'];
-  if(!isset($result['mail'])){
-    echo "la variable est vide mais pas null";
+  if(isset($result['mail'])){
+    // Redirect back to index.php with success message
+    header("Location: ../../index.php?success=true");
+  }
+  else{
+    echo "<h1>mot de passe ou mail incorrect</h1>";
   }
     
-    // // Redirect back to index.php with success message
-    // // header("Location: ../../index.php?success=true");
     // // exit; // Ensure script stops here to prevent further output
     //
     // // echo "New record inserted successfully";
