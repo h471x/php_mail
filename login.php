@@ -5,13 +5,15 @@ try {
   // Create a new PDO instance
   // PHP Dtabase Object is more efficient
   // than mysqli or mysql
-  $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+  // $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
   // Set PDO error mode to exception
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
   //RSH VERSION 
+  $pdo = new PDO($DB_DSN, $username, $password);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   // $option=
   // [
   //   PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', /*Set up the encodage used in php */
