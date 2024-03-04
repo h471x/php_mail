@@ -22,7 +22,7 @@ try {
     //Catch them all data
     $result=$stmt->fetch(PDO::FETCH_ASSOC);
     // echo $result['mail'];
-  if(isset($result['mail']) && !is_empty($result['mail'])){
+  if(isset($result['mail']) && !empty($result['mail'])){
     // Redirect back to index.php with success message
     header("Location: ../../index.php");
   }
