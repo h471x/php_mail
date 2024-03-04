@@ -17,8 +17,8 @@ try {
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', /*Set up the encodage used in php */
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,// Set PDO error mode to exception
     PDO::ATTR_EMULATE_PREPARES => false, /*No emulation of Query*/
-  ]
-  $pdo->new PDO($DB_DSN,$username,$password,$option);
+  ];
+  $pdo=new PDO($DB_DSN,$username,$password,$option);
 
   // Create the database if it doesn't exist
   $pdo->exec("CREATE DATABASE IF NOT EXISTS mail");
