@@ -19,20 +19,20 @@ try {
     PDO::ATTR_EMULATE_PREPARES => false, /*No emulation of Query*/
   ];
   $pdo=new PDO($DB_DSN,$username,$password,$option);
-
-  // Create the database if it doesn't exist
-  $pdo->exec("CREATE DATABASE IF NOT EXISTS mail");
-
-  // Select the database
-  $pdo->exec("USE mail");
-
-  // Create users table
-  $pdo->exec("CREATE TABLE IF NOT EXISTS users (
-              id INT AUTO_INCREMENT PRIMARY KEY,
-              userame VARCHAR(50) NOT NULL,
-              password VARCHAR(255) NOT NULL)");
-
-  // Set the message if connected successfully
+  //
+  // // Create the database if it doesn't exist
+  // $pdo->exec("CREATE DATABASE IF NOT EXISTS mail");
+  //
+  // // Select the database
+  // $pdo->exec("USE mail");
+  //
+  // // Create users table
+  // $pdo->exec("CREATE TABLE IF NOT EXISTS users (
+  //             id INT AUTO_INCREMENT PRIMARY KEY,
+  //             userame VARCHAR(50) NOT NULL,
+  //             password VARCHAR(255) NOT NULL)");
+  //
+  // // Set the message if connected successfully
   $message = '<h1>Connected</h1>';
 } catch (PDOException $e) {
   // Set an error message if connection fails
