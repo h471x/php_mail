@@ -17,12 +17,15 @@ try {
     //
     // // Execute the statement
     $stmt->execute();
-    echo "<pre>";
     // print_r($stmt->fetch(PDO::FETCH_ASSOC));
+  
+    //Catch them all data
     $result=$stmt->fetch(PDO::FETCH_ASSOC);
-    echo "</pre>";
-    echo $result['mail'];
-    //
+    // echo $result['mail'];
+  if(!isset($result['mail'])){
+    echo "la variable est vide mais pas null";
+  }
+    
     // // Redirect back to index.php with success message
     // // header("Location: ../../index.php?success=true");
     // // exit; // Ensure script stops here to prevent further output
