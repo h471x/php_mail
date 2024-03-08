@@ -1,8 +1,22 @@
 -- Create table to store user information
 use mail;
 
-CREATE TABLE IF NOT EXISTS users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(50) NOT NULL,
-  password VARCHAR(255) NOT NULL
+CREATE TABLE IF NOT EXISTS USER(
+  Id_user SERIAL DEFAULT VALUES 1 PRIMARY KEY,
+  Name_user VARCHAR(255) NOT NULL,
+  Firstname_user VARCHAR(255) NULL,
+  Password VARCHAR(255) NOT NULL ,
+  Email_user VARCHAR(255) NOT NULL UNIQUE,
+  Date_inscription DATE NOT NULL 
 );
+CREATE TABLE IF NOT EXISTS MESSAGE (
+  Id_message SERIAL DEFAULT VALUES 1 PRIMARY KEY,
+  Email_source VARCHAR(255) NOT NULL,
+  Email_destination VARCHAR(255) NULL,
+  Objet VARCHAR(255) NOT NULL,
+  Contenu TEXT NULL , 
+);
+
+
+CREATE TABLE IF NOT EXISTS CONTACT(
+  Email_
