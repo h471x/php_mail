@@ -38,7 +38,7 @@
         </div>
     </form>
     <div class="bottom">
-        <span><a href="#">Sign Up</a></span>
+        <span><a href="./sign_up.php">Sign Up</a></span>
         <span><a href="#">Forgot Password?</a></span>
     </div>
 </div>
