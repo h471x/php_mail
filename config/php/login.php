@@ -4,7 +4,7 @@ require_once "./connect.php";
 
 try {
     // Data from the form
-    $mail = $_POST['username'];
+    $mail = $_POST['email'];
     $password = $_POST['password'];
     // echo $mail.$password;
 

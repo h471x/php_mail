@@ -25,7 +25,7 @@
         <!-- Form action points to login_process.php -->
         <div class="input-box">
             <label for="email">E-Mail</label>
-            <input type="email" class="input-field" id="email" name="username" required> <!-- Corrected name attribute to "email" -->
+            <input type="email" class="input-field" id="email" name="email" required> <!-- Corrected name attribute to "email" -->
             <i class="bx bx-envelope"></i>
         </div>
         <div class="input-box">
@@ -34,7 +34,7 @@
             <i class="bx bx-lock"></i>
         </div>
         <div class="input-box">
-            <input type="submit" class="input-submit" value="SIGN IN">
+            <input type="submit" class="input-submit" value="Log in">
         </div>
     </form>
     <div class="bottom">
