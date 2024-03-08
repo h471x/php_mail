@@ -29,7 +29,6 @@ try {
   else{
     echo "<script langage='Javascript' type='text/javascript'>alert('Mot de passe incorect')</script>";
   }
-    
     // // exit; // Ensure script stops here to prevent further output
     //
     // // echo "New record inserted successfully";
