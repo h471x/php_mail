@@ -25,8 +25,13 @@
     <form action="./config/php/sign_up.php" method="post"> 
         <!-- Form action points to login_process.php -->
         <div class="input-box">
-            <label for name=
+            <label for="name">Name</label>
+            <input type="text" name="name" class="input-field" id="name"/>
             <br><br>
+            <label for="first_name">First name</label> 
+            <input type="text" classe="input-field" id="first_name" name="first_name"/>
+            <br/>
+            <br/>
             <label for="email">E-Mail</label>
             <input type="email" class="input-field" id="email" name="email" required> <!-- Corrected name attribute to "email" -->
             <i class="bx bx-envelope"></i>
@@ -40,10 +45,10 @@
             <input type="submit" class="input-submit" value="SIGN IN">
         </div>
     </form>
-    <div class="bottom">
-        <span><a href="#">Sign Up</a></span>
-        <span><a href="#">Forgot Password?</a></span>
-    </div>
+    <!-- <div class="bottom"> -->
+    <!--     <span><a href="#">Sign Up</a></span> -->
+    <!--     <span><a href="#">Forgot Password?</a></span> -->
+    <!-- </div> -->
 </div>
 
        <div class="wrapper"></div>
