@@ -19,7 +19,7 @@
     <div class="container">
        <div class="box">
     <div class="header">
-        <p>Log In to e-mail</p>
+        <p>Sign up to php-mail</p>
         <h4>Connection : <?php echo $message ?></h4>
     </div>
     <form action="./config/php/sign_up.php" method="post"> 
@@ -27,11 +27,12 @@
         <div class="input-box">
             <label for="name">Name</label>
             <input type="text" name="name" class="input-field" id="name"/>
-            <br><br>
+        </div>
+        <div class="input-box">
             <label for="first_name">First name</label> 
             <input type="text" classe="input-field" id="first_name" name="first_name"/>
-            <br/>
-            <br/>
+        </div>
+        <div class="input-box">
             <label for="email">E-Mail</label>
             <input type="email" class="input-field" id="email" name="email" required> <!-- Corrected name attribute to "email" -->
             <i class="bx bx-envelope"></i>
@@ -42,7 +43,7 @@
             <i class="bx bx-lock"></i>
         </div>
         <div class="input-box">
-            <input type="submit" class="input-submit" value="SIGN IN">
+            <input type="submit" class="input-submit" value="SIGN UP">
         </div>
     </form>
     <!-- <div class="bottom"> -->
