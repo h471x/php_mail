@@ -18,7 +18,7 @@
     <div class="container">
        <div class="box">
     <div class="header">
-        <p>Log In to e-mail</p>
+        <p>Log In to php-mail</p>
         <h4>Connection : <?php echo $message ?></h4>
     </div>
     <form action="./config/php/login.php" method="post"> 
