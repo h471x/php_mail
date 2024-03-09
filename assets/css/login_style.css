@@ -20,7 +20,7 @@ body{
 }
 .box{
     width: 450px;
-    height: 500px;
+    height: 600px;
     background: #fff;
     backdrop-filter: blur(20px);
     border-radius: 30px;
@@ -32,7 +32,7 @@ body{
 .wrapper{
     position: absolute;
     width: 455px;
-    height: 500px;
+    height: 600px;
     border-radius: 30px;
     background: rgba(255,255,255,0.53);
     box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
