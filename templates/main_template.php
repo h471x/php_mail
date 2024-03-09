@@ -48,6 +48,11 @@
         </div>
 
         <div class="sidebarOption">
+          <span class="material-icons"> near_me </span>
+          <h3>Sent</h3>
+        </div>
+        
+        <div class="sidebarOption">
           <span class="material-icons"> star </span>
           <h3>Starred</h3>
         </div>
@@ -62,10 +67,6 @@
           <h3>Important</h3>
         </div>
 
-        <div class="sidebarOption">
-          <span class="material-icons"> near_me </span>
-          <h3>Sent</h3>
-        </div>
 
         <div class="sidebarOption">
           <span class="material-icons"> note </span>
