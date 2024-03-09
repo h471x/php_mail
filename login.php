@@ -1,8 +1,6 @@
 <?php
   require "./config/php/connect.php";
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/boxicons.min.css">
     <link rel="stylesheet" href="./assets/css/login_style.css">
+    <link rel="icon" href="./assets/images/gui_icons/white/mail.png">
     <title>Login</title>
 </head>
 <body>
