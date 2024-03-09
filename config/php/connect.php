@@ -21,7 +21,7 @@ try {
   // Create users table
   $pdo->exec("CREATE TABLE IF NOT EXISTS users (
               id INT AUTO_INCREMENT PRIMARY KEY,
-              userame VARCHAR(50) NOT NULL,
+              username VARCHAR(50) NOT NULL,
               password VARCHAR(255) NOT NULL)");
 
   // Set the message if connected successfully
