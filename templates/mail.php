@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google Font Icons -->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="./assets/css/font.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="icon" href="./assets/images/gui_icons/white/mail.png">
+    <link rel="stylesheet" href="../assets/css/font.css"/>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="../assets/images/gui_icons/white/mail.png">
     <title>Php Mail</title>
   </head>
   <body>
@@ -17,7 +17,7 @@
     <div class="header">
       <div class="header__left">
         <!-- <span class="material-icons"> menu </span> -->
-        <img src="./assets/images/gui_icons/white/mail.png" alt="" class="mail"/>
+        <img src="../assets/images/gui_icons/white/mail.png" alt="" class="mail"/>
         <h1>e-mail</h1>
           <!-- src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png" -->
       </div>
@@ -78,7 +78,6 @@
           <span class="material-icons"> note </span>
           <h3>Drafts</h3>
         </div>
-
         <!-- <div class="sidebarOption">
           <span class="material-icons"> expand_more </span>
           <h3>More</h3>

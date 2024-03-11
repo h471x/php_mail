@@ -20,11 +20,11 @@
         <p>Log In to e-mail</p>
         <h4>Connection : <?php echo $message ?></h4>
     </div>
-    <form action="./config/php/login.php" method="post"> 
+    <form action="config/php/signin.php" method="post"> 
         <!-- Form action points to login_process.php -->
         <div class="input-box">
             <label for="email">E-Mail</label>
-            <input type="email" class="input-field" id="email" name="username" required> <!-- Corrected name attribute to "email" -->
+            <input type="email" class="input-field" id="email" name="mail" required>
             <i class="bx bx-envelope"></i>
         </div>
         <div class="input-box">
