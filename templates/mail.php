@@ -9,7 +9,7 @@
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> -->
     <link rel="stylesheet" href="../assets/css/font.css"/>
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="icon" href="../assets/images/gui_icons/mail_icon.png">
+    <link rel="icon" href="../assets/images/gui_icons/white/mail.png">
     <title>Php Mail</title>
   </head>
   <body>
@@ -51,7 +51,17 @@
           <span class="material-icons"> near_me </span>
           <h3>Sent</h3>
         </div>
+
+        <div class="sidebarOption">
+          <span class="material-icons"> label_important </span>
+          <h3>Important</h3>
+        </div>
         
+        <div class="sidebarOption">
+          <span class="material-icons"> person </span>
+          <h3>Contacts</h3>
+        </div>
+
         <div class="sidebarOption">
           <span class="material-icons"> star </span>
           <h3>Starred</h3>
@@ -62,17 +72,12 @@
           <h3>Snoozed</h3>
         </div>
 
-        <div class="sidebarOption">
-          <span class="material-icons"> label_important </span>
-          <h3>Important</h3>
-        </div>
 
 
         <div class="sidebarOption">
           <span class="material-icons"> note </span>
           <h3>Drafts</h3>
         </div>
-
         <!-- <div class="sidebarOption">
           <span class="material-icons"> expand_more </span>
           <h3>More</h3>
