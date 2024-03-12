@@ -22,16 +22,30 @@
           <!-- src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png" -->
       </div>
 
-      <div class="header__middle">
-        <span class="material-icons"> search </span>
-        <input type="text" placeholder="Search mail" />
-        <span class="material-icons"> arrow_drop_down </span>
-      </div>
+      <form class="header__middle" action="">
+        <button type="submit">
+          <span class="material-icons"> search </span>
+        </button>
+        <input type="search" placeholder="Search mail" />
+        <!-- <span class="material-icons"> arrow_drop_down </span> -->
+      </form>
 
       <div class="header__right">
-        <span class="material-icons"> apps </span>
+        <!-- <span class="material-icons"> apps </span>
         <span class="material-icons"> notifications </span>
-        <span class="material-icons"> account_circle </span>
+        <span class="material-icons"> account_circle </span> -->
+        <div class="user">
+          <h3>User Name</h3>
+          <!-- <span>example@mail.com</span> -->
+        </div>
+        <button class="theme">
+          <span class="material-icons">wb_sunny</span>
+        </button>
+        <!-- here for the dark mode -->
+        <!-- <span class="material-icons">brightness_3</span> -->
+        <button class="logout">
+          <span class="material-icons">exit_to_app</span>
+        </button>
         <!-- <img src="./gui_icons/white/user_circle.png" alt="" class="gui_icon"/> -->
       </div>
     </div>
@@ -53,16 +67,16 @@
         </div>
 
         <div class="sidebarOption">
-          <span class="material-icons"> label_important </span>
-          <h3>Important</h3>
-        </div>
-        
-        <div class="sidebarOption">
           <span class="material-icons"> person </span>
           <h3>Contacts</h3>
         </div>
 
-        <div class="sidebarOption">
+        <!-- <div class="sidebarOption">
+          <span class="material-icons"> label_important </span>
+          <h3>Important</h3>
+        </div> -->
+
+        <!-- <div class="sidebarOption">
           <span class="material-icons"> star </span>
           <h3>Starred</h3>
         </div>
@@ -70,14 +84,14 @@
         <div class="sidebarOption">
           <span class="material-icons"> access_time </span>
           <h3>Snoozed</h3>
-        </div>
+        </div> -->
 
 
 
-        <div class="sidebarOption">
+        <!-- <div class="sidebarOption">
           <span class="material-icons"> note </span>
           <h3>Drafts</h3>
-        </div>
+        </div> -->
         <!-- <div class="sidebarOption">
           <span class="material-icons"> expand_more </span>
           <h3>More</h3>
@@ -96,20 +110,20 @@
       <!-- Email List Starts -->
       <div class="emailList">
         <!-- Settings Starts -->
-        <div class="emailList__settings">
+        <!-- <div class="emailList__settings">
           <div class="emailList__settingsLeft">
-            <input type="checkbox" />
-            <span class="material-icons"> arrow_drop_down </span>
+            <input type="checkbox" /> -->
+            <!-- <span class="material-icons"> arrow_drop_down </span>
             <span class="material-icons"> redo </span>
-            <span class="material-icons"> more_vert </span>
-          </div>
-          <div class="emailList__settingsRight">
-            <span class="material-icons"> chevron_left </span>
-            <span class="material-icons"> chevron_right </span>
+            <span class="material-icons"> more_vert </span> -->
+          <!-- </div>
+          <div class="emailList__settingsRight"> -->
+            <!-- <span class="material-icons"> chevron_left </span>
+            <span class="material-icons"> chevron_right </span> -->
             <!-- <span class="material-icons"> keyboard_hide </span> -->
-            <span class="material-icons"> settings </span>
+            <!-- <span class="material-icons"> settings </span>
           </div>
-        </div>
+        </div> -->
         <!-- Settings Ends -->
 
         <!-- Section Starts -->
@@ -136,9 +150,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -157,9 +171,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -178,9 +192,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -200,9 +214,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">Google</h3>
@@ -222,9 +236,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -243,9 +257,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -264,9 +278,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -286,9 +300,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">Google</h3>
@@ -308,9 +322,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -329,9 +343,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -350,9 +364,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -372,9 +386,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">Google</h3>
@@ -394,9 +408,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -415,9 +429,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -436,9 +450,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -458,9 +472,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">Google</h3>
@@ -480,9 +494,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -501,9 +515,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -522,9 +536,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">YouTube</h3>
@@ -544,9 +558,9 @@
           <!-- Email Row Starts -->
           <div class="emailRow">
             <div class="emailRow__options">
-              <input type="checkbox" name="" id="" />
-              <span class="material-icons"> star_border </span>
-              <span class="material-icons"> label_important </span>
+              <!-- <input type="checkbox" name="" id="" /> -->
+              <!-- <span class="material-icons"> star_border </span> -->
+              <!-- <span class="material-icons"> label_important </span> -->
             </div>
 
             <h3 class="emailRow__title">Google</h3>
