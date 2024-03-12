@@ -583,4 +583,5 @@
     </div>
     <!-- Main Body Ends -->
   </body>
+  <script src="../assets/js/script.js"></script>
 </html>
