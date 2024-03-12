@@ -17,7 +17,7 @@
     <div class="header">
       <div class="header__left">
         <!-- <span class="material-icons"> menu </span> -->
-        <img src="../assets/images/gui_icons/white/mail.png" alt="" class="mail"/>
+        <img src="../assets/images/gui_icons/white/mail.png" alt="" class="mail" id="mailIcon"/>
         <h1>e-mail</h1>
           <!-- src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png" -->
       </div>
@@ -39,12 +39,13 @@
           <!-- <span>example@mail.com</span> -->
         </div>
         <button class="theme">
-          <span class="material-icons">wb_sunny</span>
+          <span class="material-icons" id="light">wb_sunny</span>
+          <!-- here for the dark mode -->
+          <!-- <span class="material-icons">brightness_3</span> -->
         </button>
-        <!-- here for the dark mode -->
-        <!-- <span class="material-icons">brightness_3</span> -->
         <button class="logout">
           <span class="material-icons">exit_to_app</span>
+          <span class="tooltip">Log Out</span>
         </button>
         <!-- <img src="./gui_icons/white/user_circle.png" alt="" class="gui_icon"/> -->
       </div>
@@ -55,7 +56,7 @@
     <div class="main__body">
       <!-- Sidebar Starts -->
       <div class="sidebar">
-        <button class="sidebar__compose"><span class="material-icons"> add </span><h4>Compose</h4></button>
+        <button class="sidebar__compose"><span class="material-icons"> add </span><h3 class="compose">New Mail</h3></button>
         <div class="sidebarOption sidebarOption__active">
           <span class="material-icons"> inbox </span>
           <h3>Inbox</h3>

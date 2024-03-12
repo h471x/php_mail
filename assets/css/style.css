@@ -1,16 +1,48 @@
+@import url("./nunito.css");
+
+:root {
+  --primary-color: white;
+  --border-color: #373a3a;
+  --icon-color: #c5cad6;
+  --header-color: #010409;
+  --soft-color: #0d1117;
+  --sidebar-active: #1a1f24;
+  --hover-color: #21262c;
+  --content-color: #010409;
+  --scroll-bg: #333;
+  --scroll-handle: #555;
+  --handle-hover: #777;
+}
+
+.light-mode {
+  --primary-color: black;
+  --border-color: #d8dee4;
+  --icon-color: black;
+  --header-color: #f6f8fa;
+  --soft-color: white;
+  --sidebar-active: #f0f2f4;
+  --hover-color: #f0f0f0;
+  --content-color: #f6f8fa;
+  --scroll-bg: #cac8c8;
+  --scroll-handle: #9b9595;
+  --handle-hover: #a59f9f;
+}
+
 * {
   margin: 0;
   padding: 0;
-  color: white;
+  color: var(--primary-color);
+  font-family: "nunito", sans-serif;
+  font-weight: 600;
 }
 
-.mail{
+.mail {
   width: 50px;
   height: 50px;
   margin-right: 20px;
 }
 
-.gui_icon{
+.gui_icon {
   width: 30%;
   height: 30%;
 }
@@ -26,10 +58,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #373a3a;
-  color: white;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--primary-color);
   /* background-color: #111111; */
-  background-color: #010409;
+  background-color: var(--header-color);
 }
 
 .header__left {
@@ -47,7 +79,8 @@
   flex: 0.7;
   align-items: center;
   /* background-color: #222424; */
-  background-color: #0d1117;
+  /* background-color: var(--soft-color); */
+  background-color: var(--sidebar-active);
   color: white;
   padding: 2px;
   padding-left: 10px;
@@ -56,7 +89,7 @@
 }
 
 .material-icons {
-  color: #c5cad6;
+  color: var(--icon-color);
 }
 
 .header__middle input {
@@ -68,30 +101,30 @@
   background-color: transparent;
 }
 
-.header__middle button{
+.header__middle button {
   display: flex;
   align-items: center;
   background-color: transparent;
   border: none;
 }
 
-.header__right button{
+.header__right button {
   display: flex;
   align-items: center;
   background-color: transparent;
   border: none;
 }
 
-.emailList__list{
+.emailList__list {
   width: 100%;
-  background-color: #010409;
+  background-color: var(--content-color);
 }
 
 .header__right {
   display: flex;
   gap: 0.25rem;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 2.5rem;
 }
 
 .header__right span {
@@ -99,7 +132,7 @@
   cursor: pointer;
 }
 
-.user{
+.user {
   padding-right: 2rem;
   display: flex;
   flex-direction: column;
@@ -110,9 +143,32 @@
   font-size: medium;
 }
 
-.logout:hover, .theme:hover{
+.logout {
+  position: relative; /* Position relative for tooltip positioning */
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%; /* Position the tooltip below the button */
+  left: 50%;
+  transform: translateX(-50%); /* Center the tooltip horizontally */
+  background-color: var(--soft-color);
+  color: var(--primary-color);
+  padding: 5px;
+  border-radius: 5px;
+  visibility: hidden; /* Hide the tooltip by default */
+  white-space: nowrap; /* Prevent line breaks in tooltip */
+}
+
+.logout:hover .tooltip {
+  visibility: visible; /* Show tooltip on button hover */
+}
+
+.logout:hover,
+.theme:hover {
   border-radius: 8px;
-  background-color: #1a1f24;
+  background-color: var(--sidebar-active);
 }
 
 /* Sidebar */
@@ -121,8 +177,9 @@
   max-width: 300px;
   padding: 8px;
   /* background-color: #111111; */
-  background-color: #0d1117;
-  border-right: 1px solid #222424;
+  background-color: var(--soft-color);
+  /* border-right: 1px solid #222424; */
+  border-right: 1px solid var(--border-color);
 }
 
 .sidebar__compose {
@@ -143,7 +200,7 @@
   box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.75);
 }
 
-.sidebar__compose:hover{
+.sidebar__compose:hover {
   background-color: #28a745;
   /* font-size: 14px; */
 }
@@ -154,9 +211,13 @@
   color: white;
 }
 
-.sidebar__compose span:hover{
+.sidebar__compose span:hover {
   /* font-weight: bold; */
   transition-delay: 2s;
+}
+
+.compose {
+  color: white;
 }
 
 .sidebarOption {
@@ -188,23 +249,23 @@
 .sidebarOption__active,
 .sidebarOption__active h3,
 .sidebarOption__active .material-icons { */
-  /* background-color: #202020; */
-  /* background-color: #21262c; */
-  /* font-weight: 800; */
+/* background-color: #202020; */
+/* background-color: #21262c; */
+/* font-weight: 800; */
 /* } */
 
-.sidebarOption:hover{
-  background-color: #21262c;
+.sidebarOption:hover {
+  background-color: var(--hover-color);
   border-radius: 8px;
   /* border-left: 5px solid #1f6feb; */
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
-.sidebarOption__active{
-  background-color: #1a1f24;
+.sidebarOption__active {
+  background-color: var(--sidebar-active);
   border-radius: 8px;
-  border-left: 5px solid #1f6feb; 
+  border-left: 5px solid #1f6feb;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
@@ -238,25 +299,24 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px; /* Set the width of the scrollbar */
+  width: 10px; 
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #333; /* Set the color of the scrollbar track */
+  background: var(--scroll-bg);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #555; /* Set the color of the scrollbar handle */
-  border-radius: 5px; /* Set the rounded corners of the scrollbar handle */
+  background: var(--scroll-handle); 
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #777; /* Set the color of the scrollbar handle on hover */
+  background: var(--handle-hover);
 }
-
 
 /* Dark mode scrollbar */
 /* For webkit browsers (Chrome, Safari, etc.) */
@@ -266,18 +326,18 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #333; /* Set the color of the scrollbar track */
+  background: var(--scroll-bg);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #555; /* Set the color of the scrollbar handle */
-  border-radius: 5px; /* Set the rounded corners of the scrollbar handle */
+  background: var(--scroll-handle);
+  border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #777; /* Set the color of the scrollbar handle on hover */
+  background: var(--handle-hover); /* Set the color of the scrollbar handle on hover */
 }
 
 /* Dark mode checkboxes */
@@ -365,7 +425,7 @@ input[type="checkbox"]:checked::before {
   position: sticky;
   top: 0;
   display: flex;
-  background-color: white;
+  background-color: var(--primary-color);
   /* border-bottom: 1px solid whitesmoke; */
   z-index: 999;
 }
@@ -409,7 +469,8 @@ input {
   display: flex;
   align-items: center;
   height: 50px;
-  border-bottom: 1px solid #373a3a;
+  /* border-bottom: 1px solid #373a3a; */
+  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
   z-index: 999;
   padding-left: 8px;
@@ -417,8 +478,9 @@ input {
 
 .emailRow:hover {
   /* background-color: #222424; */
-  background-color: #21262c;
-  border-bottom: 1px solid #373a3a;  
+  background-color: var(--hover-color);
+  /* border-bottom: 1px solid #373a3a;   */
+  border-bottom: 1px solid var(--soft-color);
   /* border-top: 1px solid whitesmoke; */
   /* box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24); */
 }
