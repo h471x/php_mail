@@ -117,7 +117,7 @@
   border: none;
 }
 
-.header__right button:hover{
+.header__right button:hover, .header__right .clicked{
   border-radius: 8px;
   background-color: var(--sidebar-active);
 }
@@ -173,6 +173,11 @@
 .dropbtn {
   position: relative;
   cursor: pointer;
+}
+
+.dropbtn .clicked{
+  border-radius: 8px;
+  background-color: var(--sidebar-active);
 }
 
 /* Style the dropdown content */

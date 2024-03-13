@@ -606,7 +606,9 @@
     </div>
     <!-- Main Body Ends -->
   </body>
-  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/sidebar.js"></script>
+  <script src="../assets/js/logout.js"></script>
   <script src="../assets/js/dictionary.js"></script>
   <script src="../assets/js/language.js"></script>
 </html>

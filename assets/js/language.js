@@ -1,3 +1,10 @@
+// Declare and initialize variables
+var languagePreference = localStorage.getItem('languagePreference') || 'fr';
+var firstClick = true;
+var dropdown = document.getElementById('languageDropdown');
+var tooltip = document.querySelector('.tooltip');
+var dropbtn = document.querySelector('.dropbtn');
+
 // Function to update labels based on language dictionary
 function updateLabels(languageDict) {
   document.getElementById("usernameLabel").textContent = languageDict.username;
@@ -9,9 +16,6 @@ function updateLabels(languageDict) {
   document.getElementById("lang").textContent = languageDict.lang;
   document.getElementById("searchInput").placeholder = languageDict.search;
 }
-
-// Load the language preference from localStorage or set a default
-var languagePreference = localStorage.getItem('languagePreference') || 'fr';
 
 // Function to load language labels based on preference
 function loadLanguageLabels(language) {
@@ -34,7 +38,7 @@ function changeLanguage(newLanguage) {
     loadLanguageLabels(newLanguage);
     languagePreference = newLanguage;
     localStorage.setItem('defaultLanguagePreference', newLanguage);
-     updateCheckmarks();
+    updateCheckmarks();
   }
 }
 
@@ -47,35 +51,39 @@ function updateCheckmarks() {
 // Function to hide the dropdown with a delay
 function hideDropdownWithDelay() {
   setTimeout(function() {
-    var dropdown = document.getElementById('languageDropdown');
     dropdown.style.display = 'none';
+    dropbtn.classList.remove('clicked');
+    firstClick = true;
   }, 250);
 }
 
 // Add an event listener to the button to toggle the dropdown
 document.getElementById('languageToggle').addEventListener('click', function() {
-  var dropdown = document.getElementById('languageDropdown');
-  var tooltip = document.querySelector('.tooltip');
+  // Toggle dropdown visibility
   dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+
+  // Apply styles based on first click or subsequent clicks
+  if (firstClick) {
+    dropbtn.classList.add('clicked');
+    firstClick = false;
+  } else {
+    dropbtn.classList.remove('clicked');
+    firstClick = true;
+  }
+
+  // Hide tooltip if dropdown is visible
   if (dropdown.style.display === 'block') {
     tooltip.style.visibility = 'hidden';
   }
 });
 
 // Add an event listener to the button to hide the tooltip when the mouse hovers over it
-document.querySelector('.dropbtn').addEventListener('mouseover', function() {
-  var dropdown = document.getElementById('languageDropdown');
-  var tooltip = document.querySelector('.tooltip');
-  if (dropdown.style.display === 'block') {
-    tooltip.style.visibility = 'hidden';
-  } else {
-    tooltip.style.visibility = 'visible';
-  }
+dropbtn.addEventListener('mouseover', function() {
+  tooltip.style.visibility = (dropdown.style.display === 'block') ? 'hidden' : 'visible';
 });
 
 // Add an event listener to the button to show the tooltip when the mouse leaves it
-document.querySelector('.dropbtn').addEventListener('mouseout', function() {
-  var tooltip = document.querySelector('.tooltip');
+dropbtn.addEventListener('mouseout', function() {
   tooltip.style.visibility = 'hidden';
 });
 
@@ -92,6 +100,3 @@ document.getElementById('enLink').addEventListener('click', function() {
 
 // Load the checkmark icons based on initial language preference
 updateCheckmarks();
-
-
-

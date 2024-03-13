@@ -1,19 +1,4 @@
-// Function to handle click on sidebar option
-function handleSidebarOptionClick() {
-  document.querySelectorAll('.sidebarOption').forEach(opt => opt.classList.remove('sidebarOption__active'));
-  this.classList.add('sidebarOption__active');
-}
-
-document.querySelectorAll('.sidebarOption').forEach(option => {
-  option.addEventListener('click', handleSidebarOptionClick);
-});
-
-// Logout button
-document.querySelector('.logout').addEventListener('click', function() {
-  window.location.href = '../index.php';
-});
-
-// Theme toggleer
+// Theme toggler
 const themeButton = document.querySelector('.theme');
 const iconSpan = document.querySelector('#light');
 const favicon = document.getElementById('mailIcon');
