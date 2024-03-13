@@ -26,7 +26,7 @@
         <button type="submit">
           <span class="material-icons"> search </span>
         </button>
-        <input type="search" placeholder="Search mail" />
+        <input type="search" id="searchInput" placeholder="" />
         <!-- <span class="material-icons"> arrow_drop_down </span> -->
       </form>
 
@@ -35,9 +35,28 @@
         <span class="material-icons"> notifications </span>
         <span class="material-icons"> account_circle </span> -->
         <div class="user">
-          <h3>User Name</h3>
+          <h3 id="usernameLabel"></h3>
           <!-- <span>example@mail.com</span> -->
         </div>
+
+        <!-- langage button -->
+        <div class="dropdown">
+          <button id="languageToggle" class="dropbtn">
+            <span class="material-icons">arrow_drop_down</span>
+            <span class="tooltip" id="lang"></span>
+          </button>
+          <div id="languageDropdown" class="dropdown-content">
+              <div class="dropdown-header" id="language"></div>
+                <a href="#" id="frLink">Français <span id="frCheck" class="checkmark"><span class="material-icons">check</span></span></a>
+                <a href="#" id="enLink">English <span id="enCheck" class="checkmark"><span class="material-icons">check</span></span></a>
+          </div>
+        </div>
+
+
+        <!-- <button>
+          <span class="material-icons"> notifications </span>
+        </button> -->
+
         <button class="theme">
           <span class="material-icons" id="light">wb_sunny</span>
           <!-- here for the dark mode -->
@@ -45,7 +64,7 @@
         </button>
         <button class="logout">
           <span class="material-icons">exit_to_app</span>
-          <span class="tooltip">Log Out</span>
+          <span class="tooltip" id="logout"></span>
         </button>
         <!-- <img src="./gui_icons/white/user_circle.png" alt="" class="gui_icon"/> -->
       </div>
@@ -56,15 +75,18 @@
     <div class="main__body">
       <!-- Sidebar Starts -->
       <div class="sidebar">
-        <button class="sidebar__compose"><span class="material-icons"> add </span><h3 class="compose">New Mail</h3></button>
+        <button class="sidebar__compose">
+          <span class="material-icons"> add </span>
+          <h3 class="compose" id="new"></h3>
+        </button>
         <div class="sidebarOption sidebarOption__active">
           <span class="material-icons"> inbox </span>
-          <h3>Inbox</h3>
+          <h3 id="inbox"></h3>
         </div>
 
         <div class="sidebarOption">
           <span class="material-icons"> near_me </span>
-          <h3>Sent</h3>
+          <h3 id="sent"></h3>
         </div>
 
         <div class="sidebarOption">
@@ -585,4 +607,6 @@
     <!-- Main Body Ends -->
   </body>
   <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/dictionary.js"></script>
+  <script src="../assets/js/language.js"></script>
 </html>
