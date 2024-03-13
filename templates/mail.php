@@ -26,7 +26,7 @@
         <button type="submit">
           <span class="material-icons"> search </span>
         </button>
-        <input type="search" id="searchInput" placeholder="" />
+        <input type="search" id="search" placeholder="" />
         <!-- <span class="material-icons"> arrow_drop_down </span> -->
       </form>
 
@@ -35,7 +35,7 @@
         <span class="material-icons"> notifications </span>
         <span class="material-icons"> account_circle </span> -->
         <div class="user">
-          <h3 id="usernameLabel"></h3>
+          <h3 id="username"></h3>
           <!-- <span>example@mail.com</span> -->
         </div>
 
@@ -47,11 +47,23 @@
           </button>
           <div id="languageDropdown" class="dropdown-content">
               <div class="dropdown-header" id="language"></div>
-                <a href="#" id="frLink">Français <span id="frCheck" class="checkmark"><span class="material-icons">check</span></span></a>
-                <a href="#" id="enLink">English <span id="enCheck" class="checkmark"><span class="material-icons">check</span></span></a>
+                <a href="" id="mgLink">Malagasy
+                   <span id="mgCheck" class="checkmark">
+                      <span class="material-icons">check</span>
+                    </span>
+                </a>
+                <a href="" id="enLink">English
+                    <span id="enCheck" class="checkmark">
+                      <span class="material-icons">check</span>
+                    </span>
+                </a>
+                <a href="" id="frLink">Français
+                  <span id="frCheck" class="checkmark">
+                    <span class="material-icons">check</span>
+                  </span>
+                </a>
           </div>
         </div>
-
 
         <!-- <button>
           <span class="material-icons"> notifications </span>
@@ -91,7 +103,7 @@
 
         <div class="sidebarOption">
           <span class="material-icons"> person </span>
-          <h3>Contacts</h3>
+          <h3 id="contacts">Contacts</h3>
         </div>
 
         <!-- <div class="sidebarOption">
