@@ -30,6 +30,48 @@
   --github-green: #238636;
 }
 
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--scroll-bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-handle); 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--handle-hover);
+}
+
+/* Dark mode scrollbar */
+/* For webkit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--scroll-bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-handle);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--handle-hover); /* Set the color of the scrollbar handle on hover */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +104,6 @@
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
   color: var(--primary-color);
-  /* background-color: #111111; */
   background-color: var(--header-color);
 }
 
@@ -80,8 +121,6 @@
   display: flex;
   flex: 0.7;
   align-items: center;
-  /* background-color: #222424; */
-  /* background-color: var(--soft-color); */
   background-color: var(--sidebar-active);
   color: white;
   padding: 2px;
@@ -125,6 +164,7 @@
 .emailList__list {
   width: 100%;
   background-color: var(--content-color);
+  overflow-y: auto;
 }
 
 .header__right {
@@ -142,12 +182,19 @@
 .user {
   padding-right: 2rem;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  align-items: center;
   justify-content: center;
   width: 90%;
-  height: 5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
   align-items: center;
   font-size: medium;
+}
+
+.user:hover{
+  border-radius: 8px;
+  background-color: var(--sidebar-active);
 }
 
 /* Add tooltip style */
@@ -197,6 +244,8 @@
   color: var(--primary-color);
   padding: 10px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
 
 /* Style the dropdown links */
@@ -239,9 +288,7 @@
   flex: 0.3;
   max-width: 20rem;
   padding: 8px;
-  /* background-color: #111111; */
   background-color: var(--soft-color);
-  /* border-right: 1px solid #222424; */
   border-right: 1px solid var(--border-color);
 }
 
@@ -254,7 +301,6 @@
   color: white;
   padding: 10px;
   border-radius: 8px;
-  /* background-color: #222424; */
   background-color: var(--github-green);
   display: flex;
   align-items: center;
@@ -267,7 +313,6 @@
 
 .sidebar__compose:hover {
   background-color: #28a745;
-  /* font-size: 14px; */
 }
 
 .sidebar__compose span {
@@ -356,54 +401,6 @@ body {
   overflow-y: hidden;
 }
 
-/* email list */
-.emailList {
-  flex: 1;
-  overflow: scroll;
-  background-color: #111111;
-}
-
-::-webkit-scrollbar {
-  width: 10px; 
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: var(--scroll-bg);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--scroll-handle); 
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--handle-hover);
-}
-
-/* Dark mode scrollbar */
-/* For webkit browsers (Chrome, Safari, etc.) */
-::-webkit-scrollbar {
-  width: 10px; /* Set the width of the scrollbar */
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: var(--scroll-bg);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--scroll-handle);
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--handle-hover); /* Set the color of the scrollbar handle on hover */
-}
 
 /* Dark mode checkboxes */
 input[type="checkbox"] {
@@ -451,6 +448,14 @@ input[type="checkbox"]:checked:hover {
 /* Show checked icon when checkbox is checked */
 input[type="checkbox"]:checked::before {
   opacity: 1; /* Show the checkmark */
+}
+
+/* email list */
+.emailList {
+  flex: 1;
+  overflow: scroll;
+  background-color: var(--content-color);
+  min-height: 100vh;
 }
 
 .emailList__settings {
@@ -534,7 +539,6 @@ input {
   display: flex;
   align-items: center;
   height: 50px;
-  /* border-bottom: 1px solid #373a3a; */
   border-bottom: 1px solid var(--border-color);
   cursor: pointer;
   z-index: 999;
@@ -542,12 +546,8 @@ input {
 }
 
 .emailRow:hover {
-  /* background-color: #222424; */
   background-color: var(--hover-color);
-  /* border-bottom: 1px solid #373a3a;   */
   border-bottom: 1px solid var(--soft-color);
-  /* border-top: 1px solid whitesmoke; */
-  /* box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24); */
 }
 
 .emailRow__message {
