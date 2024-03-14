@@ -13,6 +13,7 @@
   --scroll-handle: #555;
   --handle-hover: #777;
   --github-green: #238636;
+  --shadow-color: #353b43;
 }
 
 .light-mode {
@@ -28,6 +29,7 @@
   --scroll-handle: #9b9595;
   --handle-hover: #a59f9f;
   --github-green: #238636;
+  --shadow-color: #0000003d;
 }
 
 ::-webkit-scrollbar {
@@ -201,7 +203,7 @@
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 2.5rem;
+  min-height: 1.75rem;
   padding: 0.5rem;
   align-items: center;
   font-size: medium;
@@ -219,6 +221,7 @@
   left: 50%;
   transform: translateX(-50%); 
   background-color: var(--soft-color);
+  /* box-shadow: var(--shadow-color) 0px 1px 4px; */
   color: var(--primary-color);
   padding: 5px;
   border-radius: 5px;
@@ -249,6 +252,7 @@
   background-color: var(--content-color);
   min-width: 140px;
   border: 1px solid var(--border-color);
+  /* box-shadow: var(--shadow-color) 0px 1px 4px; */
   border-radius: 8px;
   z-index: 1;
 }
