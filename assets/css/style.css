@@ -80,6 +80,20 @@
   font-weight: 600;
 }
 
+.iframe{
+  position: absolute;
+  width: 80vw;
+  height: 80vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--content-color);
+  color: var(--primary-color);
+  visibility: hidden;
+}
+
 .mail {
   width: 50px;
   height: 50px;
@@ -164,6 +178,7 @@
 .emailList__list {
   width: 100%;
   background-color: var(--content-color);
+  color: var(--primary-color);
   overflow-y: auto;
 }
 
@@ -540,6 +555,7 @@ input {
   align-items: center;
   height: 50px;
   border-bottom: 1px solid var(--border-color);
+  color: var(--primary-color);
   cursor: pointer;
   z-index: 999;
   padding-left: 8px;
@@ -555,6 +571,7 @@ input {
   flex: 0.8;
   align-items: center;
   font-size: 13px;
+  color: var(--primary-color);
 }
 
 .emailRow__message h4 {
@@ -570,6 +587,7 @@ input {
   padding-left: 1rem;
   font-size: 13px;
   flex: 0.3;
+  color: var(--primary-color);
 }
 
 .emailRow__time {

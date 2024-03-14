@@ -11,6 +11,7 @@
     <title>Php Mail</title>
   </head>
   <body>
+    <iframe src="./inbox.php" class="iframe" frameborder="0"></iframe>
     <!-- Header Starts -->
     <div class="header">
       <div class="header__left">
@@ -118,4 +119,5 @@
   <script src="../assets/js/logout.js"></script>
   <script src="../assets/js/dictionary.js"></script>
   <script src="../assets/js/language.js"></script>
+  <script src="../assets/js/inbox.js"></script>
 </html>
