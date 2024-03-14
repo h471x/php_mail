@@ -106,17 +106,73 @@ $emailRows = [
     ],
 
     [
-        "title" => "YouTube Last",
+        "title" => "YouTube",
         "message" => "You Got a New Subscriber",
         "description" => "on Your Channel Future Coders",
         "time" => "10pm"
     ],
-    // Add more email rows as needed
+
     [
-        "title" => "",
-        "message" => "",
-        "description" => "",
-        "time" => ""
+        "title" => "YouTube",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
+    ],
+
+    [
+        "title" => "YouTube",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
+    ],
+
+    [
+        "title" => "YouTube",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
+    ],
+
+    [
+        "title" => "YouTube",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
+    ],
+
+    [
+        "title" => "YouTube",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
+    ],
+
+    [
+        "title" => "YouTube",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
+    ],
+
+    [
+        "title" => "YouTube",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
+    ],
+
+    [
+        "title" => "YouTube",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
+    ],
+
+    [
+        "title" => "YouTube Last",
+        "message" => "You Got a New Subscriber",
+        "description" => "on Your Channel Future Coders",
+        "time" => "10pm"
     ]
 ];
 

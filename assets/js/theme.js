@@ -20,11 +20,11 @@ const initialFaviconURL = isLight ? faviconURLs.black : faviconURLs.white;
 favicon.setAttribute('src', initialFaviconURL);
 
 // Toggle button
-themeButton.addEventListener('click', () => {
+themeButton.onclick = () => {
   root.classList.toggle('light-mode');
   iconSpan.innerHTML = isLight ? 'wb_sunny' : 'brightness_3';
   isLight = !isLight;
   const faviconURL = isLight ? faviconURLs.black : faviconURLs.white;
   favicon.setAttribute('src', faviconURL);
   localStorage.setItem('isLight', isLight);
-});
+};

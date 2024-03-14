@@ -97,11 +97,11 @@
 
       <!-- Email List  -->
       <div class="emailList">
-        <ul>
+        <!-- <ul> -->
           <!-- <div class="inbox"> -->
-            <li>
+            <!-- <li> -->
               <?php require_once "./inbox.php" ?>
-            </li>
+            <!-- </li> -->
         <!-- </div> -->
         <!-- <div class="sent">
         <?php require_once "./send.php" ?>
@@ -109,7 +109,7 @@
         <div class="contacts">
         <?php require_once "./contact.php" ?>
         </div> -->
-        </ul>
+        <!-- </ul> -->
         
       </div>
     </div>

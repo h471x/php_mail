@@ -1,4 +1,4 @@
 // Logout button
-document.querySelector('.logout').addEventListener('click', function() {
+document.querySelector('.logout').onclick = () => {
   window.location.href = '../index.php';
-});
+};
