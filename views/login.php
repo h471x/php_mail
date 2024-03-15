@@ -24,18 +24,18 @@
       <!-- Form action points to login -->
       <form action="/php_mail/config/php/signin.php" class="login-form" method="post"> 
         <div class="input-box">
-          <label for="email">Username or e-mail</label>
-          <input type="text" class="input-field" id="email" name="mail" required>
+          <label for="email">User e-mail</label>
+          <input type="text" class="input-field" id="email" name="mail" spellcheck="false" autocomplete="off">
           <i class="bx bx-envelope"></i>
-          <div id="email-error" style="display: none; color: red;">Format : mail@example.com</div>
+          <div id="email-error" style="display: none; color: red;"></div>
         </div>
         <div class="input-box">
           <label for="pass">Password</label>
-          <input type="password" class="input-field" id="pass" name="password" required>
+          <input type="password" class="input-field" id="pass" name="password" spellcheck="false">
           <div class="toggle-password">
             <i class="bx bx-show"></i>
           </div>
-          <div id="password-error" style="display: none; color: red;">Must be at least 8 characters</div>
+          <div id="password-error" style="display: none; color: red;"></div>
         </div>
         <div class="input-box">
           <input type="submit" class="input-submit text" value="Sign In" style="color: white;">
@@ -50,7 +50,7 @@
   </div>
   <script src="/php_mail/assets/js/password.js"></script>
   <script src="/php_mail/assets/js/theme.js"></script>
-  <script src="/php_mail/assets/js/language.js"></script>
-  <script src="/php_mail/assets/js/dictionary.js"></script>
+  <!-- <script src="/php_mail/assets/js/language.js"></script>
+  <script src="/php_mail/assets/js/dictionary.js"></script> -->
 </body>
 </html>
