@@ -1,4 +1,5 @@
 @import url('./nunito.css');
+@import url('./icons.css');
 @import url("./color.css");
 
 *{
@@ -9,7 +10,7 @@
     font-weight: 600;
 }
 body{
-    background-color: #fff;
+    background-color: var(--content-color);
 }
 .container{
     display: flex;
@@ -19,17 +20,18 @@ body{
     position: relative;
 }
 .box{
-    width: 450px;
-    height: 500px;
-    background: #fff;
+    width: 25rem;
+    height : 24rem;
+    background: var(--soft-color);
     backdrop-filter: blur(20px);
-    border-radius: 30px;
-    padding: 40px;
-    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
-                -2px -0px 15px 2px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    /* box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
+                -2px -0px 15px 2px rgba(0,0,0,0.1); */
+    border: 0.5px groove var(--border-color);
     z-index: 10;
 }
-.wrapper{
+/* .wrapper{
     position: absolute;
     width: 455px;
     height: 500px;
@@ -38,10 +40,30 @@ body{
     box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
                 -2px -0px 15px 2px rgba(0,0,0,0.054);
     transform: rotate(5deg);
+} */
+
+.header {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--primary-color);
+  }
+
+  .header div {
+    display: flex;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    justify-content: center;
+    /* border: 0.5px groove #716f6f; */
 }
-.header{
-    margin-bottom: 50px;
-}
+
+.connected{ background-color: #45cc58; }
+.wrong{ background-color: #f78166; }
+.disconnected{ background-color: #eb0909; }
+
 .header header{
     display: flex;
     justify-content: right;
@@ -54,61 +76,124 @@ header img{
     font-weight: 800;
     margin-top: 10px;
 }
+
+/* .login-form{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+} */
+
+.tooltip {
+    position: absolute;
+    top: 20%;
+    left: 85%;
+    transform: translateX(-50%); 
+    border: 1px solid var(--border-color);
+    background-color: var(--soft-color);
+    color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    visibility: hidden; 
+    white-space: nowrap;
+}
+
+.status:hover .tooltip{
+    visibility: visible;
+}
+
 .input-box{
     display: flex;
     flex-direction: column;
-    margin: 10px 0;
+    /* margin: 5px 0; */
     position: relative;
 }
+
+.input-box input, .input-box label, .input-box {
+    color: var(--primary-color);
+}
+
 i{
     font-size: 22px;
     position: absolute;
     top: 35px;
     right: 12px;
+    color: var(--primary-color);
+}
+
+.input-box button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
     color: #595b5e;
+    background: black;
+    width: 10px;
+    height: 10px;
+    border: none;
+    cursor: pointer;
 }
-input{
-    height: 40px;
-    border: 2px solid rgb(153,157,158);
-    border-radius: 7px;
-    margin: 7px 0;
-    outline: none;
-}
+
 .input-field{
     font-weight: 500;
     padding: 0 10px;
     font-size: 17px;
-    color: #333;
-    background: transparent;
+    /* color: #333; */
+    background-color: var(--soft-color);
     transition: all .3s ease-in-out;
+}
+
+.input-field:-webkit-autofill{
+    background-color: var(--soft-color);
+}
+input{
+    height: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 7px;
+    margin: 5px 0;
+    outline: none;
 }
 .input-field:focus{
-    border:2px solid rgb(89,53,180);
+    border:2px solid #1f6feb;
 }
-.input-field:focus ~ i{
-    color: rgb(89,53,180);
+.input-field:focus ~ i, .input-field:focus button ~ i{
+    color: #1f6feb;
 }
+
+.input-field:focus ~ .bx-envelope,
+.input-field:focus ~ .toggle-password .bx-show,
+.input-field:focus ~ .toggle-password .bx-hide {
+    color: var(--primary-color);
+}
+
 .input-submit{
-    margin-top: 20px;
-    background: #1e263a;
+    margin-top: 1rem;
+    background: #238636;
+    font-size: 1rem;
     border: none;
-    color: #fff;
+    color: white;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    margin-bottom: 1rem;
 }
+
 .input-submit:hover{
-    background: #122b71;
+    background: #2ea043;
 }
 .bottom{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-top: 25px;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--primary-color);
+    /* margin-top: 25px; */
 }
 .bottom span a{
     color: #727374;
     text-decoration: none;
 }
 .bottom span a:hover{
+    color: #1f6feb;
     text-decoration: underline;
 }

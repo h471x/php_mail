@@ -11,6 +11,7 @@
   --scroll-handle: #555;
   --handle-hover: #777;
   --github-green: #238636;
+  --github-blue: #1f6feb;
   --shadow-color: #353b43;
 }
 
@@ -27,5 +28,6 @@
   --scroll-handle: #9b9595;
   --handle-hover: #a59f9f;
   --github-green: #238636;
+  --github-blue: #1f6feb;
   --shadow-color: #0000003d;
 }

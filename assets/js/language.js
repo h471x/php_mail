@@ -24,6 +24,7 @@ const updateLabels = (languageDict) => {
   document.getElementById("contacts").textContent = languageDict.contacts;
   document.getElementById("language").textContent = languageDict.language;
   document.getElementById("lang").textContent = languageDict.lang;
+  // document.getElementById("loginTitle").textContent = languageDict.loginTitle;
   document.getElementById("search").placeholder = languageDict.search;
 };
 

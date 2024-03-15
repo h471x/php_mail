@@ -1,44 +1,56 @@
-<?php require "./config/php/connect.php"; ?>
+<?php $basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/"; ?>
+<?php require_once $basePath . "config/php/connect.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/icons.css">
-    <link rel="stylesheet" href="./assets/css/login.css">
-    <link rel="icon" href="./assets/images/mail_white.png">
+    <link rel="stylesheet" href="/php_mail/assets/css/login.css">
+    <link rel="icon" href="/php_mail/assets/images/mail_white.png">
     <title>Login</title>
 </head>
 <body>
   <div class="container">
     <div class="box">
       <div class="header">
-        <p>Log In to e-mail</p>
-        <h4>Connection : <?php echo $message ?></h4>
+        <p id="loginTitle">Login to e-mail</p>
+        <div class="status">
+          <?php echo $status ?>
+          <?php echo $error ?>
+        </div>
       </div>
       <!-- Form action points to login -->
-      <form action="config/php/signin.php" method="post"> 
+      <form action="/php_mail/config/php/signin.php" class="login-form" method="post"> 
         <div class="input-box">
-          <label for="email">E-Mail</label>
-          <input type="email" class="input-field" id="email" name="mail" required>
+          <label for="email">Username or e-mail</label>
+          <input type="text" class="input-field" id="email" name="mail" required>
           <i class="bx bx-envelope"></i>
+          <div id="email-error" style="display: none; color: red;">Format : mail@example.com</div>
         </div>
         <div class="input-box">
           <label for="pass">Password</label>
           <input type="password" class="input-field" id="pass" name="password" required>
-          <i class="bx bx-lock"></i>
+          <div class="toggle-password">
+            <i class="bx bx-show"></i>
+          </div>
+          <div id="password-error" style="display: none; color: red;">Must be at least 8 characters</div>
         </div>
         <div class="input-box">
-          <input type="submit" class="input-submit" value="SIGN IN">
+          <input type="submit" class="input-submit text" value="Sign In" style="color: white;">
         </div>
       </form>
       <div class="bottom">
-        <span><a href="#">Sign Up</a></span>
-        <span><a href="#">Forgot Password?</a></span>
+        <span>New to e-mail?</span>&nbsp;&nbsp;
+        <span><a href="">Sign Up</a></span>
       </div>
     </div>
     <!-- <div class="wrapper"></div> -->
   </div>
+  <script src="/php_mail/assets/js/password.js"></script>
+  <script src="/php_mail/assets/js/theme.js"></script>
+  <script src="/php_mail/assets/js/language.js"></script>
+  <script src="/php_mail/assets/js/dictionary.js"></script>
 </body>
 </html>

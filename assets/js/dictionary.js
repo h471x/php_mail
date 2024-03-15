@@ -10,6 +10,7 @@ var languageDictionaries = {
     "search" : "Hitady mail",
     "language" : "Fiteny",
     "lang" : "Safidy Fiteny"
+    // "loginTitle" : "Hiditra @e-mail"
   },
 
   "en": {
@@ -22,6 +23,7 @@ var languageDictionaries = {
     "search" : "Search mail",
     "language" : "Language",
     "lang" : "Choose Language"
+    // "loginTitle" : "Log In to e-mail"
   },
 
   "fr": {
@@ -34,5 +36,6 @@ var languageDictionaries = {
     "search" : "Rechercher un mail",
     "language" : "Langue",
     "lang" : "Choisir la Langue"
+    // "loginTitle" : "Se Connecter à e-mail"
   }
 };

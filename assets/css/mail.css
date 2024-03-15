@@ -1,3 +1,4 @@
+@import url("./font.css");
 @import url("./nunito.css");
 @import url("./color.css");
 @import url("./scroll.css");
@@ -315,7 +316,7 @@
 .sidebarOption:hover {
   background-color: var(--hover-color);
   border-radius: 8px;
-  /* border-left: 5px solid #1f6feb; */
+  /* border-left: 5px solid var(--github-blue); */
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
@@ -323,7 +324,7 @@
 .sidebarOption__active {
   background-color: var(--sidebar-active);
   border-radius: 8px;
-  border-left: 5px solid #1f6feb;
+  border-left: 5px solid var(--github-blue);
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }

@@ -1,6 +1,6 @@
 // Get the compose button
-var compose = document.querySelector(".sidebar__compose");
-var iframe = document.querySelector(".iframe");
+const compose = document.querySelector(".sidebar__compose");
+const iframe = document.querySelector(".iframe");
 var isIframeVisible = false;
 
 // When clicked Show/Hide the compose
