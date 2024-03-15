@@ -19,7 +19,7 @@ try{
   $stmt->execute();
 
   // Redirect back to index.php with success message
-  header("Location: ../../templates/mail.php?success=true");
+  header("Location: ../../views/mail.php?success=true");
   exit; // Ensure script stops here to prevent further output
 }catch(PDOException $e) {
   echo "Error: " . $e->getMessage();

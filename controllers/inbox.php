@@ -196,6 +196,8 @@ function generateEmailRows($rows) {
 
 ?>
 
-<div class="emailList__list">
+<div class="emailList">
+  <div class="emailList__list">
     <?php generateEmailRows($emailRows); ?>
+  </div>
 </div>

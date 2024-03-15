@@ -1,2 +1,1 @@
-<?php
-  require_once "templates/login.php";
+<?php require_once "views/login.php";
