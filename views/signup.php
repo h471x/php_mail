@@ -1,0 +1,1 @@
+<?php echo "<h1>Signup to e-mail</h1>" ; ?>

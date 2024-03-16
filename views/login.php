@@ -43,7 +43,7 @@
       </form>
       <div class="bottom">
         <span>New to e-mail?</span>&nbsp;&nbsp;
-        <span><a href="">Sign Up</a></span>
+        <span><a href="/php_mail/views/signup.php">Sign Up</a></span>
       </div>
     </div>
     <!-- <div class="wrapper"></div> -->

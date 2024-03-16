@@ -14,7 +14,7 @@ form.addEventListener('submit', function(event) {
   if (!passwordInput.value.trim()) {
     event.preventDefault();
     passwordInput.style.border = '2px solid red';
-    passwordErrorDisplay.textContent = 'Please fill this out';
+    passwordErrorDisplay.textContent = 'Please fill this field out';
     passwordErrorDisplay.style.display = 'block';
     isValid = false;
   } else if (passwordInput.value.length < 8) {
@@ -30,7 +30,7 @@ form.addEventListener('submit', function(event) {
   if (!emailInput.value.trim()) {
     event.preventDefault();
     emailInput.style.border = '2px solid red';
-    emailErrorDisplay.textContent = 'Please fill this out';
+    emailErrorDisplay.textContent = 'Please fill this field out';
     emailErrorDisplay.style.display = 'block';
     isValid = false;
   } else if (!emailRegex.test(emailInput.value)) {
