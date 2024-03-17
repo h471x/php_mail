@@ -91,7 +91,6 @@
     <!-- <div class="wrapper"></div> -->
   </div>
   <script src="/php_mail/assets/js/signup.js"></script>
-  <script src="/php_mail/assets/js/theme.js"></script>
   <!-- <script src="/php_mail/assets/js/language.js"></script>
   <script src="/php_mail/assets/js/dictionary.js"></script> -->
 </body>

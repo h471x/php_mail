@@ -9,8 +9,21 @@ var languageDictionaries = {
     "contacts" : "Olona Fantatra",
     "search" : "Hitady mail",
     "language" : "Fiteny",
-    "lang" : "Safidy Fiteny"
-    // "loginTitle" : "Hiditra @e-mail"
+    "lang" : "Safidy Fiteny",
+    "phpmail_signin" : "Php Mailaka - Hiditra",
+    "loginTitle" : "Hiditra @e-mail",
+    "useremail_signin" : "Mailaka",
+    "fill" : "Aza avela banga",
+    "format" : "Ohatra : mail@example.com",
+    "lack" : "tarehitsoratra 8 farafaharatsiny",
+    "signin_password" : "Teny Miafina",
+    "login_signin" : "Hiditra",
+    "status_connected" : "Mifandray",
+    "status_disconnected" : "Tapaka",
+    "status_denied" : "Diso Fandray",
+    "new_user" : "Vaovao @php-mail ?",
+    "signup_link" : "Hamorona",
+    "username_signin" : "Anarana"
   },
 
   "en": {
@@ -22,8 +35,21 @@ var languageDictionaries = {
     "contacts" : "Contacts",
     "search" : "Search mail",
     "language" : "Language",
-    "lang" : "Choose Language"
-    // "loginTitle" : "Log In to e-mail"
+    "lang" : "Choose Language",
+    "phpmail_signin" : "Php Mail - Signin",
+    "loginTitle" : "Log In to e-mail",
+    "useremail_signin" : "E-mail",
+    "fill" : "Please fill this field out",
+    "format" : "Format : mail@example.com",
+    "lack" : "must be at least 8 characters long",
+    "signin_password" : "Password",
+    "login_signin" : "Sign In",
+    "status_connected" : "Connected",
+    "status_disconnected" : "Disconnected",
+    "status_denied" : "Access Denied",
+    "new_user" : "New to php-mail ?",
+    "signup_link" : "Sign Up",
+    "username_signin" : "Username"
   },
 
   "fr": {
@@ -35,7 +61,20 @@ var languageDictionaries = {
     "contacts" : "Contacts",
     "search" : "Rechercher un mail",
     "language" : "Langue",
-    "lang" : "Choisir la Langue"
-    // "loginTitle" : "Se Connecter à e-mail"
+    "lang" : "Choisir la Langue",
+    "phpmail_signin" : "Php Mail - Connection",
+    "loginTitle" : "Se Connecter à e-mail",
+    "useremail_signin" : "E-mail",
+    "fill" : "Veuillez ne pas laisser vide",
+    "format" : "Format : mail@example.com",
+    "lack" : "au moins 8 caractères",
+    "signin_password" : "Mot De Passe",
+    "login_signin" : "Se Connecter",
+    "status_connected" : "Connecté",
+    "status_disconnected" : "Déconnecté",
+    "status_denied" : "Accès Refusé",
+    "new_user" : "Nouveau sur php-mail ?",
+    "signup_link" : "Créer un compte",
+    "username_signin" : "Nom d'utilisateur"
   }
 };

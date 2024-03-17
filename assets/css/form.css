@@ -158,7 +158,7 @@ signup-header img{
 .tooltip {
     position: absolute;
     top: 20%;
-    left: 85%;
+    left: 84%;
     transform: translateX(-50%); 
     border: 1px solid var(--border-color);
     background-color: var(--soft-color);

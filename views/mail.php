@@ -18,9 +18,9 @@
       <?php require_once $basePath . "controllers/inbox.php" ?>
     </div>
   </body>
-  <script src="/php_mail/assets/js/theme.js"></script>
   <script src="/php_mail/assets/js/sidebar.js"></script>
   <script src="/php_mail/assets/js/logout.js"></script>
   <script src="/php_mail/assets/js/dictionary.js"></script>
-  <script src="/php_mail/assets/js/language.js"></script>
+  <script src="/php_mail/assets/js/mail.js"></script>
+  <script src="/php_mail/assets/js/theme.js"></script>
 </html>

@@ -1,4 +1,5 @@
 //Email & Password handler
+const root = document.documentElement;
 const form = document.querySelector('form');
 const passwordInput = document.getElementById('signup-pass');
 const confirmInput = document.getElementById('confirm-pass');
@@ -15,6 +16,10 @@ const toggleConfirmButton = document.querySelector(".toggle-confirm");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 var isPasswordVisible = false;
 var isConfirmVisible = false;
+
+// Persistent theme 
+let isLight = localStorage.getItem('isLight') === 'true';
+isLight ? root.classList.add('light-mode') : null;
 
 // Focus the input onload
 document.addEventListener('DOMContentLoaded', function() {
