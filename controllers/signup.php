@@ -27,4 +27,5 @@
 
   // // Close the connection
   // $pdo = null;
+  echo "<h1>test</h1>";
 ?>

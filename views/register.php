@@ -26,44 +26,55 @@
         <div class="inputContainer">
           <div class="leftInput">
             <div class="input-box">
-              <label for="email">Full Name</label>
+              <div class="titleInput">
+                <label for="email">Full Name</label>
+                <div id="name-error" style="display: none; color: red;"></div>
+              </div>
               <input type="text" class="input-field" id="name" name="name" spellcheck="false" autocomplete="off">
               <i class="material-icons">person</i>
-              <div id="email-error" style="display: none; color: red;"></div>
             </div>
 
             <div class="input-box">
-              <label for="email">Username</label>
+              <div class="titleInput">
+                <label for="email">Username</label>
+                <div id="user-error" style="display: none; color: red;"></div>
+              </div>
               <input type="text" class="input-field" id="username" name="username" spellcheck="false" autocomplete="off">
               <i class="material-icons">person</i>
-              <div id="email-error" style="display: none; color: red;"></div>
-            </div>
+              </div>
 
             <div class="input-box">
-              <label for="email">E-mail</label>
+              <div class="titleInput">
+                <label for="email">E-mail</label>
+                <div id="email-error" style="display: none; color: red;"></div>
+              </div>
               <input type="text" class="input-field" id="signup-email" name="signup-mail" spellcheck="false" autocomplete="off">
               <i class="bx bx-envelope"></i>
-              <div id="email-error" style="display: none; color: red;"></div>
             </div>
           </div>
 
           <div class="rightInput">
             <div class="input-box">
-              <label for="pass">Password</label>
+              <div class="titleInput">
+                <label for="pass">Password</label>
+                <div id="password-error" style="display: none; color: red;"></div>
+              </div>
               <input type="password" class="input-field" id="signup-pass" name="signup-password" spellcheck="false">
               <div class="toggle-password">
                 <i class="bx bx-show"></i>
               </div>
-              <div id="password-error" style="display: none; color: red;"></div>
             </div>
 
             <div class="input-box">
-              <label for="pass">Confirm Password</label>
+              <div class="titleInput">
+                <label for="pass">Confirm Password</label>
+                <div id="confirm-error" style="display: none; color: red;"></div>
+              </div>
               <input type="password" class="input-field" id="confirm-pass" name="confirm-password" spellcheck="false">
-              <div class="toggle-password">
+              <div class="toggle-confirm">
                 <i class="bx bx-show"></i>
               </div>
-              <div id="password-error" style="display: none; color: red;"></div>
+              
             </div>
 
             <div class="input-box">

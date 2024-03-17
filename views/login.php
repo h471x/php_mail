@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/php_mail/assets/css/form.css">
     <link rel="icon" href="/php_mail/assets/images/mail_white.png">
-    <title>Php Mail - Login</title>
+    <title>Php Mail - Sign In</title>
 </head>
 <body>
   <div class="container">
@@ -24,18 +24,22 @@
       <!-- Form action points to login -->
       <form action="/php_mail/controllers/signin.php" class="login-form" method="post"> 
         <div class="input-box">
-          <label for="email">User e-mail</label>
+          <div class="titleInput">
+            <label for="email">User e-mail</label>
+            <div id="email-error" style="display: none; color: red;"></div>
+          </div>
           <input type="text" class="input-field" id="email" name="mail" spellcheck="false" autocomplete="off">
           <i class="bx bx-envelope"></i>
-          <div id="email-error" style="display: none; color: red;"></div>
         </div>
         <div class="input-box">
-          <label for="pass">Password</label>
+          <div class="titleInput">
+            <label for="pass">Password</label>
+            <div id="password-error" style="display: none; color: red;"></div>
+          </div>
           <input type="password" class="input-field" id="pass" name="password" spellcheck="false">
           <div class="toggle-password">
             <i class="bx bx-show"></i>
           </div>
-          <div id="password-error" style="display: none; color: red;"></div>
         </div>
         <div class="input-box">
           <input type="submit" class="input-submit text" value="Sign In" style="color: white;">

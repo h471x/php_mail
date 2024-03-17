@@ -13,6 +13,7 @@
   --github-green: #238636;
   --github-blue: #1f6feb;
   --shadow-color: #353b43;
+  --connected : #45cc58;
 }
 
 .light-mode {
@@ -30,4 +31,5 @@
   --github-green: #238636;
   --github-blue: #1f6feb;
   --shadow-color: #0000003d;
+  --connected : #45cc58;
 }

@@ -20,7 +20,7 @@ form.addEventListener('submit', function(event) {
   } else if (passwordInput.value.length < 8) {
     event.preventDefault();
     passwordInput.style.border = '2px solid red';
-    passwordErrorDisplay.textContent = 'Must be at least 8 characters long';
+    passwordErrorDisplay.textContent = 'must be at least 8 characters long';
     passwordErrorDisplay.style.display = 'block';
     isValid = false;
   }
