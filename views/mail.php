@@ -22,5 +22,4 @@
   <script src="/php_mail/assets/js/logout.js"></script>
   <script src="/php_mail/assets/js/dictionary.js"></script>
   <script src="/php_mail/assets/js/language.js"></script>
-  <script src="/php_mail/assets/js/inbox.js"></script>
 </html>

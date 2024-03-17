@@ -15,5 +15,6 @@
 
   $mail_database = "
   CREATE DATABASE IF NOT EXISTS mail;
-  USE mail;";
+  USE mail;
+  ";
 ?>

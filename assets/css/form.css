@@ -1,3 +1,4 @@
+@import url("./font.css");
 @import url('./nunito.css');
 @import url('./icons.css');
 @import url("./color.css");
@@ -26,10 +27,39 @@ body{
     backdrop-filter: blur(20px);
     border-radius: 15px;
     padding: 2rem;
+    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
+    -2px -0px 15px 2px rgba(0,0,0,0.054);
     /* box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
                 -2px -0px 15px 2px rgba(0,0,0,0.1); */
     border: 0.5px groove var(--border-color);
     z-index: 10;
+}
+
+.signup-box{
+    width: 50rem;
+    height : 25rem;
+    background: var(--soft-color);
+    /* backdrop-filter: blur(20px); */
+    border-radius: 15px;
+    padding: 2rem;
+    /* padding: 0.75rem 2rem 2rem 2rem; */
+    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
+                -2px -0px 15px 2px rgba(0,0,0,0.054);
+    /* box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
+                -2px -0px 15px 2px rgba(0,0,0,0.1); */
+    border: 0.5px groove var(--border-color);
+    z-index: 10;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    width: 100%;
+}
+
+.leftInput, .rightInput {
+    flex: 1;
 }
 /* .wrapper{
     position: absolute;
@@ -48,9 +78,9 @@ body{
     justify-content: space-between;
     align-items: baseline;
     color: var(--primary-color);
-  }
+}
 
-  .header div {
+.header div {
     display: flex;
     align-items: center;
     width: 15px;
@@ -60,9 +90,6 @@ body{
     /* border: 0.5px groove #716f6f; */
 }
 
-.connected{ background-color: #45cc58; }
-.wrong{ background-color: #f78166; }
-.disconnected{ background-color: #eb0909; }
 
 .header header{
     display: flex;
@@ -77,6 +104,39 @@ header img{
     margin-top: 10px;
 }
 
+.signup-header {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.signup-header div {
+    display: flex;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    justify-content: center;
+    /* border: 0.5px groove #716f6f; */
+}
+
+
+.signup-header header{
+    display: flex;
+    justify-content: right;
+}
+signup-header img{
+    width: 25px;
+}
+
+.signup-header p{
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
 /* .login-form{
     width: 95%;
     display: flex;
@@ -84,6 +144,10 @@ header img{
     align-content: center;
     justify-content: center;
 } */
+
+.connected{ background-color: #45cc58; }
+.wrong{ background-color: #f78166; }
+.disconnected{ background-color: #eb0909; }
 
 .tooltip {
     position: absolute;
@@ -99,7 +163,21 @@ header img{
     white-space: nowrap;
 }
 
-.status:hover .tooltip{
+.signup-tooltip {
+    position: absolute;
+    top: 27%;
+    left: 76%;
+    transform: translateX(-50%); 
+    border: 1px solid var(--border-color);
+    background-color: var(--soft-color);
+    color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    visibility: hidden; 
+    white-space: nowrap;
+}
+
+.status:hover .tooltip, .status:hover .signup-tooltip{
     visibility: visible;
 }
 
@@ -162,6 +240,7 @@ input{
 }
 
 .input-field:focus ~ .bx-envelope,
+.input-field:focus ~ .material-icons,
 .input-field:focus ~ .toggle-password .bx-show,
 .input-field:focus ~ .toggle-password .bx-hide {
     color: var(--primary-color);
@@ -181,6 +260,22 @@ input{
 .input-submit:hover{
     background: #2ea043;
 }
+
+.input-submit-signup{
+    margin-top: 1.6rem;
+    background: #238636;
+    font-size: 1rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.input-submit-signup:hover{
+    background: #2ea043;
+}
+
 .bottom{
     display: flex;
     flex-direction: row;
@@ -189,11 +284,20 @@ input{
     color: var(--primary-color);
     /* margin-top: 25px; */
 }
-.bottom span a{
+
+.signup-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 1rem;
+    color: var(--primary-color);
+    /* margin-top: 25px; */
+}
+.bottom span a, .signup-bottom span a{
     color: #727374;
     text-decoration: none;
 }
-.bottom span a:hover{
+.bottom span a:hover, .signup-bottom span a:hover{
     color: #1f6feb;
     text-decoration: underline;
 }

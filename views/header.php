@@ -1,7 +1,7 @@
 <div class="header">
   <div class="header__left">
     <img src="../assets/images/mail_white.png" alt="" class="mail" id="mailIcon"/>
-    <h1>e-mail</h1>
+    <h1>php-mail</h1>
   </div>
 
   <form class="header__middle" action="">

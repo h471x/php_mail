@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/php_mail/assets/css/login.css">
+    <link rel="stylesheet" href="/php_mail/assets/css/form.css">
     <link rel="icon" href="/php_mail/assets/images/mail_white.png">
-    <title>Login</title>
+    <title>Php Mail - Login</title>
 </head>
 <body>
   <div class="container">
     <div class="box">
       <div class="header">
-        <p id="loginTitle">Login to e-mail</p>
+        <p id="loginTitle">Login to php-mail</p>
         <div class="status">
           <?php echo $status ?>
           <?php echo $error ?>
@@ -42,13 +42,13 @@
         </div>
       </form>
       <div class="bottom">
-        <span>New to e-mail?</span>&nbsp;&nbsp;
+        <span>New to php-mail?</span>&nbsp;&nbsp;
         <span><a href="/php_mail/views/register.php">Sign Up</a></span>
       </div>
     </div>
     <!-- <div class="wrapper"></div> -->
   </div>
-  <script src="/php_mail/assets/js/password.js"></script>
+  <script src="/php_mail/assets/js/signin.js"></script>
   <script src="/php_mail/assets/js/theme.js"></script>
   <!-- <script src="/php_mail/assets/js/language.js"></script>
   <script src="/php_mail/assets/js/dictionary.js"></script> -->
