@@ -16,10 +16,12 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 var isPasswordVisible = false;
 var isConfirmVisible = false;
 
+// Focus the input onload
 document.addEventListener('DOMContentLoaded', function() {
   nameInput.focus();
 });
 
+// Add some conditions before submitting the form
 form.addEventListener('submit', function(event) {
   let isValid = true;
 
@@ -224,6 +226,7 @@ function handleInput(inputElement, errorDisplay) {
   });
 }
 
+// Handle inputs controls
 handleInput(nameInput, nameErrorDisplay);
 handleInput(usernameInput, usernameErrorDisplay);
 handleInput(emailInput, emailErrorDisplay);
@@ -240,6 +243,7 @@ togglePasswordButton.addEventListener('click', function() {
   passwordInput.focus();
 });
 
+// Toggle password confirmation visibility
 toggleConfirmButton.addEventListener('click', function() {
   isConfirmVisible = !isConfirmVisible;
   var type = isConfirmVisible ? 'text' : 'password';

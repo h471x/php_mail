@@ -8,14 +8,30 @@ session_start();
 
 try {
     // Data from the form
-    $email = $_POST['email'];
+    // if it is email then we select email
+    if (isset($_POST['email'])) {
+        $email = $_POST['email'];
+        $query = "SELECT * FROM user WHERE email_user = :email";
+        $bind = ':email';
+    } else {
+        // otherwise login with the username
+        $username = $_POST['username'];
+        $query =  "SELECT * FROM user WHERE username_user = :username";
+        $bind = ':username';
+    }
+
+    // get the password
     $password = $_POST['password'];
 
     // Prepare SQL statement
-    $stmt = $pdo->prepare("SELECT * FROM user WHERE email_user = :email");
+    $stmt = $pdo->prepare($query);
 
     // Bind parameters
-    $stmt->bindParam(':email', $email);
+    if (isset($email)) {
+        $stmt->bindParam($bind, $email);
+    } else {
+        $stmt->bindParam($bind, $username);
+    }
 
     // Execute the statement
     $stmt->execute();

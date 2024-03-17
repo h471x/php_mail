@@ -1,0 +1,15 @@
+@import url("../color.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+body{
+  background-color: var(--content-color);
+}
+
+.compose{
+  color: var(--primary-color);
+}

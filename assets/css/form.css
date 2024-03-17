@@ -242,6 +242,11 @@ input{
 .input-field:focus{
     border:2px solid #1f6feb;
 }
+
+.toggle-user i {
+    cursor: pointer;
+}
+
 .input-field:focus ~ i, .input-field:focus button ~ i{
     color: #1f6feb;
 }

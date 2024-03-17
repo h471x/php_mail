@@ -11,7 +11,7 @@
     <title>Php Mail</title>
   </head>
   <body>
-    <iframe src="../controllers/inbox.php" class="iframe" frameborder="0"></iframe>
+    <iframe src="../controllers/compose.php" class="iframe" frameborder="0"></iframe>
     <?php require_once $basePath . "views/header.php"; ?>
     <div class="main__body">
       <?php require_once $basePath . "views/sidebar.php"; ?>

@@ -25,11 +25,13 @@
       <form action="/php_mail/controllers/signin.php" class="login-form" method="post"> 
           <div class="input-box">
               <div class="titleInput">
-                  <label for="email">User e-mail</label>
+                  <label for="email" id="useremail">E-mail</label>
                   <div id="email-error" style="display: none; color: red;"></div>
               </div>
               <input type="text" class="input-field" id="email" name="email" spellcheck="false" autocomplete="off">
-              <i class="bx bx-envelope"></i>
+              <div class="toggle-user">
+                <i class="bx bx-envelope"></i>
+              </div>
           </div>
           <div class="input-box">
               <div class="titleInput">
