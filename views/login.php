@@ -22,7 +22,7 @@
         </div>
       </div>
       <!-- Form action points to login -->
-      <form action="/php_mail/config/php/signin.php" class="login-form" method="post"> 
+      <form action="/php_mail/controllers/signin.php" class="login-form" method="post"> 
         <div class="input-box">
           <label for="email">User e-mail</label>
           <input type="text" class="input-field" id="email" name="mail" spellcheck="false" autocomplete="off">
@@ -43,7 +43,7 @@
       </form>
       <div class="bottom">
         <span>New to e-mail?</span>&nbsp;&nbsp;
-        <span><a href="/php_mail/views/signup.php">Sign Up</a></span>
+        <span><a href="/php_mail/views/register.php">Sign Up</a></span>
       </div>
     </div>
     <!-- <div class="wrapper"></div> -->
