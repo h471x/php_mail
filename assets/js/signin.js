@@ -7,6 +7,10 @@ const emailErrorDisplay = document.getElementById('email-error');
 const togglePasswordButton = document.querySelector(".toggle-password");
 var isPasswordVisible = false;
 
+document.addEventListener('DOMContentLoaded', function() {
+  emailInput.focus();
+});
+
 form.addEventListener('submit', function(event) {
   let isValid = true;
 

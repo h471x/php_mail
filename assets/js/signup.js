@@ -16,6 +16,10 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 var isPasswordVisible = false;
 var isConfirmVisible = false;
 
+document.addEventListener('DOMContentLoaded', function() {
+  nameInput.focus();
+});
+
 form.addEventListener('submit', function(event) {
   let isValid = true;
 
