@@ -14,7 +14,6 @@ var isUser = false;
 
 // Function to update labels based on language dictionary
 const updateLabels = (languageDict) => {
-  // document.getElementById("username").textContent = languageDict.username;
   document.getElementById("loginTitle").textContent = languageDict.loginTitle;
   document.getElementById("phpmail_signin").textContent = languageDict.phpmail_signin;
   document.getElementById("useremail").textContent = languageDict.useremail_signin;

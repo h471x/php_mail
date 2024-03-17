@@ -67,16 +67,6 @@ body{
 .leftInput, .rightInput {
     flex: 1;
 }
-/* .wrapper{
-    position: absolute;
-    width: 455px;
-    height: 500px;
-    border-radius: 30px;
-    background: rgba(255,255,255,0.53);
-    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
-                -2px -0px 15px 2px rgba(0,0,0,0.054);
-    transform: rotate(5deg);
-} */
 
 .header {
     margin-bottom: 1rem;
@@ -182,6 +172,7 @@ signup-header img{
     border-radius: 5px;
     visibility: hidden; 
     white-space: nowrap;
+    z-index: 99;
 }
 
 .status:hover .tooltip, .status:hover .signup-tooltip{

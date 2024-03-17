@@ -1,5 +1,6 @@
 //Email & Password handler
 const root = document.documentElement;
+let languagePreference = localStorage.getItem('languagePreference') || 'fr';
 const form = document.querySelector('form');
 const passwordInput = document.getElementById('signup-pass');
 const confirmInput = document.getElementById('confirm-pass');
@@ -16,6 +17,36 @@ const toggleConfirmButton = document.querySelector(".toggle-confirm");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 var isPasswordVisible = false;
 var isConfirmVisible = false;
+
+// Function to update labels based on language dictionary
+const updateLabels = (languageDict) => {
+  document.getElementById("phpmail_signup").textContent = languageDict.phpmail_signup;
+  document.getElementById("signupTitle").textContent = languageDict.signupTitle;
+  document.getElementById("status_connected").textContent = languageDict.status_connected;
+  document.getElementById("status_disconnected").textContent = languageDict.status_disconnected;
+  document.getElementById("status_denied").textContent = languageDict.status_denied;
+  document.getElementById("signup_name").textContent = languageDict.signup_name;
+  document.getElementById("signup_username").textContent = languageDict.signup_username;
+  document.getElementById("useremail").textContent = languageDict.useremail_signin;
+  document.getElementById("signup_password").textContent = languageDict.signin_password;
+  document.getElementById("signup_confirm").textContent = languageDict.signup_confirm;
+  document.getElementById("signup_account").textContent = languageDict.signup_account;
+  document.getElementById("signin_link").textContent = languageDict.signin_link;
+  document.getElementById("signup").value = languageDict.signup;
+};
+
+// Function to load language labels based on preference
+const loadLanguageLabels = (language) => {
+  if (languageDictionaries[language]) {
+    updateLabels(languageDictionaries[language]);
+    localStorage.setItem('languagePreference', language);
+  } else {
+    console.error('Language dictionary not found for:', language);
+  }
+};
+
+// Load the language labels if the language preference is set
+languagePreference && loadLanguageLabels(languagePreference);
 
 // Persistent theme 
 let isLight = localStorage.getItem('isLight') === 'true';
@@ -35,7 +66,7 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
     nameInput.style.border = '2px solid red';
     nameErrorDisplay.style.color = 'red';
-    nameErrorDisplay.textContent = 'Please fill the full name';
+    nameErrorDisplay.textContent = languageDictionaries[languagePreference].fill_name;
     nameErrorDisplay.style.display = 'block';
     isValid = false;
   }else{
@@ -50,7 +81,7 @@ form.addEventListener('submit', function(event) {
       event.preventDefault();
       usernameInput.style.border = '2px solid red';
       usernameErrorDisplay.style.color = 'red';
-      usernameErrorDisplay.textContent = 'Please fill the Username';
+      usernameErrorDisplay.textContent = languageDictionaries[languagePreference].fill_username;
       usernameErrorDisplay.style.display = 'block';
       isValid = false;
     }else{
@@ -64,13 +95,13 @@ form.addEventListener('submit', function(event) {
   if (!emailInput.value.trim()) {
     event.preventDefault();
     emailInput.style.border = '2px solid red';
-    emailErrorDisplay.textContent = 'Please fill the email';
+    emailErrorDisplay.textContent = languageDictionaries[languagePreference].fill_email;
     emailErrorDisplay.style.display = 'block';
     isValid = false;
   } else if (!emailRegex.test(emailInput.value)) {
     event.preventDefault();
     emailInput.style.border = '2px solid red';
-    emailErrorDisplay.textContent = 'Format : mail@example.com';
+    emailErrorDisplay.textContent = languageDictionaries[languagePreference].format;
     emailErrorDisplay.style.display = 'block';
     isValid = false;
   }else{
@@ -84,13 +115,13 @@ form.addEventListener('submit', function(event) {
   if (!passwordInput.value.trim()) {
     event.preventDefault();
     passwordInput.style.border = '2px solid red';
-    passwordErrorDisplay.textContent = 'Password cannot be empty';
+    passwordErrorDisplay.textContent = languageDictionaries[languagePreference].fill_pass;
     passwordErrorDisplay.style.display = 'block';
     isValid = false;
   } else if (passwordInput.value.length < 8) {
     event.preventDefault();
     passwordInput.style.border = '2px solid red';
-    passwordErrorDisplay.textContent = 'must be at least 8 characters long';
+    passwordErrorDisplay.textContent = languageDictionaries[languagePreference].lack;
     passwordErrorDisplay.style.display = 'block';
     isValid = false;
   }else{
@@ -104,19 +135,19 @@ form.addEventListener('submit', function(event) {
   if (!confirmInput.value.trim()) {
     event.preventDefault();
     confirmInput.style.border = '2px solid red';
-    confirmErrorDisplay.textContent = 'Password cannot be empty';
+    confirmErrorDisplay.textContent = languageDictionaries[languagePreference].fill_pass;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
   } else if (passwordInput.value !== confirmInput.value) {
     event.preventDefault();
     confirmInput.style.border = '2px solid red';
-    confirmErrorDisplay.textContent = 'Password do not match';
+    confirmErrorDisplay.textContent = languageDictionaries[languagePreference].no_match;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
   }else if (confirmInput.value.length < 8) {
     event.preventDefault();
     confirmInput.style.border = '2px solid red';
-    confirmErrorDisplay.textContent = 'minimum 8 characters long';
+    confirmErrorDisplay.textContent = languageDictionaries[languagePreference].lack;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
   }else{
@@ -166,7 +197,7 @@ emailInput.addEventListener('blur', function(){
     isValid = false;
   } else if (!emailRegex.test(emailInput.value)) {
     emailInput.style.border = '2px solid red';
-    emailErrorDisplay.textContent = 'Format : mail@example.com';
+    emailErrorDisplay.textContent = languageDictionaries[languagePreference].format;
     emailErrorDisplay.style.display = 'block';
     isValid = false;
   }else{
@@ -184,7 +215,7 @@ passwordInput.addEventListener('blur', function(){
     isValid = false;
   } else if (passwordInput.value.length < 8) {
     passwordInput.style.border = '2px solid red';
-    passwordErrorDisplay.textContent = 'must be at least 8 characters long';
+    passwordErrorDisplay.textContent = languageDictionaries[languagePreference].lack;
     passwordErrorDisplay.style.display = 'block';
     isValid = false;
   }else{
@@ -202,12 +233,12 @@ confirmInput.addEventListener('blur', function(){
     isValid = false;
   } else if (passwordInput.value !== confirmInput.value) {
     confirmInput.style.border = '2px solid red';
-    confirmErrorDisplay.textContent = 'Password do not match';
+    confirmErrorDisplay.textContent = languageDictionaries[languagePreference].no_match;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
   }else if (confirmInput.value.length < 8) {
     confirmInput.style.border = '2px solid red';
-    confirmErrorDisplay.textContent = 'minimum 8 characters long';
+    confirmErrorDisplay.textContent = languageDictionaries[languagePreference].lack;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
   }else{

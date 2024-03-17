@@ -9,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/php_mail/assets/css/form.css">
     <link rel="icon" href="/php_mail/assets/images/mail_white.png">
-    <title>Php Mail - Sign Up</title>
+    <title id="phpmail_signup"></title>
 </head>
 <body>
   <div class="container">
     <div class="signup-box">
       <div class="signup-header">
-        <p id="loginTitle">Sign Up with php-mail</p>
+        <p id="signupTitle"></p>
         <div class="status">
           <?php echo $status ?>
           <?php echo $signup_error ?>
@@ -27,7 +27,7 @@
           <div class="leftInput">
             <div class="input-box">
               <div class="titleInput">
-                <label for="email">Full Name</label>
+                <label for="email" id="signup_name"></label>
                 <div id="name-error" style="display: none; color: red;"></div>
               </div>
               <input type="text" class="input-field" id="name" name="name" spellcheck="false" autocomplete="off">
@@ -36,7 +36,7 @@
 
             <div class="input-box">
               <div class="titleInput">
-                <label for="email">Username</label>
+                <label for="email" id="signup_username"></label>
                 <div id="user-error" style="display: none; color: red;"></div>
               </div>
               <input type="text" class="input-field" id="username" name="username" spellcheck="false" autocomplete="off">
@@ -45,7 +45,7 @@
 
             <div class="input-box">
               <div class="titleInput">
-                <label for="email">E-mail</label>
+                <label for="email" id="useremail"></label>
                 <div id="email-error" style="display: none; color: red;"></div>
               </div>
               <input type="text" class="input-field" id="signup-email" name="newmail" spellcheck="false" autocomplete="off">
@@ -56,7 +56,7 @@
           <div class="rightInput">
             <div class="input-box">
               <div class="titleInput">
-                <label for="pass">Password</label>
+                <label for="pass" id="signup_password"></label>
                 <div id="password-error" style="display: none; color: red;"></div>
               </div>
               <input type="password" class="input-field" id="signup-pass" name="newpassword" spellcheck="false">
@@ -67,7 +67,7 @@
 
             <div class="input-box">
               <div class="titleInput">
-                <label for="pass">Confirm Password</label>
+                <label for="pass" id="signup_confirm"></label>
                 <div id="confirm-error" style="display: none; color: red;"></div>
               </div>
               <input type="password" class="input-field" id="confirm-pass" name="confirm-password" spellcheck="false">
@@ -78,20 +78,18 @@
             </div>
 
             <div class="input-box">
-              <input type="submit" class="input-submit-signup text" value="Sign Up" style="color: white;">
+              <input type="submit" class="input-submit-signup text" value="" id="signup" style="color: white;">
             </div>
           </div>
         </div> 
       </form>
       <div class="signup-bottom">
-        <span>Have a php-mail account ?</span>&nbsp;&nbsp;
-        <span><a href="/php_mail/views/login.php">Sign In</a></span>
+        <span id="signup_account"></span>&nbsp;&nbsp;
+        <span><a href="/php_mail/views/login.php" id="signin_link"></a></span>
       </div>
     </div>
-    <!-- <div class="wrapper"></div> -->
   </div>
+  <script src="/php_mail/assets/js/dictionary.js"></script>
   <script src="/php_mail/assets/js/signup.js"></script>
-  <!-- <script src="/php_mail/assets/js/language.js"></script>
-  <script src="/php_mail/assets/js/dictionary.js"></script> -->
 </body>
 </html>
