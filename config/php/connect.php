@@ -7,10 +7,12 @@
     $pdo = new PDO($database, $username, $password, $options);
 
     //  Create Database
-     $pdo->exec($mail_database);
+    $pdo->exec($mail_database);
 
-    // Create users table
-    $pdo->exec($user);
+    // Create tables
+    $pdo->exec($user_table); 
+    $pdo->exec($message_table);
+    $pdo->exec($contact_table); 
 
     // Set the message if connected successfully
     $status = '<div class="status connected"></div>';

@@ -13,7 +13,7 @@
 
   <div class="header__right">
     <div class="user">
-      <h3 id="username"></h3>
+    <h3 id="username"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Username'; ?></h3>
     </div>
 
     <!-- langage button -->

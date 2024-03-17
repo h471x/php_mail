@@ -1,31 +1,42 @@
 <?php
-  // // Get the database connection instance
-  // $basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/";
-  // require_once $basePath . "config/php/connect.php";
+// Get the database connection instance
+$basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/";
+require_once $basePath . "config/php/connect.php";
 
-  // try{
-  //   // Data from the form
-  //   $mail = $_POST['mail'];
-  //   $password = $_POST['password'];
+// Start the session
+session_start();
 
-  //   // Prepare SQL statement
-  //   $stmt = $pdo->prepare("INSERT INTO user(mail, password) VALUES (:mail, :password)");
+try {
+    // Data from the form
+    $name = $_POST['name'];
+    $username = $_POST['username'];
+    $mail = $_POST['newmail'];
+    $password = $_POST['newpassword'];
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-  //   // Bind parameters
-  //   $stmt->bindParam(':mail', $mail);
-  //   $stmt->bindParam(':password', $password);
+    // Prepare the SQL statement to insert data
+    $stmt = $pdo->prepare("INSERT INTO user (fullname_user, username_user, email_user, user_password, inscription_date) 
+    VALUES (:fullname, :username, :email, :password, CURDATE())");
 
-  //   // Execute the statement
-  //   $stmt->execute();
+    // Bind parameters
+    $stmt->bindParam(':fullname', $name);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':email', $mail);
+    $stmt->bindParam(':password', $hashed_password);
 
-  //   // Redirect back to index.php with success message
-  //   header("Location: ../../php_mail/views/mail.php?success=true");
-  //   exit; // Ensure script stops here to prevent further output
-  // }catch(PDOException $e) {
-  //   echo "Error: " . $e->getMessage();
-  // }
+    // Execute the prepared statement
+    $stmt->execute();
 
-  // // Close the connection
-  // $pdo = null;
-  echo "<h1>test</h1>";
+    // Store the username in session
+    $_SESSION['username'] = $username;
+
+    // Redirect back to index.php with success message
+    header("Location: ../../php_mail/views/mail.php?signup=true&username=" . urlencode($username));
+    exit;
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+// Close the connection
+$pdo = null;
 ?>

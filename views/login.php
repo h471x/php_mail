@@ -23,28 +23,29 @@
       </div>
       <!-- Form action points to login -->
       <form action="/php_mail/controllers/signin.php" class="login-form" method="post"> 
-        <div class="input-box">
-          <div class="titleInput">
-            <label for="email">User e-mail</label>
-            <div id="email-error" style="display: none; color: red;"></div>
+          <div class="input-box">
+              <div class="titleInput">
+                  <label for="email">User e-mail</label>
+                  <div id="email-error" style="display: none; color: red;"></div>
+              </div>
+              <input type="text" class="input-field" id="email" name="email" spellcheck="false" autocomplete="off">
+              <i class="bx bx-envelope"></i>
           </div>
-          <input type="text" class="input-field" id="email" name="mail" spellcheck="false" autocomplete="off">
-          <i class="bx bx-envelope"></i>
-        </div>
-        <div class="input-box">
-          <div class="titleInput">
-            <label for="pass">Password</label>
-            <div id="password-error" style="display: none; color: red;"></div>
+          <div class="input-box">
+              <div class="titleInput">
+                  <label for="pass">Password</label>
+                  <div id="password-error" style="display: none; color: red;"></div>
+              </div>
+              <input type="password" class="input-field" id="pass" name="password" spellcheck="false">
+              <div class="toggle-password">
+                  <i class="bx bx-show"></i>
+              </div>
           </div>
-          <input type="password" class="input-field" id="pass" name="password" spellcheck="false">
-          <div class="toggle-password">
-            <i class="bx bx-show"></i>
+          <div class="input-box">
+              <input type="submit" class="input-submit text" value="Sign In" style="color: white;">
           </div>
-        </div>
-        <div class="input-box">
-          <input type="submit" class="input-submit text" value="Sign In" style="color: white;">
-        </div>
       </form>
+
       <div class="bottom">
         <span>New to php-mail?</span>&nbsp;&nbsp;
         <span><a href="/php_mail/views/register.php">Sign Up</a></span>

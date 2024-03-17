@@ -1,4 +1,5 @@
 <?php $basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/"; ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

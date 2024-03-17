@@ -16,7 +16,7 @@ const mgCheck = document.getElementById('mgCheck');
 
 // Function to update labels based on language dictionary
 const updateLabels = (languageDict) => {
-  document.getElementById("username").textContent = languageDict.username;
+  // document.getElementById("username").textContent = languageDict.username;
   document.getElementById("logout").textContent = languageDict.logout;
   document.getElementById("new").textContent = languageDict.new;
   document.getElementById("inbox").textContent = languageDict.inbox;

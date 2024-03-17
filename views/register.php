@@ -48,7 +48,7 @@
                 <label for="email">E-mail</label>
                 <div id="email-error" style="display: none; color: red;"></div>
               </div>
-              <input type="text" class="input-field" id="signup-email" name="signup-mail" spellcheck="false" autocomplete="off">
+              <input type="text" class="input-field" id="signup-email" name="newmail" spellcheck="false" autocomplete="off">
               <i class="bx bx-envelope"></i>
             </div>
           </div>
@@ -59,7 +59,7 @@
                 <label for="pass">Password</label>
                 <div id="password-error" style="display: none; color: red;"></div>
               </div>
-              <input type="password" class="input-field" id="signup-pass" name="signup-password" spellcheck="false">
+              <input type="password" class="input-field" id="signup-pass" name="newpassword" spellcheck="false">
               <div class="toggle-password">
                 <i class="bx bx-show"></i>
               </div>
