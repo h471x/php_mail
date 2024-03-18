@@ -10,11 +10,18 @@ document.querySelectorAll('.sidebarOption').forEach(option => {
 
 // Get the compose button
 const compose = document.querySelector(".sidebar__compose");
-const iframe = document.querySelector(".iframe");
-var isIframeVisible = false;
+const composeClose = document.querySelector("#closeButton");
+const composeContainer = document.querySelector(".composeContainer");
+var isComposeContainer = false;
 
 // When clicked Show/Hide the compose
 compose.onclick = function () {
-  iframe.style.visibility = isIframeVisible ? "hidden" : "visible";
-  isIframeVisible = !isIframeVisible;
+  composeContainer.style.visibility = isComposeContainer ? "hidden" : "visible";
+  isComposeContainer = !isComposeContainer;
+};
+
+// When clicked Show/Hide the compose
+composeClose.onclick = function () {
+  composeContainer.style.visibility = isComposeContainer ? "hidden" : "visible";
+  isComposeContainer = !isComposeContainer;
 };

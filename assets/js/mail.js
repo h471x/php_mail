@@ -22,6 +22,7 @@ const updateLabels = (languageDict) => {
   document.getElementById("sent").textContent = languageDict.sent;
   document.getElementById("contacts").textContent = languageDict.contacts;
   document.getElementById("language").textContent = languageDict.language;
+  document.getElementById("composetitle").textContent = languageDict.composetitle;
   document.getElementById("lang").textContent = languageDict.lang;
   document.getElementById("search").placeholder = languageDict.search;
 };
@@ -62,7 +63,7 @@ const hideDropdownWithDelay = () => {
     dropdown.style.display = 'none';
     dropbtn.classList.remove('clicked');
     firstClick = true;
-  }, 250);
+  }, 500);
 };
 
 // Toggle dropdown with button click
@@ -84,20 +85,25 @@ dropbtn.onmouseout = () => {
 };
 
 // Change language and hide dropdown on language option click
-frLink.onclick = () => {
+// Change language and hide dropdown on language option click
+frLink.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent page reload
   changeLanguage('fr');
   hideDropdownWithDelay();
-};
+});
 
-enLink.onclick = () => {
+enLink.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent page reload
   changeLanguage('en');
   hideDropdownWithDelay();
-};
+});
 
-mgLink.onclick = () => {
+mgLink.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent page reload
   changeLanguage('mg');
   hideDropdownWithDelay();
-};
+});
+
 
 // Load the checkmark icons based on initial language preference
 updateCheckmarks();
