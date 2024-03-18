@@ -4,17 +4,19 @@
     <h1>php-mail</h1>
   </div>
 
-  <form class="header__middle" action="">
-    <button type="submit">
-      <span class="material-icons"> search </span>
+  <form class="header__middle" id="searchForm">
+    <button type="submit" id="searchButton">
+        <span class="material-icons"> search </span>
     </button>
-    <input type="search" id="search" placeholder="" />
+    <input type="search" id="searchInput" placeholder="" autocomplete="off" spellcheck="false"/>
   </form>
 
   <div class="header__right">
-    <div class="user">
-    <h3 id="username"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Username'; ?></h3>
-    </div>
+      <button class="user">
+        <h3 id="username">
+          <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Username'; ?>
+        </h3>
+      </button>
 
     <!-- langage button -->
     <div class="dropdown">

@@ -95,12 +95,14 @@ form.addEventListener('submit', function(event) {
   if (!emailInput.value.trim()) {
     event.preventDefault();
     emailInput.style.border = '2px solid red';
+    emailErrorDisplay.style.color = 'red';
     emailErrorDisplay.textContent = languageDictionaries[languagePreference].fill_email;
     emailErrorDisplay.style.display = 'block';
     isValid = false;
   } else if (!emailRegex.test(emailInput.value)) {
     event.preventDefault();
     emailInput.style.border = '2px solid red';
+    emailErrorDisplay.style.color = 'red';
     emailErrorDisplay.textContent = languageDictionaries[languagePreference].format;
     emailErrorDisplay.style.display = 'block';
     isValid = false;
@@ -115,12 +117,14 @@ form.addEventListener('submit', function(event) {
   if (!passwordInput.value.trim()) {
     event.preventDefault();
     passwordInput.style.border = '2px solid red';
+    passwordErrorDisplay.style.color = 'red';
     passwordErrorDisplay.textContent = languageDictionaries[languagePreference].fill_pass;
     passwordErrorDisplay.style.display = 'block';
     isValid = false;
   } else if (passwordInput.value.length < 8) {
     event.preventDefault();
     passwordInput.style.border = '2px solid red';
+    passwordErrorDisplay.style.color = 'red';
     passwordErrorDisplay.textContent = languageDictionaries[languagePreference].lack;
     passwordErrorDisplay.style.display = 'block';
     isValid = false;
@@ -135,18 +139,21 @@ form.addEventListener('submit', function(event) {
   if (!confirmInput.value.trim()) {
     event.preventDefault();
     confirmInput.style.border = '2px solid red';
+    confirmErrorDisplay.style.color = 'red';
     confirmErrorDisplay.textContent = languageDictionaries[languagePreference].fill_pass;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
   } else if (passwordInput.value !== confirmInput.value) {
     event.preventDefault();
     confirmInput.style.border = '2px solid red';
+    confirmErrorDisplay.style.color = 'red';
     confirmErrorDisplay.textContent = languageDictionaries[languagePreference].no_match;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
   }else if (confirmInput.value.length < 8) {
     event.preventDefault();
     confirmInput.style.border = '2px solid red';
+    confirmErrorDisplay.style.color = 'red';
     confirmErrorDisplay.textContent = languageDictionaries[languagePreference].lack;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
@@ -197,6 +204,7 @@ emailInput.addEventListener('blur', function(){
     isValid = false;
   } else if (!emailRegex.test(emailInput.value)) {
     emailInput.style.border = '2px solid red';
+    emailErrorDisplay.style.color = 'red';
     emailErrorDisplay.textContent = languageDictionaries[languagePreference].format;
     emailErrorDisplay.style.display = 'block';
     isValid = false;
@@ -215,6 +223,7 @@ passwordInput.addEventListener('blur', function(){
     isValid = false;
   } else if (passwordInput.value.length < 8) {
     passwordInput.style.border = '2px solid red';
+    passwordErrorDisplay.style.color = 'red';
     passwordErrorDisplay.textContent = languageDictionaries[languagePreference].lack;
     passwordErrorDisplay.style.display = 'block';
     isValid = false;
@@ -233,11 +242,13 @@ confirmInput.addEventListener('blur', function(){
     isValid = false;
   } else if (passwordInput.value !== confirmInput.value) {
     confirmInput.style.border = '2px solid red';
+    confirmErrorDisplay.style.color = 'red';
     confirmErrorDisplay.textContent = languageDictionaries[languagePreference].no_match;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;
   }else if (confirmInput.value.length < 8) {
     confirmInput.style.border = '2px solid red';
+    confirmErrorDisplay.style.color = 'red';
     confirmErrorDisplay.textContent = languageDictionaries[languagePreference].lack;
     confirmErrorDisplay.style.display = 'block';
     isValid = false;

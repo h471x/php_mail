@@ -1,7 +1,7 @@
 <?php
 $emailRows = [
     [
-        "title" => "Contact",
+        "title" => "Sent",
         "message" => "You Got a New Subscriber",
         "description" => "on Your Channel Future Coders",
         "time" => "10pm"

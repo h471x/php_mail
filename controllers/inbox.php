@@ -1,7 +1,7 @@
 <?php
 $emailRows = [
     [
-        "title" => "YouTube",
+        "title" => "Inbox",
         "message" => "You Got a New Subscriber",
         "description" => "on Your Channel Future Coders",
         "time" => "10pm"
@@ -196,7 +196,7 @@ function generateEmailRows($rows) {
 
 ?>
 
-<div class="emailList">
+<div class="emailList" id="inbox">
   <div class="emailList__list">
     <?php generateEmailRows($emailRows); ?>
   </div>

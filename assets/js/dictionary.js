@@ -3,15 +3,15 @@ var languageDictionaries = {
   "mg": {
     "username": "Username",
     "logout" : "Hiala",
-    "new" : "Mailaka vaovao",
-    "inbox" : "Mailaka Voaray",
-    "sent" : "Mailaka Nalefa",
+    "new" : "Mail vaovao",
+    "inbox" : "Mail Voaray",
+    "sent" : "Mail Nalefa",
     "contacts" : "Olona Fantatra",
     "search" : "Hitady mail",
     "language" : "Fiteny",
     "lang" : "Safidy Fiteny",
-    "phpmail_signin" : "Php Mailaka - Hiditra",
-    "phpmail_signup" : "Php Mailaka - Hamorona",
+    "phpmail_signin" : "Php Mail - Hiditra",
+    "phpmail_signup" : "Php Mail - Hamorona",
     "loginTitle" : "Hiditra @php-mail",
     "signupTitle" : "Hamorona kaonty php-mail",
     "useremail_signin" : "Mailaka",
@@ -117,6 +117,6 @@ var languageDictionaries = {
     "fill_username" : "Saisisser le nom d'utilisateur",
     "fill_email" : "Saisisser l'adresse e-mail",
     "signup" : "Créer compte",
-    "composetitle" : "Ecrire un nouveau mail"
+    "composetitle" : "Composer un mail"
   }
 };

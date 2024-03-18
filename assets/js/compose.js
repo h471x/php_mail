@@ -13,7 +13,7 @@ function handleMouseDown(e) {
     offsetY = e.clientY - container.offsetTop;
 
     // Change cursor style to indicate dragging
-    container.style.cursor = "grabbing";
+    // container.style.cursor = "grabbing";
 
     // Add mouse move and mouse up event listeners
     document.addEventListener("mousemove", handleMouseMove);
