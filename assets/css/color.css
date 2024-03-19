@@ -16,6 +16,8 @@
   --shadow-color: #353b43;
   --connected: #45cc58;
   --checkmark: #45cc58;
+  --tooltip-color: #010409;
+  --box-shadow-color: black;
 }
 
 .light-mode {
@@ -36,4 +38,6 @@
   --shadow-color: #0000003d;
   --connected: #45cc58;
   --checkmark: #238636;
+  --tooltip-color: white;
+  --box-shadow-color: #0000001d;
 }
