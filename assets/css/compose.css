@@ -12,8 +12,8 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: 2px 2px 15px 2px var(--box-shadow-color),
-    -2px -0px 15px 2px var(--box-shadow-color);
-    z-index: 99;
+                      -2px -0px 15px 2px var(--box-shadow-color);
+  z-index: 99;
 }
 
 .composeHeader{
@@ -28,6 +28,10 @@
   user-select: none;
 }
 
+.navbtn{
+  display: flex;
+}
+
 .composeHeader button{
   display: flex;
   align-items: center;
@@ -35,9 +39,12 @@
   width: 2rem;
   height: 2rem;
   color: var(--primary-color);
-  border-top-right-radius: 8px;
   background-color: transparent;
   border: none;
+}
+
+.close{
+  border-top-right-radius: 8px;
 }
 
 .composeHeader button:hover{

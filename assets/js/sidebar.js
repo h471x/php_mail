@@ -31,29 +31,94 @@ document.querySelectorAll('.sidebarOption').forEach(option => {
   });
 });
 
-// Get the compose button
-const compose = document.querySelector(".sidebar__compose");
+// Get the compose container buttons
+const composeButton = document.querySelector(".sidebar__compose");
 const composeClose = document.querySelector("#closeButton");
+const composeReduce = document.querySelector("#reduceButton");
 const composeContainer = document.querySelector(".composeContainer");
-const bodyheader = document.querySelector(".header");
-const sidebar = document.querySelector(".sidebar");
-const content = document.querySelector(".content");
 const overlay = document.querySelector(".overlay");
+const destination = document.querySelector("#destinationUser");
+const subject = document.querySelector("#subject");
+const message = document.querySelector(".mail_message");
 var isComposeContainer = false;
+var isComposeReduced = false;
+
+// Center an element
+function centerElement(element){
+  element.style.visibility = "visible";
+  element.style.position = "fixed";
+  element.style.top = "50%";
+  element.style.left = "50%";
+  element.style.transform = "translate(-50%, -50%)";
+}
+
+// Reset values
+function resetValue(...elements) {
+  elements.forEach(element => {
+    element.value = "";
+  });
+}
+
+// Focus the first element without a value, or the last element if all elements have values
+function focusElement(...elements) {
+  if (elements.some(element => element.value === "")) {
+    elements.find(element => element.value === "").focus();
+  } else {
+    elements[elements.length - 1].focus();
+  }
+}
+
+// Toggle visibility
+function toggleVisibility(element, condition){
+  element.style.visibility = condition ? "hidden" : "visible";
+}
 
 // When clicked Show/Hide the compose
-compose.onclick = function () {
-  composeContainer.style.visibility = isComposeContainer ? "hidden" : "visible";
-  overlay.style.visibility = isComposeContainer ? "hidden" : "visible";
-  // bodyheader.style.filter = !isComposeContainer ? "blur(2px)" : "none";
-  // sidebar.style.filter = !isComposeContainer ? "blur(2px)" : "none";
-  // content.style.filter = !isComposeContainer ? "blur(2px)" : "none";
-  isComposeContainer = !isComposeContainer;
+composeButton.onclick = () => {
+  if (!isComposeReduced) {
+    toggleVisibility(composeContainer, isComposeContainer);
+    toggleVisibility(overlay, isComposeContainer);
+    isComposeContainer = !isComposeContainer;
+    composeContainer.style.top = "50%";
+    composeContainer.style.left = "50%";
+    composeContainer.style.transform = "translate(-50%, -50%)";
+    focusElement(destination, subject, message);
+  } else {
+    overlay.style.visibility = "visible";
+    centerElement(composeContainer);
+    focusElement(destination, subject, message);
+    isComposeReduced = false;
+  }
 };
 
-// When clicked Show/Hide the compose
+// When Close button is clicked hide the compose
 composeClose.onclick = function () {
-  composeContainer.style.visibility = isComposeContainer ? "hidden" : "visible";
-  overlay.style.visibility = isComposeContainer ? "hidden" : "visible";
+  resetValue(destination, subject, message);
+  toggleVisibility(composeContainer, isComposeContainer);
+  toggleVisibility(overlay, isComposeContainer);
+  composeContainer.style.position = "fixed";
+  composeContainer.style.bottom = "0";
+  composeContainer.style.left = "50%";
+  composeContainer.style.transform = "translateX(-50%)";
   isComposeContainer = !isComposeContainer;
+  isComposeReduced = false;
 };
+
+
+// When clicked Show/Reduce the compose
+composeReduce.onclick = (event) => {
+  event.preventDefault();
+  if (!isComposeReduced) {
+    overlay.style.visibility = "hidden";
+    composeContainer.style.visibility = "visible";
+    composeContainer.style.position = "fixed";
+    composeContainer.style.bottom = "0";
+    composeContainer.style.left = "50%";
+    composeContainer.style.transform = "translate(-50%, 50%)";
+  } else {
+    overlay.style.visibility = "visible";
+    centerElement(composeContainer);
+    focusElement(destination, subject, message);
+  }
+  isComposeReduced = !isComposeReduced;
+}

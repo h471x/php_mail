@@ -4,9 +4,14 @@
     <span class="material-icons">create</span>&nbsp;
       <p class="composetitle" id="composetitle"></p>
     </div>
-    <button id="closeButton" class="compose">
-      <span class="material-icons">close</span>
-    </button>
+    <div class="navbtn">
+      <button id="reduceButton" class="compose reduce">
+        <span class="material-icons">remove</span> <!-- Using "remove" icon for reduce -->
+      </button>
+      <button id="closeButton" class="compose close">
+        <span class="material-icons">close</span> 
+      </button>
+    </div>
   </div>
   <form method="post" action="/php_mail/controllers/compose.php">
       <div class="newContainer">
