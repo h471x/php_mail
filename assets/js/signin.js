@@ -74,12 +74,14 @@ form.addEventListener('submit', function(event) {
     if (!emailInput.value.trim()) {
       event.preventDefault();
       emailInput.style.border = '2px solid red';
+      emailErrorDisplay.style.color = 'red';
       emailErrorDisplay.textContent = languageDictionaries[languagePreference].fill;
       emailErrorDisplay.style.display = 'block';
       isValid = false;
     }else if (!emailRegex.test(emailInput.value)) {
       event.preventDefault();
-      emailInput.style.border = '2px solid red';
+      emailInput.style.border = '2px solid var(--github-orange)';
+      emailErrorDisplay.style.color = 'var(--github-orange)';
       emailErrorDisplay.textContent = languageDictionaries[languagePreference].format;
       emailErrorDisplay.style.display = 'block';
       isValid = false;

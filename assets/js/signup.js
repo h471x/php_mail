@@ -101,8 +101,8 @@ form.addEventListener('submit', function(event) {
     isValid = false;
   } else if (!emailRegex.test(emailInput.value)) {
     event.preventDefault();
-    emailInput.style.border = '2px solid red';
-    emailErrorDisplay.style.color = 'red';
+    emailInput.style.border = '2px solid var(--github-orange)';
+    emailErrorDisplay.style.color = 'var(--github-orange)';
     emailErrorDisplay.textContent = languageDictionaries[languagePreference].format;
     emailErrorDisplay.style.display = 'block';
     isValid = false;
@@ -203,8 +203,8 @@ emailInput.addEventListener('blur', function(){
     emailInput.style.border = '2px solid var(--border-color)';
     isValid = false;
   } else if (!emailRegex.test(emailInput.value)) {
-    emailInput.style.border = '2px solid red';
-    emailErrorDisplay.style.color = 'red';
+    emailInput.style.border = '2px solid var(--github-orange)';
+    emailErrorDisplay.style.color = 'var(--github-orange)';
     emailErrorDisplay.textContent = languageDictionaries[languagePreference].format;
     emailErrorDisplay.style.display = 'block';
     isValid = false;

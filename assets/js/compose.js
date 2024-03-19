@@ -57,7 +57,7 @@ function validateElements(elements) {
         element.blur();
       }
     } else if (element === ComposeDestination && !emailRegexForm.test(element.value.trim())) {
-      element.style.borderBottom = '2px solid red';
+      element.style.borderBottom = '2px solid var(--github-orange)';
       setTimeout(function() {
         element.style.borderBottom = '';
       }, 2000);
