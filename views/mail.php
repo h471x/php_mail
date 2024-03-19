@@ -16,10 +16,12 @@
     <?php require_once $basePath . "views/compose.php"; ?>
     <div class="main__body" id="mainBody">
       <?php require_once $basePath . "views/sidebar.php"; ?>
-      <?php require_once $basePath . "controllers/inbox.php"; ?>
+      <div class="content">
+        <?php require_once $basePath . "controllers/inbox.php"; ?>
+      </div>
     </div>
   </body>
-  <script src="/php/mail/assets/js/header.js"></script>
+  <!-- <script src="/php/mail/assets/js/header.js"></script> -->
   <script src="/php_mail/assets/js/sidebar.js"></script>
   <script src="/php_mail/assets/js/logout.js"></script>
   <script src="/php_mail/assets/js/dictionary.js"></script>

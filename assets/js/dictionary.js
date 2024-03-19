@@ -14,7 +14,7 @@ var languageDictionaries = {
     "phpmail_signup" : "Php Mail - Hamorona",
     "loginTitle" : "Hiditra @php-mail",
     "signupTitle" : "Hamorona kaonty php-mail",
-    "useremail_signin" : "Mailaka",
+    "useremail_signin" : "Mail",
     "fill" : "Aza avela banga",
     "fill_pass" : "Tsy maintsy asiana teny miafina",
     "format" : "mail@example.com",

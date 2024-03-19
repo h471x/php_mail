@@ -43,6 +43,8 @@ try {
     if ($user && password_verify($password, $user['user_password'])) {
         // Store the username in session
         $_SESSION['username'] = $user['username_user'];
+        $_SESSION['fullname'] = $user['fullname_user'];
+        $_SESSION['mail'] = $user['email_user'];
         // Redirect to success page with username
         header("Location: ../../php_mail/views/mail.php?success=true&username=" . urlencode($user['username_user']));
         exit;

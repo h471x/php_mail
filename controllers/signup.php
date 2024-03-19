@@ -27,8 +27,10 @@ try {
     // Execute the prepared statement
     $stmt->execute();
 
-    // Store the username in session
+    // Store the user informations in session
     $_SESSION['username'] = $username;
+    $_SESSION['fullname'] = $name;
+    $_SESSION['mail'] = $mail;
 
     // Redirect back to index.php with success message
     header("Location: ../../php_mail/views/mail.php?signup=true&username=" . urlencode($username));

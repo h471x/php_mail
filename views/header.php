@@ -12,10 +12,18 @@
   </form>
 
   <div class="header__right">
-      <button class="user">
+      <button class="userinfo">
         <h3 id="username">
           <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Username'; ?>
         </h3>
+        <span class="userTooltip">
+          <p id="user_fullname">
+            <?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : 'User Full Name'; ?>
+          </p>
+          <p is="user-email">
+            <?php echo isset($_SESSION['mail']) ? $_SESSION['mail'] : 'User e-mail'; ?>
+          </p>
+        </span>
       </button>
 
     <!-- langage button -->
