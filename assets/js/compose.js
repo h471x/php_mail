@@ -6,14 +6,10 @@ var offsetX, offsetY;
 
 // Function to handle mouse down event on the header
 function handleMouseDown(e) {
-  // Check if the mouse click occurred on the header
   if (e.target === header || header.contains(e.target)) {
     // Set initial mouse position relative to the container's current position
     offsetX = e.clientX - container.offsetLeft;
     offsetY = e.clientY - container.offsetTop;
-
-    // Change cursor style to indicate dragging
-    // container.style.cursor = "grabbing";
 
     // Add mouse move and mouse up event listeners
     document.addEventListener("mousemove", handleMouseMove);
@@ -34,9 +30,6 @@ function handleMouseMove(e) {
 
 // Function to handle mouse up event
 function handleMouseUp() {
-  // Reset cursor style
-  container.style.cursor = "default";
-
   // Remove mouse move and mouse up event listeners
   document.removeEventListener("mousemove", handleMouseMove);
   document.removeEventListener("mouseup", handleMouseUp);
@@ -44,3 +37,52 @@ function handleMouseUp() {
 
 // Add mouse down event listener to the header
 header.addEventListener("mousedown", handleMouseDown);
+
+// handle form submit
+const composeForm = document.querySelector('.composeForm');
+const ComposeDestination = document.querySelector("#destinationUser");
+const ComposeSubject = document.querySelector("#subject");
+const ComposeMessage = document.querySelector("#mailmessage");
+const emailRegexForm = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validateElements(elements) {
+  let firstBlankElement = null;
+
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    if (element.value.trim() === '') {
+      if (!firstBlankElement) {
+        firstBlankElement = element;
+      } else {
+        element.blur();
+      }
+    } else if (element === ComposeDestination && !emailRegexForm.test(element.value.trim())) {
+      element.style.borderBottom = '2px solid red';
+      setTimeout(function() {
+        element.style.borderBottom = '';
+      }, 2000);
+      if (!firstBlankElement) firstBlankElement = element;
+    } else {
+      element.style.borderBottom = '';
+    }
+  }
+
+  if (firstBlankElement) {
+    firstBlankElement.focus();
+    return false;
+  }
+  return true;
+}
+
+// Add conditions before submitting the form
+composeForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let composeValid = validateElements([ComposeDestination, ComposeSubject, ComposeMessage]);
+
+  if (composeValid) {
+    console.log('Form submitted successfully');
+    composeForm.submit();
+    resetValue(ComposeDestination, ComposeSubject, ComposeMessage);
+  }
+});

@@ -74,7 +74,7 @@ function toggleVisibility(element, condition){
 }
 
 // When clicked Show/Hide the compose
-composeButton.onclick = () => {
+composeButton.onclick = (event) => {
   if (!isComposeReduced) {
     toggleVisibility(composeContainer, isComposeContainer);
     toggleVisibility(overlay, isComposeContainer);

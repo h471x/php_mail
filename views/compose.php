@@ -13,7 +13,7 @@
       </button>
     </div>
   </div>
-  <form method="post" action="/php_mail/controllers/compose.php">
+  <form method="post" action="/php_mail/controllers/compose.php" class="composeForm">
       <div class="newContainer">
         <div class="destination">
           <input type="text" placeholder="" class="destination" id="destinationUser" spellcheck="false" autocomplete="off" name="destination">
