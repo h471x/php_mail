@@ -3,6 +3,31 @@ document.querySelectorAll('.sidebarOption').forEach(option => {
   option.addEventListener('click', function() {
     document.querySelectorAll('.sidebarOption').forEach(opt => opt.classList.remove('sidebarOption__active'));
     this.classList.add('sidebarOption__active');
+
+    // Get the ID of the clicked sidebar option
+    const id = this.id;
+
+    // Map the ID to the corresponding URL
+    const urlMap = {
+      'inboxOption': '/php_mail/controllers/inbox.php',
+      'sentOption': '/php_mail/controllers/sent.php',
+      'contactsOption': '/php_mail/controllers/contact.php'
+    };
+
+    // Fetch content from the corresponding URL and update the .content div
+    fetch(urlMap[id])
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.querySelector('.content').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
   });
 });
 
