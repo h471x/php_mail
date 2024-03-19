@@ -25,6 +25,7 @@
   border-top-right-radius: 8px;
   border-bottom: 1px solid var(--border-color);
   background-color: var(--header-color);
+  user-select: none;
 }
 
 .composeHeader button{
