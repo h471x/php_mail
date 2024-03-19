@@ -37,7 +37,11 @@ var languageDictionaries = {
     "fill_username" : "Anarana fiantso mahazatra",
     "fill_email" : "Soraty ny mailaka hampiasaina",
     "signup" : "Hamorona Kaonty",
-    "composetitle" : "Hanoratra mail vaovao"
+    "composetitle" : "Hanoratra mail vaovao",
+    "destination" : "Alefa @",
+    "subject" : "Antony",
+    "mailmessage" : "Mail halefa ...",
+    "send_compose" : "Alefa"
   },
 
   "en": {
@@ -77,7 +81,11 @@ var languageDictionaries = {
     "fill_username" : "Please fill the username",
     "fill_email" : "Please fill the email",
     "signup" : "Sign Up",
-    "composetitle" : "Compose a new mail"
+    "composetitle" : "Compose a new mail",
+    "destination" : "To",
+    "subject" : "Subject",
+    "mailmessage" : "Your email ...",
+    "send_compose" : "Send"
   },
 
   "fr": {
@@ -117,6 +125,10 @@ var languageDictionaries = {
     "fill_username" : "Saisisser le nom d'utilisateur",
     "fill_email" : "Saisisser l'adresse e-mail",
     "signup" : "Créer compte",
-    "composetitle" : "Composer un mail"
+    "composetitle" : "Composer un mail",
+    "destination" : "Envoyer à",
+    "subject" : "Objet",
+    "mailmessage" : "Votre email ...",
+    "send_compose" : "Envoyer"
   }
 };

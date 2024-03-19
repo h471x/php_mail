@@ -24,7 +24,11 @@ const updateLabels = (languageDict) => {
   document.getElementById("language").textContent = languageDict.language;
   document.getElementById("composetitle").textContent = languageDict.composetitle;
   document.getElementById("lang").textContent = languageDict.lang;
+  document.getElementById("send_compose").value = languageDict.send_compose;
   document.getElementById("searchInput").placeholder = languageDict.search;
+  document.getElementById("destinationUser").placeholder = languageDict.destination;
+  document.getElementById("subject").placeholder = languageDict.subject;
+  document.getElementById("mailmessage").placeholder = languageDict.mailmessage;
 };
 
 // Function to load language labels based on preference

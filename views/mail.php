@@ -21,10 +21,10 @@
       </div>
     </div>
   </body>
+  <script src="/php_mail/assets/js/dictionary.js"></script>
   <!-- <script src="/php/mail/assets/js/header.js"></script> -->
   <script src="/php_mail/assets/js/sidebar.js"></script>
   <script src="/php_mail/assets/js/logout.js"></script>
-  <script src="/php_mail/assets/js/dictionary.js"></script>
   <script src="/php_mail/assets/js/mail.js"></script>
   <script src="/php_mail/assets/js/theme.js"></script>
   <script src="/php_mail/assets/js/compose.js"></script>
