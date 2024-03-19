@@ -13,7 +13,7 @@
   border-radius: 8px;
   box-shadow: 2px 2px 15px 2px var(--box-shadow-color),
     -2px -0px 15px 2px var(--box-shadow-color);
-    z-index: 999;
+    z-index: 99;
 }
 
 .composeHeader{

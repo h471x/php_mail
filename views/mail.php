@@ -12,6 +12,7 @@
     <title>Php Mail</title>
   </head>
   <body>
+    <div class="overlay" style="visibility: hidden;"></div>
     <?php require_once $basePath . "views/header.php"; ?>
     <?php require_once $basePath . "views/compose.php"; ?>
     <div class="main__body" id="mainBody">
