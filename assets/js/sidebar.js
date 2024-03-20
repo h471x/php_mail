@@ -109,6 +109,7 @@ composeClose.onclick = function () {
 composeReduce.onclick = (event) => {
   event.preventDefault();
   if (!isComposeReduced) {
+    centerElement(composeContainer);
     overlay.style.visibility = "hidden";
     composeContainer.style.visibility = "visible";
     composeContainer.style.position = "fixed";

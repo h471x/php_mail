@@ -31,6 +31,7 @@ function handleMouseMove(e) {
 // Function to handle mouse up event
 function handleMouseUp() {
   // Remove mouse move and mouse up event listeners
+  focusElement(destination, subject, message);
   document.removeEventListener("mousemove", handleMouseMove);
   document.removeEventListener("mouseup", handleMouseUp);
 }

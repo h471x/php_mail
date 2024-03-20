@@ -14,6 +14,8 @@
   box-shadow: 2px 2px 15px 2px var(--box-shadow-color),
                       -2px -0px 15px 2px var(--box-shadow-color);
   z-index: 99;
+  /* transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out; */
+  /* transform: translate(-50%, -50%) scale(0.9); */
 }
 
 .composeHeader{
@@ -94,6 +96,7 @@
 }
 
 .mail_message{
+  overflow-x: hidden;
   position: relative;
   background-color: transparent;
   color: var(--primary-color);
