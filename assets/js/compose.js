@@ -44,7 +44,7 @@ const composeForm = document.querySelector('.composeForm');
 const ComposeDestination = document.querySelector("#destinationUser");
 const ComposeSubject = document.querySelector("#subject");
 const ComposeMessage = document.querySelector("#mailmessage");
-const emailRegexForm = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailRegexForm = /^[^\s@]+@gmail\.com$/;
 
 function validateElements(elements) {
   let firstBlankElement = null;

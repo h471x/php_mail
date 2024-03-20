@@ -69,7 +69,7 @@ form.addEventListener('submit', function(event) {
   }
 
   // Validate email format
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[^\s@]+@gmail\.com$/;
   if (emailInput.getAttribute('name') === 'email') {
     if (!emailInput.value.trim()) {
       event.preventDefault();
