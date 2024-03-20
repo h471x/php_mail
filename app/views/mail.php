@@ -13,12 +13,12 @@
   </head>
   <body>
     <div class="overlay" style="visibility: hidden;"></div>
-    <?php require_once $basePath . "views/header.php"; ?>
-    <?php require_once $basePath . "views/compose.php"; ?>
+    <?php require_once $basePath . "app/views/header.php"; ?>
+    <?php require_once $basePath . "app/views/compose.php"; ?>
     <div class="main__body" id="mainBody">
-      <?php require_once $basePath . "views/sidebar.php"; ?>
+      <?php require_once $basePath . "app/views/sidebar.php"; ?>
       <div class="content">
-        <?php require_once $basePath . "controllers/inbox.php"; ?>
+        <?php require_once $basePath . "app/controllers/inbox.php"; ?>
       </div>
     </div>
   </body>

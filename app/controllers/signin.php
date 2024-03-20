@@ -46,12 +46,12 @@ try {
         $_SESSION['fullname'] = $user['fullname_user'];
         $_SESSION['mail'] = $user['email_user'];
         // Redirect to success page with username
-        header("Location: ../../php_mail/views/mail.php?success=true&username=" . urlencode($user['username_user']));
+        header("Location: ../../app/views/mail.php?success=true&username=" . urlencode($user['username_user']));
         exit;
     } else {
         // Redirect to login page with error message
         $error_message = "InvalidCredentials";
-        header("Location: ../../php_mail/views/login.php?error=$error_message");
+        header("Location: ../../app/views/login.php?error=$error_message");
         exit;
     }
 } catch (PDOException $e) {
@@ -60,7 +60,7 @@ try {
 
     // Redirect to login page with generic error message
     $error_message = "DatabaseError";
-    header("Location: ../../php_mail/views/login.php?error=$error_message");
+    header("Location: ../../app/views/login.php?error=$error_message");
     exit;
 }
 

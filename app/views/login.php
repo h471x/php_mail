@@ -22,7 +22,7 @@
         </div>
       </div>
       <!-- Form action points to login -->
-      <form action="/php_mail/controllers/signin.php" class="login-form" method="post"> 
+      <form action="/php_mail/app/controllers/signin.php" class="login-form" method="post"> 
           <div class="input-box">
               <div class="titleInput">
                   <label for="email" id="useremail"></label>
@@ -51,7 +51,7 @@
 
       <div class="bottom">
         <span id="new_user">New to php-mail?</span>&nbsp;&nbsp;
-        <span><a href="/php_mail/views/register.php" id="signup_link">Sign Up</a></span>
+        <span><a href="/php_mail/app/views/register.php" id="signup_link">Sign Up</a></span>
       </div>
     </div>
     <!-- <div class="wrapper"></div> -->

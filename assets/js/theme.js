@@ -9,8 +9,8 @@ let isLight = localStorage.getItem('isLight') === 'true';
 isLight ? root.classList.add('light-mode') : null;
 
 const faviconURLs = {
-  white: '../assets/images/mail_white.png',
-  black: '../assets/images/mail_black.png'
+  white: '/php_mail/assets/images/mail_white.png',
+  black: '/php_mail/assets/images/mail_black.png'
 };
 
 // Theme toggler icon

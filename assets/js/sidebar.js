@@ -9,9 +9,9 @@ document.querySelectorAll('.sidebarOption').forEach(option => {
 
     // Map the ID to the corresponding URL
     const urlMap = {
-      'inboxOption': '/php_mail/controllers/inbox.php',
-      'sentOption': '/php_mail/controllers/sent.php',
-      'contactsOption': '/php_mail/controllers/contact.php'
+      'inboxOption': '/php_mail/app/controllers/inbox.php',
+      'sentOption': '/php_mail/app/controllers/sent.php',
+      'contactsOption': '/php_mail/app/controllers/contact.php'
     };
 
     // Fetch content from the corresponding URL and update the .content div

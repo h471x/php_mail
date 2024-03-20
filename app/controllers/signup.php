@@ -33,7 +33,7 @@ try {
     $_SESSION['mail'] = $mail;
 
     // Redirect back to index.php with success message
-    header("Location: ../../php_mail/views/mail.php?signup=true&username=" . urlencode($username));
+    header("Location: ../../app/views/mail.php?signup=true&username=" . urlencode($username));
     exit;
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();

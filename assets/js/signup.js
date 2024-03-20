@@ -14,7 +14,7 @@ const confirmErrorDisplay = document.getElementById('confirm-error');
 const emailErrorDisplay = document.getElementById('email-error');
 const togglePasswordButton = document.querySelector(".toggle-password");
 const toggleConfirmButton = document.querySelector(".toggle-confirm");
-const emailRegexForm = /^[^\s@]+@gmail\.com$/;
+const emailRegex = /^[^\s@]+@gmail\.com$/;
 var isPasswordVisible = false;
 var isConfirmVisible = false;
 
