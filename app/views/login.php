@@ -22,7 +22,7 @@
         </div>
       </div>
       <!-- Form action points to login -->
-      <form action="/php_mail/app/controllers/signin.php" class="login-form" method="post"> 
+      <form action="/php_mail/app/controllers/signinCtl.php" class="login-form" method="post">
           <div class="input-box">
               <div class="titleInput">
                   <label for="email" id="useremail"></label>

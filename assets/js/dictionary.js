@@ -120,7 +120,7 @@ var languageDictionaries = {
     "signup_name" : "Nom Complet",
     "signup_username" : "Nom d'Utilisateur",
     "username_signin" : "Nom d'utilisateur",
-    "signup_account" : "Déjà connecté sur php-mail ?",
+    "signup_account" : "Déjà souscrit(e) sur php-mail ?",
     "fill_name" : "Saisisser le nom complet",
     "fill_username" : "Saisisser le nom d'utilisateur",
     "fill_email" : "Saisisser l'adresse e-mail",

@@ -18,7 +18,7 @@
     <div class="main__body" id="mainBody">
       <?php require_once $basePath . "app/views/sidebar.php"; ?>
       <div class="content">
-        <?php require_once $basePath . "app/controllers/inbox.php"; ?>
+        <?php require_once $basePath . "app/controllers/inboxCtl.php"; ?>
       </div>
     </div>
   </body>
