@@ -1,6 +1,6 @@
 <div class="header">
   <div class="header__left">
-    <img src="../assets/images/mail_white.png" alt="" class="mail" id="mailIcon"/>
+    <img src="/php_mail/assets/images/mail_white.png" alt="" class="mail" id="mailIcon"/>
     <h1>php-mail</h1>
   </div>
 

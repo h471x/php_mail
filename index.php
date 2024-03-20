@@ -1,7 +1,7 @@
 <?php
 // Get the database connection instance
 $basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/";
-require_once $basePath . "app/config/php/connect.php";
+require_once $basePath . "config/php/connect.php";
 
 // Check if there are any users in the user table
 $stmt = $pdo->query("SELECT COUNT(*) FROM user");
