@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS message (
 );
 
 CREATE TABLE IF NOT EXISTS contact (
+  Contact_id SERIAL PRIMARY KEY,
   Email_propriate VARCHAR(255) NOT NULL, 
   Email_contact VARCHAR(255) NOT NULL 
 );
