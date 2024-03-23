@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/php_mail/assets/css/form.css">
-    <link rel="icon" href="/php_mail/assets/images/mail_white.png">
-    <title id="phpmail_auth"></title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/php_mail/assets/css/form.css">
+  <link rel="icon" href="/php_mail/assets/images/mail_white.png">
+  <title id="phpmail_auth"></title>
 </head>
 <body>
   <div class="container">
@@ -21,7 +21,7 @@
           <?php echo $auth_error ?>
         </div>
       </div>
-      <!-- Form action points to login -->
+      <!-- Form action points to authenticate -->
       <form action="/php_mail/app/controllers/registerCtl.php" class="login-form" method="post">
           <br><div class="input-box">
             <div class="description" style="text-align: center;">
@@ -31,7 +31,7 @@
           </div>
           <div class="bottom">
             <span id="mail_auth"></span>&nbsp;&nbsp;
-            <span><a href="/php_mail/app/views/register.php" id="resend_link"></a></span>
+            <span><a href="/php_mail/app/controllers/resendAuth.php" id="resend_link"></a></span>
           </div><br>
           <div class="input-box">
               <div class="titleInput">
@@ -47,7 +47,6 @@
               <input type="submit" class="input-submit text" value="" id="auth_btn" style="color: white;">
           </div>
       </form>
-    <!-- <div class="wrapper"></div> -->
   </div>
   <script src="/php_mail/assets/js/dictionary.js"></script>
   <script src="/php_mail/assets/js/authenticate.js"></script>

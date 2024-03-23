@@ -17,6 +17,9 @@ const updateLabels = (languageDict) => {
   document.getElementById("auth_desc_title").textContent = languageDict.auth_desc_title;
   document.getElementById("auth_desc").textContent = languageDict.auth_desc;
   document.getElementById("auth_btn").value = languageDict.auth_btn;
+  document.getElementById("status_connected").textContent = languageDict.status_connected;
+  document.getElementById("status_disconnected").textContent = languageDict.status_disconnected;
+  document.getElementById("status_denied").textContent = languageDict.status_denied;
 };
 
 // Function to load language labels based on preference
@@ -41,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
   authInput.focus();
 });
 
+ // Regular expression : xxxx space xxxx space xxxx
+var authPattern = /^[0-9]{4} [0-9]{4} [0-9]{4}$/;
+
 // Add some conditions before submitting the form
 form.addEventListener('submit', function(event) {
   let isValid = true;
@@ -58,6 +64,12 @@ form.addEventListener('submit', function(event) {
     authErrorDisplay.textContent = languageDictionaries[languagePreference].auth_lack;
     authErrorDisplay.style.display = 'block';
     isValid = false;
+  }else if (authPattern.test(authValue)) {
+    event.preventDefault();
+    authInput.style.border = '2px solid var(--connected)';
+    authErrorDisplay.style.color = 'var(--connected)';
+    authErrorDisplay.textContent = '✓';
+    authErrorDisplay.style.display = 'block';
   }else{
     authInput.style.border = '2px solid var(--connected)';
     authErrorDisplay.style.color = 'var(--connected)';

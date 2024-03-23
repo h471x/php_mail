@@ -14,6 +14,7 @@
     fullname_user VARCHAR(255) NOT NULL,
     username_user VARCHAR(255) NOT NULL,
     user_password VARCHAR(255) NOT NULL,
+    2fa_password VARCHAR(16) NOT NULL,
     inscription_date DATE NOT NULL);
   ";
 
