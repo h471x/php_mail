@@ -28,16 +28,16 @@ $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
 // Attempt to send email
-// if(mail($destination, $subject, $message, $headers)) {
+if(mail($destination, $subject, $message, $headers)) {
   header("Location: /php_mail/app/views/authenticate.php");
-  // exit;
-// } else {
-//     echo "<h1>Failed to send the email</h1>";
-//     $error = error_get_last();
-//     if ($error) {
-//         echo "<p>Error message: " . $error['message'] . "</p>";
-//     } else {
-//         echo "<p>No error message available.</p>";
-//     }
-// }
+  exit;
+} else {
+    echo "<h1>Failed to send the email</h1>";
+    $error = error_get_last();
+    if ($error) {
+        echo "<p>Error message: " . $error['message'] . "</p>";
+    } else {
+        echo "<p>No error message available.</p>";
+    }
+}
 ?>

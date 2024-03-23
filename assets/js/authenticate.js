@@ -14,6 +14,7 @@ const updateLabels = (languageDict) => {
   document.getElementById("authTitle").textContent = languageDict.authTitle;
   document.getElementById("auth_password").textContent = languageDict.auth_password;
   document.getElementById("resend_link").textContent = languageDict.resend_link;
+  document.getElementById("auth_mail").textContent = languageDict.auth_mail;
   document.getElementById("auth_desc_title").textContent = languageDict.auth_desc_title;
   document.getElementById("auth_desc").textContent = languageDict.auth_desc;
   document.getElementById("auth_btn").value = languageDict.auth_btn;

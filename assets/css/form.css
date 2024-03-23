@@ -53,7 +53,7 @@ body{
 
 .auth-box{
     width: 29rem;
-    height : 25rem;
+    height : 28rem;
     background: var(--soft-color);
     /* backdrop-filter: blur(20px); */
     border-radius: 15px;
@@ -197,7 +197,7 @@ signup-header img{
 
 .auth-tooltip {
     position: absolute;
-    top: 28%;
+    top: 23%;
     left: 63%;
     transform: translateX(-50%); 
     border: 1px solid var(--border-color);
