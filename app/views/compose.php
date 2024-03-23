@@ -6,14 +6,14 @@
     </div>
     <div class="navbtn">
       <button id="reduceButton" class="compose reduce">
-        <span class="material-icons">remove</span> <!-- Using "remove" icon for reduce -->
+        <span class="material-icons">remove</span>
       </button>
       <button id="closeButton" class="compose close">
         <span class="material-icons">close</span> 
       </button>
     </div>
   </div>
-  <form method="post" action="/php_mail/controllers/composeCtl.php" class="composeForm">
+  <form method="post" action="/php_mail/app/controllers/composeCtl.php" class="composeForm">
       <div class="newContainer">
         <div class="destination">
           <input type="text" placeholder="" class="destination" id="destinationUser" spellcheck="false" autocomplete="off" name="destination">

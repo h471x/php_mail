@@ -21,8 +21,7 @@
           <?php echo $signup_error ?>
         </div>
       </div>
-      <!-- Form action points to login -->
-      <!-- <form action="/php_mail/app/views/authenticate.php" class="login-form" method="post"> -->
+      <!-- Form action points to signup -->
       <form action="/php_mail/app/controllers/signupCtl.php" class="login-form" method="post">
         <div class="inputContainer">
           <div class="leftInput">

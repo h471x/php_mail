@@ -172,7 +172,7 @@ form.addEventListener('submit', function(event) {
     // Redirect to the user gmail account
     form.setAttribute('action', 'https://mail.google.com/mail/' + emailInput.value);
     form.setAttribute('target', '_blank');
-     form.submit();
+    form.submit();
 
     // Redirect back to the submission form
     form.setAttribute('action', originalActionUrl);

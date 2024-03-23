@@ -38,7 +38,7 @@
                   <label for="pass" id="auth_password"></label>
                   <div id="auth-error" style="display: none; color: red;"></div>
               </div>
-              <input type="password" class="input-field" id="auth_pass" name="two_factor" spellcheck="false" maxlength="16">
+              <input type="password" class="input-field" id="auth_pass" name="two_factor" spellcheck="false" maxlength="18">
               <div class="toggle-auth">
                   <i class="bx bx-show"></i>
               </div>

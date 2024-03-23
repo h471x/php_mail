@@ -84,6 +84,6 @@ composeForm.addEventListener('submit', function(event) {
   if (composeValid) {
     console.log('Form submitted successfully');
     composeForm.submit();
-    resetValue(ComposeDestination, ComposeSubject, ComposeMessage);
+    // resetValue(ComposeDestination, ComposeSubject, ComposeMessage);
   }
 });
