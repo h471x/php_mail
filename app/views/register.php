@@ -22,7 +22,8 @@
         </div>
       </div>
       <!-- Form action points to login -->
-      <form action="/php_mail/app/views/authenticate.php" class="login-form" method="post">
+      <!-- <form action="/php_mail/app/views/authenticate.php" class="login-form" method="post"> -->
+      <form action="/php_mail/app/controllers/signupCtl.php" class="login-form" method="post">
         <div class="inputContainer">
           <div class="leftInput">
             <div class="input-box">
@@ -83,10 +84,31 @@
           </div>
         </div> 
       </form>
-      <div class="signup-bottom">
-        <span id="signup_account"></span>&nbsp;&nbsp;
-        <span><a href="/php_mail/app/views/login.php" id="signin_link"></a></span>
-      </div>
+
+      <?php
+          // Check if there are any users in the user table
+          $stmt = $pdo->query("SELECT COUNT(*) FROM user");
+          $userCount = $stmt->fetchColumn();
+
+          // If there are no users, welcome
+          if ($userCount === 0) {
+              $user_style = "visibility: hidden;";
+              $welcome_style = "visibility: visible;";
+          } else {
+              // If there are users, redirect to signin.php
+              $user_style = "visibility: visible;";
+              $welcome_style = "visibility: hidden;";
+          }
+
+          // Close the connection
+          $pdo = null;
+        ?>
+        <div class="signup-bottom">
+          <span id="signup_account" style="<?php echo $user_style ?>"></span>&nbsp;&nbsp;
+          <span style="<?php echo $user_style ?>"><a href="/php_mail/app/views/login.php" id="signin_link"></a></span>
+          <h3 id="signup_welcome" style="<?php echo $welcome_style ?> position: absolute; font-weight: 1000;"></h3>
+        </div>
+        </div>
     </div>
   </div>
   <script src="/php_mail/assets/js/dictionary.js"></script>

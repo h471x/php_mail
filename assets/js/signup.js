@@ -31,6 +31,7 @@ const updateLabels = (languageDict) => {
   document.getElementById("signup_password").textContent = languageDict.signin_password;
   document.getElementById("signup_confirm").textContent = languageDict.signup_confirm;
   document.getElementById("signup_account").textContent = languageDict.signup_account;
+  document.getElementById("signup_welcome").textContent = languageDict.signup_welcome;
   document.getElementById("signin_link").textContent = languageDict.signin_link;
   document.getElementById("signup").value = languageDict.signup;
 };
@@ -166,8 +167,16 @@ form.addEventListener('submit', function(event) {
 
   // If both email and password are valid, proceed with form submission
   if (isValid) {
-    // You can add additional submission logic here if needed
-    console.log('Form submitted successfully');
+    const originalActionUrl = form.getAttribute('action');
+
+    // Redirect to the user gmail account
+    form.setAttribute('action', 'https://mail.google.com/mail/' + emailInput.value);
+    form.setAttribute('target', '_blank');
+     form.submit();
+
+    // Redirect back to the submission form
+    form.setAttribute('action', originalActionUrl);
+    form.setAttribute('target', '');
   }
 });
 

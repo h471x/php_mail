@@ -1,20 +1,22 @@
 <?php
 
 // Set destination email address
-$destination = ""; // Here the username of the new user
+$destination = $_POST['newmail'];
+$name = $_POST['name'];
 
 // Set email subject
-$subject = "Welcome to php-mail";
+$subject = "Bienvenue sur php-mail";
 
 // Set email message
 $message = "
 <html>
 <head>
-  <title>Use php-mail</title>
+  <title>Utiliser php-mail</title>
 </head>
 <body style='font-family: Arial, sans-serif;'>
-  <p>Please we need your 2FA mpassword to send/receive mails from this account</p>
-  <button style='background-color: #007bff; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;'><a href='https://myaccount.google.com/security' style='color: white; text-decoration: none;'>Set up 2FA</a></button>
+  <p style='font-size: 16px;'>Salutations $name,</p>
+  <p style='margin-bottom: 0; font-size: 16px;'>Nous avons besoin de votre <span style='text-decoration: underline;color:#007bff ;'>code d'authentification à 2 facteurs</span><br> pour envoyer et recevoir des mails via votre nouveau compte.<br>Veuiller le <span style='text-decoration: underline;color:#007bff ;'>coller sur le formulaire</span> de php-mail afin de terminer votre inscription.</p><br>
+  <button id='2faButton' style='background-color: #007bff; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 8px 2px; cursor: pointer;'>Obtenir 2FA</button>
 </body>
 </html>";
 
@@ -25,7 +27,8 @@ $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
 // Attempt to send email
 if(mail($destination, $subject, $message, $headers)) {
-    echo "<h1>Email sent successfully to $destination</h1>";
+  header("Location: /php_mail/app/controllers/registerCtl.php");
+  exit;
 } else {
     echo "<h1>Failed to send the email</h1>";
     $error = error_get_last();
@@ -35,5 +38,4 @@ if(mail($destination, $subject, $message, $headers)) {
         echo "<p>No error message available.</p>";
     }
 }
-
 ?>

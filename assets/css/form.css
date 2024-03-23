@@ -295,6 +295,7 @@ input{
     font-size: 1rem;
     color: var(--primary-color);
     margin-top: 0.5rem;
+    user-select: none;
 }
 .bottom span a, .signup-bottom span a{
     color: #727374;
