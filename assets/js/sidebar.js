@@ -83,6 +83,7 @@ composeButton.onclick = (event) => {
     composeContainer.style.left = "50%";
     composeContainer.style.transform = "translate(-50%, -50%)";
     focusElement(destination, subject, message);
+    resetValue(message);
   } else {
     overlay.style.visibility = "visible";
     centerElement(composeContainer);
