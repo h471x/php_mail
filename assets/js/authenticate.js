@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
   authInput.focus();
 });
 
- // Regular expression : xxxx space xxxx space xxxx
-var authPattern = /^[0-9]{4} [0-9]{4} [0-9]{4}$/;
+// Regular expression : xxxx xxxx xxxx xxxx
+var authPattern = /^.{4}.{4}.{4}.{4}$/;
 
 // Add some conditions before submitting the form
 form.addEventListener('submit', function(event) {
@@ -59,7 +59,7 @@ form.addEventListener('submit', function(event) {
     authErrorDisplay.textContent = languageDictionaries[languagePreference].fill;
     authErrorDisplay.style.display = 'block';
     isValid = false;
-  } else if (authInput.value.length !== 16) {
+  } else if (authInput.value.length !== 16 && !authPattern.test(authValue)) {
     event.preventDefault();
     authInput.style.border = '2px solid red';
     authErrorDisplay.textContent = languageDictionaries[languagePreference].auth_lack;

@@ -14,8 +14,8 @@ try {
     $hashed_password = $_SESSION['hashed_password'];
     $two_factor_raw = $_POST['two_factor'];
 
-    // Regular expression pattern to match the format "xxxx xxxx xxxx"
-    $pattern = '/^\d{4} \d{4} \d{4}$/';
+    // Regular expression pattern to match the format "xxxx xxxx xxxx xxxx"
+    $pattern = '/^[a-zA-Z0-9]{4} [a-zA-Z0-9]{4} [a-zA-Z0-9]{4} [a-zA-Z0-9]{4}$/';
     
     // Check if the input matches the specified format
     if (preg_match($pattern, $two_factor_raw)) {

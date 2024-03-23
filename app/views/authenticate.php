@@ -1,6 +1,8 @@
 <?php $basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/"; ?>
 <?php require_once $basePath . "config/php/connect.php"; ?>
-<?php session_start(); ?>
+<?php session_start();
+  $user_email = $_SESSION['mail'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +28,7 @@
           <div class="input-box">
             <div class="description" style="text-align: center;">
               <span id="auth_mail"></span><br>
-              <span style="text-decoration: underline; color: var(--github-blue);"><?php echo $_SESSION['mail']; ?></span><br><br>
+              <span><a href="https://mail.google.com/mail/?authuser=<?php echo $user_email; ?>" target="_blank" style="text-decoration: underline; color: var(--github-blue);"><?php echo $user_email; ?></a></span><br><br>
               <span id="auth_desc_title"></span><br>
               <span id="auth_desc"></span>
             </div>
@@ -40,7 +42,7 @@
                   <label for="pass" id="auth_password"></label>
                   <div id="auth-error" style="display: none; color: red;"></div>
               </div>
-              <input type="password" class="input-field" id="auth_pass" name="two_factor" spellcheck="false" maxlength="18">
+              <input type="password" class="input-field" id="auth_pass" name="two_factor" spellcheck="false" maxlength="19">
               <div class="toggle-auth">
                   <i class="bx bx-show"></i>
               </div>
