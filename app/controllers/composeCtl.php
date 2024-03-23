@@ -58,7 +58,7 @@
 
         // Send email
         if ($mail->send()) {
-            header("Location: ../../app/views/mail.php?send=true&destination=" . $destination));
+            header("Location: ../../app/views/mail.php?send=true&destination=" . urlencode($destination));
         } else {
             echo 'Error: ' . $mail->ErrorInfo;
         }
