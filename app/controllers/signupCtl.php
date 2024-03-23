@@ -24,7 +24,7 @@
   <body style='font-family: Arial, sans-serif;'>
     <p style='font-size: 16px;'>Salutations $name,</p>
     <p style='margin-bottom: 0; font-size: 16px;'>Nous avons besoin de votre <span style='text-decoration: underline;color:#007bff ;'>code d'authentification à 2 facteurs</span><br> pour envoyer et recevoir des mails via votre nouveau compte.<br>Veuiller le <span style='text-decoration: underline;color:#007bff ;'>coller sur le formulaire</span> de php-mail afin de terminer votre inscription.</p><br>
-    <button id='2faButton' style='background-color: #007bff; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 8px 2px; cursor: pointer;'><a href='https://myaccount.google.com/security' style='color: white; text-decoration: none;'>Obtenir 2FA</a></button>
+    <button id='2faButton' style='background-color: #007bff; border: none; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 8px 2px; cursor: pointer;'><a href='https://myaccount.google.com/security?authuser=$destination' style='color: white; text-decoration: none;'>Obtenir 2FA</a></button>
   </body>
   </html>";
 
