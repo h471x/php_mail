@@ -167,16 +167,16 @@ form.addEventListener('submit', function(event) {
 
   // If both email and password are valid, proceed with form submission
   if (isValid) {
-    const originalActionUrl = form.getAttribute('action');
+    // const originalActionUrl = form.getAttribute('action');
 
-    // Redirect to the user gmail account
-    form.setAttribute('action', 'https://mail.google.com/mail/' + emailInput.value);
-    form.setAttribute('target', '_blank');
+    // // Redirect to the user gmail account
+    // form.setAttribute('action', 'https://mail.google.com/mail/' + emailInput.value);
+    // form.setAttribute('target', '_blank');
      form.submit();
 
-    // Redirect back to the submission form
-    form.setAttribute('action', originalActionUrl);
-    form.setAttribute('target', '');
+    // // Redirect back to the submission form
+    // form.setAttribute('action', originalActionUrl);
+    // form.setAttribute('target', '');
   }
 });
 

@@ -7,12 +7,12 @@ require_once $basePath . "config/php/connect.php";
 session_start();
 
 try {
-    // Data from the form
-    $name = $_POST['name'];
-    $username = $_POST['username'];
-    $mail = $_POST['newmail'];
-    $password = $_POST['newpassword'];
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    // Retrieve form data from session variables
+    $name = $_SESSION['name'];
+    $username = $_SESSION['username'];
+    $mail = $_SESSION['mail'];
+    $hashed_password = $_SESSION['hashed_password'];
+    // $two_factor = $_POST['two_factor'];
 
     // Prepare the SQL statement to insert data
     $stmt = $pdo->prepare("INSERT INTO user (fullname_user, username_user, email_user, user_password, inscription_date) 
@@ -23,6 +23,7 @@ try {
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':email', $mail);
     $stmt->bindParam(':password', $hashed_password);
+    // $stmt->bindParam(':password', $hashed_password);
 
     // Execute the prepared statement
     $stmt->execute();

@@ -1,6 +1,6 @@
 <?php $basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/"; ?>
 <?php require_once $basePath . "config/php/connect.php"; ?>
-
+<?php session_destroy(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,8 +50,8 @@
       </form>
 
       <div class="bottom">
-        <span id="new_user">New to php-mail?</span>&nbsp;&nbsp;
-        <span><a href="/php_mail/app/views/register.php" id="signup_link">Sign Up</a></span>
+        <span id="new_user"></span>&nbsp;&nbsp;
+        <span><a href="/php_mail/app/views/register.php" id="signup_link"></a></span>
       </div>
     </div>
     <!-- <div class="wrapper"></div> -->

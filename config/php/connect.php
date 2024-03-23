@@ -27,6 +27,11 @@
     <span class="signup-tooltip" id="status_denied"style="visibility: hidden;">Access Denied</span>
     <span class="signup-tooltip"  id="status_issue" style="visibility: hidden;">Server Issue</span>';
 
+    $auth_error = '<span class="auth-tooltip"  id="status_connected">Connected</span>
+    <span class="auth-tooltip"  id="status_disconnected" style="visibility: hidden;">Disconnected</span>
+    <span class="auth-tooltip" id="status_denied"style="visibility: hidden;">Access Denied</span>
+    <span class="auth-tooltip"  id="status_issue" style="visibility: hidden;">Server Issue</span>';
+
   } catch (PDOException $e) {
     // Default error handling
     $status = '<div class="disconnected"></div>';
@@ -41,6 +46,11 @@
     <span class="signup-tooltip" id="status_disconnected"style="visibility: hidden;">Disconnected</span>
     <span class="signup-tooltip" id="status_denied"style="visibility: hidden;">Access Denied</span>
     <span class="signup-tooltip"  id="status_issue" style="visibility: hidden;">Server Issue</span>';
+
+    $auth_error = '<span class="auth-tooltip" id="status_issue">Server Issue</span>
+    <span class="auth-tooltip" id="status_disconnected"style="visibility: hidden;">Disconnected</span>
+    <span class="auth-tooltip" id="status_denied"style="visibility: hidden;">Access Denied</span>
+    <span class="auth-tooltip"  id="status_issue" style="visibility: hidden;">Server Issue</span>';
 
     $error_message = addslashes($e->getMessage());
 
@@ -58,6 +68,11 @@
         <span class="signup-tooltip" id="status_denied"style="visibility: hidden;">Access Denied</span>
         <span class="signup-tooltip"  id="status_issue" style="visibility: hidden;">Server Issue</span>';
 
+        $auth_error = '<span class="auth-tooltip" id="status_disconnected">Disconnected</span>
+        <span class="auth-tooltip"  id="status_connected" style="visibility: hidden;">Connected</span>
+        <span class="auth-tooltip" id="status_denied"style="visibility: hidden;">Access Denied</span>
+        <span class="auth-tooltip"  id="status_issue" style="visibility: hidden;">Server Issue</span>';
+
         $error_message = "SQL Server is not running.";
     } elseif (strpos($error_message, 'Access denied') !== false) {
         $status = '<div class="status wrong"></div>';
@@ -71,6 +86,11 @@
         <span class="signup-tooltip"  id="status_connected" style="visibility: hidden;">Connected</span>
         <span class="signup-tooltip" id="status_disconnected"style="visibility: hidden;">Disconnected</span>
         <span class="signup-tooltip"  id="status_issue" style="visibility: hidden;">Server Issue</span>';
+
+        $auth_error = '<span class="auth-tooltip"  id="status_denied">Access Denied</span>
+        <span class="auth-tooltip"  id="status_connected" style="visibility: hidden;">Connected</span>
+        <span class="auth-tooltip" id="status_disconnected"style="visibility: hidden;">Disconnected</span>
+        <span class="auth-tooltip"  id="status_issue" style="visibility: hidden;">Server Issue</span>';
 
         $error_message = "Wrong Database Credentials.";
     }

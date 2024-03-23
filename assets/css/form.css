@@ -51,6 +51,26 @@ body{
     z-index: 10;
 }
 
+.auth-box{
+    width: 29rem;
+    height : 25rem;
+    background: var(--soft-color);
+    /* backdrop-filter: blur(20px); */
+    border-radius: 15px;
+    padding: 2rem;
+    /* padding: 0.75rem 2rem 2rem 2rem; */
+    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
+                -2px -0px 15px 2px rgba(0,0,0,0.054);
+    /* box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
+                -2px -0px 15px 2px rgba(0,0,0,0.1); */
+    border: 0.5px groove var(--border-color);
+    z-index: 10;
+}
+
+.description{
+    font-size: 18px;
+}
+
 .inputContainer {
     display: flex;
     justify-content: space-evenly;
@@ -175,7 +195,24 @@ signup-header img{
     z-index: 99;
 }
 
-.status:hover .tooltip, .status:hover .signup-tooltip{
+.auth-tooltip {
+    position: absolute;
+    top: 28%;
+    left: 63%;
+    transform: translateX(-50%); 
+    border: 1px solid var(--border-color);
+    background-color: var(--soft-color);
+    color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    visibility: hidden; 
+    white-space: nowrap;
+    z-index: 99;
+}
+
+.status:hover .tooltip,
+.status:hover .signup-tooltip,
+.status:hover .auth-tooltip{
     visibility: visible;
 }
 

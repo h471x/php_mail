@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+
+// Store form data in session variables
+$_SESSION['name'] = $_POST['name'];
+$_SESSION['username'] = $_POST['username'];
+$_SESSION['mail'] = $_POST['newmail'];
+$_SESSION['hashed_password'] = password_hash($_POST['newpassword'], PASSWORD_DEFAULT);
+
 // Set destination email address
 $destination = $_POST['newmail'];
 $name = $_POST['name'];
@@ -26,16 +34,16 @@ $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
 // Attempt to send email
-if(mail($destination, $subject, $message, $headers)) {
+// if(mail($destination, $subject, $message, $headers)) {
   header("Location: /php_mail/app/views/authenticate.php");
-  exit;
-} else {
-    echo "<h1>Failed to send the email</h1>";
-    $error = error_get_last();
-    if ($error) {
-        echo "<p>Error message: " . $error['message'] . "</p>";
-    } else {
-        echo "<p>No error message available.</p>";
-    }
-}
+  // exit;
+// } else {
+//     echo "<h1>Failed to send the email</h1>";
+//     $error = error_get_last();
+//     if ($error) {
+//         echo "<p>Error message: " . $error['message'] . "</p>";
+//     } else {
+//         echo "<p>No error message available.</p>";
+//     }
+// }
 ?>
