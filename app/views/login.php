@@ -54,7 +54,6 @@
         <span><a href="/php_mail/app/views/register.php" id="signup_link"></a></span>
       </div>
     </div>
-    <!-- <div class="wrapper"></div> -->
   </div>
   <script src="/php_mail/assets/js/dictionary.js"></script>
   <script src="/php_mail/assets/js/signin.js"></script>

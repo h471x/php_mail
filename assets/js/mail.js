@@ -89,21 +89,20 @@ dropbtn.onmouseout = () => {
 };
 
 // Change language and hide dropdown on language option click
-// Change language and hide dropdown on language option click
 frLink.addEventListener('click', (event) => {
-  event.preventDefault(); // Prevent page reload
+  event.preventDefault();
   changeLanguage('fr');
   hideDropdownWithDelay();
 });
 
 enLink.addEventListener('click', (event) => {
-  event.preventDefault(); // Prevent page reload
+  event.preventDefault();
   changeLanguage('en');
   hideDropdownWithDelay();
 });
 
 mgLink.addEventListener('click', (event) => {
-  event.preventDefault(); // Prevent page reload
+  event.preventDefault();
   changeLanguage('mg');
   hideDropdownWithDelay();
 });

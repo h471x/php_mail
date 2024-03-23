@@ -1,13 +1,4 @@
 <?php 
-  // $user = "
-  // CREATE TABLE IF NOT EXISTS user (
-  //   user_id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  //   name VARCHAR(50),
-  //   firstName VARCHAR(60),
-  //   mail VARCHAR(100) NOT NULL,
-  //   password VARCHAR(20) NOT NULL);
-  // ";
-
   $user_table = "
   CREATE TABLE IF NOT EXISTS user (
     email_user VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY,
@@ -34,17 +25,16 @@
     email_contact VARCHAR(255) NOT NULL,
     PRIMARY KEY (email_propriate, email_contact));
   ";
-//Create trigger for contact 
-//WARNING :"DELIMITER IS IMPORTANT"
+
+  //Create trigger for contact
+  //WARNING :"DELIMITER IS IMPORTANT"
 
   $insert_contact_auto="DELIMITER //
-
-    CREATE TRIGGER insert_contact AFTER INSERT ON message
-    FOR EACH ROW
-    BEGIN
-        INSERT INTO contact (Email_propriate, Email_contact) VALUES (NEW.Email_user, NEW.Email_destination);
-    END;
-    //
-
-    DELIMITER ;";
+  CREATE TRIGGER insert_contact AFTER INSERT ON message
+  FOR EACH ROW
+  BEGIN
+    INSERT INTO contact (Email_propriate, Email_contact) VALUES (NEW.Email_user, NEW.Email_destination);
+  END;
+   //
+  DELIMITER ;";
 ?>
