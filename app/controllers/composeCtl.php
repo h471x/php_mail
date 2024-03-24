@@ -59,6 +59,16 @@
         // Send email
         if ($mail->send()) {
             header("Location: ../../app/views/mail.php?send=true&destination=" . urlencode($destination));
+   
+            //Insert into table message
+            $insert_message= "INSERT INTO message (email_destination, objet, contenu ,email_user) VALUES (:destination, :objet, :contenu ,:user)";
+            $insert_mess=$pdo->prepare($insert_message);
+            $insert_mess->bindvalue(':destination',$destination);
+            $insert_mess->bindvalue(':objet',$subject);
+            $insert_mess->bindvalue(':contenu',$message);
+            $insert_mess->bindvalue(':user',$user_mail);
+            $insert_mess->execute();
+            
         } else {
             echo 'Error: ' . $mail->ErrorInfo;
         }
