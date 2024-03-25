@@ -1,6 +1,5 @@
 <?php $basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/"; ?>
 <?php require_once $basePath . "config/php/connect.php"; ?>
-<?php session_destroy(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

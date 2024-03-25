@@ -46,6 +46,16 @@ const ComposeSubject = document.querySelector("#subject");
 const ComposeMessage = document.querySelector("#mailmessage");
 const emailRegexForm = /^[^\s@]+@gmail\.com$/;
 
+ComposeDestination.addEventListener('blur', () => {
+  if (!emailRegexForm.test(ComposeDestination.value.trim())) {
+    ComposeDestination.style.borderBottom = '2px solid var(--github-orange)';
+    ComposeDestination.focus();
+    setTimeout(function() {
+      ComposeDestination.style.borderBottom = '';
+    }, 2000);
+  }
+});
+
 function validateElements(elements) {
   let firstBlankElement = null;
 
@@ -85,5 +95,18 @@ composeForm.addEventListener('submit', function(event) {
     console.log('Form submitted successfully');
     composeForm.submit();
     // resetValue(ComposeDestination, ComposeSubject, ComposeMessage);
+  }
+});
+
+// Add keydown event listener to handle Enter key press within the form
+composeForm.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    // Check if the form is valid before submitting
+    let composeValid = validateElements([ComposeDestination, ComposeSubject, ComposeMessage]);
+
+    if (composeValid) {
+      // Submit the form
+      composeForm.submit();
+    }
   }
 });

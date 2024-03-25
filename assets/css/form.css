@@ -29,8 +29,6 @@ body{
     padding: 2rem;
     box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
     -2px -0px 15px 2px rgba(0,0,0,0.054);
-    /* box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
-                -2px -0px 15px 2px rgba(0,0,0,0.1); */
     border: 0.5px groove var(--border-color);
     z-index: 10;
 }
@@ -39,14 +37,10 @@ body{
     width: 50rem;
     height : 25.5rem;
     background: var(--soft-color);
-    /* backdrop-filter: blur(20px); */
     border-radius: 15px;
     padding: 2rem;
-    /* padding: 0.75rem 2rem 2rem 2rem; */
     box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
                 -2px -0px 15px 2px rgba(0,0,0,0.054);
-    /* box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
-                -2px -0px 15px 2px rgba(0,0,0,0.1); */
     border: 0.5px groove var(--border-color);
     z-index: 10;
 }
@@ -55,14 +49,10 @@ body{
     width: 29rem;
     height : 28rem;
     background: var(--soft-color);
-    /* backdrop-filter: blur(20px); */
     border-radius: 15px;
     padding: 2rem;
-    /* padding: 0.75rem 2rem 2rem 2rem; */
     box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
                 -2px -0px 15px 2px rgba(0,0,0,0.054);
-    /* box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
-                -2px -0px 15px 2px rgba(0,0,0,0.1); */
     border: 0.5px groove var(--border-color);
     z-index: 10;
 }
@@ -103,7 +93,6 @@ body{
     height: 15px;
     border-radius: 50%;
     justify-content: center;
-    /* border: 0.5px groove #716f6f; */
 }
 
 
@@ -135,7 +124,6 @@ header img{
     height: 15px;
     border-radius: 50%;
     justify-content: center;
-    /* border: 0.5px groove #716f6f; */
 }
 
 
@@ -152,14 +140,6 @@ signup-header img{
     font-weight: 800;
     margin-top: 10px;
 }
-
-/* .login-form{
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-} */
 
 .connected{ background-color: var(--connected); }
 .wrong{ background-color: #f78166; }
@@ -252,7 +232,6 @@ i{
     font-weight: 500;
     padding: 0 10px;
     font-size: 17px;
-    /* color: #333; */
     background-color: var(--soft-color);
     transition: all .3s ease-in-out;
 }
