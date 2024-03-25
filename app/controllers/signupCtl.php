@@ -53,12 +53,6 @@
     header("Location: /php_mail/app/views/authenticate.php");
     exit;
   } else {
-      echo "<h1>Failed to send the email</h1>";
-      $error = error_get_last();
-      if ($error) {
-          echo "<p>Error message: " . $error['message'] . "</p>";
-      } else {
-          echo "<p>No error message available.</p>";
-      }
+      header("Location: /php_mail/app/views/authenticate.php?authentification=false&" . error_get_last());
   }
 ?>

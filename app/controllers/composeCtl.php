@@ -70,7 +70,7 @@
             $insert_mess->execute();
             
         } else {
-            echo 'Error: ' . $mail->ErrorInfo;
+            header("Location: ../../app/views/mail.php?send=false&error=" . $mail->ErrorInfo);
         }
     } catch (Exception $e) {
         echo "Error: {$mail->ErrorInfo}";
