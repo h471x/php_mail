@@ -46,15 +46,17 @@ const ComposeSubject = document.querySelector("#subject");
 const ComposeMessage = document.querySelector("#mailmessage");
 const emailRegexForm = /^[^\s@]+@gmail\.com$/;
 
-ComposeDestination.addEventListener('blur', () => {
-  if (!emailRegexForm.test(ComposeDestination.value.trim())) {
-    ComposeDestination.style.borderBottom = '2px solid var(--github-orange)';
-    ComposeDestination.focus();
-    setTimeout(function() {
-      ComposeDestination.style.borderBottom = '';
-    }, 2000);
-  }
-});
+if(ComposeDestination.value.trim()){
+  ComposeDestination.addEventListener('blur', () => {
+    if (!emailRegexForm.test(ComposeDestination.value.trim())) {
+      ComposeDestination.style.borderBottom = '2px solid var(--github-orange)';
+      ComposeDestination.focus();
+      setTimeout(function() {
+        ComposeDestination.style.borderBottom = '';
+      }, 2000);
+    }
+  });
+}
 
 function validateElements(elements) {
   let firstBlankElement = null;
