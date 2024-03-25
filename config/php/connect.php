@@ -12,7 +12,8 @@
     // Create tables
     $pdo->exec($user_table); 
     $pdo->exec($message_table);
-    $pdo->exec($contact_table); 
+    $pdo->exec($contact_table);
+    $pdo->exec($contact_trigger);
 
     // Set the message if connected successfully
     $status = '<div class="status connected"></div>';
