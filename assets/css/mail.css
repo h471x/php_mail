@@ -516,6 +516,11 @@ input {
   border-bottom: 1px solid var(--soft-color);
 }
 
+.row_active{
+  background-color: var(--sidebar-active);
+  border-bottom: 1px solid var(--soft-color);
+}
+
 .emailRow__message {
   display: flex;
   flex: 0.8;

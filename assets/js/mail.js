@@ -1,30 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//   var emailRows = document.querySelectorAll('.emailRow');
-//   emailRows.forEach(function(emailRow) {
-//     emailRow.addEventListener('click', function() {
-//       showEmailContent(emailRow);
-//     });
-//   });
-// });
-
-// function showEmailContent(emailRow) {
-//   // var title = emailRow.querySelector('.emailRow__title').textContent;
-//   // var description = emailRow.querySelector('.emailRow__description').textContent;
-//   // var message = emailRow.querySelector('.emailRow__message h4').textContent;
-
-//   var emailContent = emailRow.querySelector('.emailContent');
-
-//   // emailContent.querySelector('.emailContent__title').textContent = title;
-//   // emailContent.querySelector('.emailContent__description').textContent = description;
-//   // emailContent.querySelector('.emailContent__message').textContent = message;
-
-//   if (emailContent.style.visibility === "hidden") {
-//     emailContent.style.visibility = "visible";
-//   } else {
-//     emailContent.style.visibility = "hidden";
-//   }
-// }
-
 // Declare and initialize variables
 let languagePreference = localStorage.getItem('languagePreference') || 'fr';
 const dropdown = document.getElementById('languageDropdown');
@@ -136,3 +109,52 @@ mgLink.addEventListener('click', (event) => {
 
 // Load the checkmark icons based on initial language preference
 updateCheckmarks();
+
+// Handle email content visibility onclick of email row
+document.addEventListener('click', function(event) {
+  const emailRow = event.target.closest('.emailRow');
+  if (emailRow) {
+    // Deactivate all rows
+    document.querySelectorAll('.emailRow').forEach(row => {
+      row.classList.remove('row_active');
+    });
+
+    // Make the clicked row active
+    emailRow.classList.add('row_active');
+
+    // Show the mail content
+    showEmailContent(emailRow);
+  }
+});
+
+// Hide the content when pressing return button
+document.addEventListener('click', function(event) {
+  // Attach click event listener to a parent element that exists in the DOM
+  if (event.target.closest('.return')) {
+    // Check if the clicked element or any of its ancestors have the class 'return'
+    toggleEmailContentVisibility();
+  }
+});
+
+// Function to show email content
+function showEmailContent(emailRow) {
+  // Get the mail data
+  var title = emailRow.querySelector('.emailRow__title').textContent;
+  var description = emailRow.querySelector('.emailRow__description').textContent;
+  var message = emailRow.querySelector('.emailRow__message h4').textContent;
+
+  // Append the data to the content preview
+  document.querySelector('.emailContent__title').textContent = title;
+  document.querySelector('.emailContent__description').textContent = description;
+  document.querySelector('.emailContent__message').textContent = message;
+
+  // Show email content
+  toggleEmailContentVisibility();
+}
+
+// Function to toggle email content visibility
+function toggleEmailContentVisibility() {
+  var emailContent = document.querySelector('.emailContent');
+  let isContentHidden = emailContent.style.visibility === "hidden";
+  emailContent.style.visibility = (isContentHidden) ? "visible" : "hidden";
+}
