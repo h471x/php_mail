@@ -4,6 +4,7 @@ const dropdown = document.getElementById('languageDropdown');
 const dropbtn = document.querySelector('.dropbtn');
 const toggleBtn = document.getElementById('languageToggle');
 const tooltip = document.querySelector('.tooltip');
+let emailListScrollPosition = 0;
 let firstClick = true;
 
 // Declare constants for language links and checkmarks
@@ -110,9 +111,11 @@ mgLink.addEventListener('click', (event) => {
 // Load the checkmark icons based on initial language preference
 updateCheckmarks();
 
-// Handle email content visibility onclick of email row
+// Handle row clicking
 document.addEventListener('click', function(event) {
   const emailRow = event.target.closest('.emailRow');
+  const emailList = document.querySelector('.emailList');
+
   if (emailRow) {
     // Deactivate all rows
     document.querySelectorAll('.emailRow').forEach(row => {
@@ -124,14 +127,33 @@ document.addEventListener('click', function(event) {
 
     // Show the mail content
     showEmailContent(emailRow);
+
+    // Hide the scrollbar
+    emailList.classList.add('hide-scrollbar');
+    emailList.classList.add('disable-scroll');
+
+    // Store the current scroll position
+    emailListScrollPosition = emailList.scrollTop;
+
+    // Scroll the emailList to the top
+    emailList.scrollTop = 0;
   }
 });
 
 // Hide the content when pressing return button
 document.addEventListener('click', function(event) {
-  // Attach click event listener to a parent element that exists in the DOM
-  if (event.target.closest('.return')) {
-    // Check if the clicked element or any of its ancestors have the class 'return'
+  const returnButton = event.target.closest('.return');
+  const emailList = document.querySelector('.emailList');
+
+  if (returnButton) {
+    // Restore the scroll position
+    emailList.scrollTop = emailListScrollPosition;
+
+    // Show scrollbar
+    emailList.classList.remove('hide-scrollbar');
+    emailList.classList.remove('disable-scroll');
+
+    // Hide the email content
     toggleEmailContentVisibility();
   }
 });

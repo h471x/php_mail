@@ -423,6 +423,7 @@ input[type="checkbox"]:checked::before {
   background-color: var(--content-color);
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden !important;
 }
 
 .emailList__settings {
@@ -519,6 +520,9 @@ input {
 .row_active{
   background-color: var(--sidebar-active);
   border-bottom: 1px solid var(--soft-color);
+  border-left: 5px solid var(--primary-color);
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 .emailRow__message {
@@ -558,11 +562,24 @@ input {
 
 .emailContent{
   position: absolute;
+  padding: 1rem 2rem 0 1rem;
   height: 100%;
   width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   background-color: var(--content-color);
   color: var(--primary-color);
+  overflow-y: auto;
+}
+
+.emailList.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.emailList.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.disable-scroll {
+  overflow: hidden !important;
 }

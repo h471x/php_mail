@@ -6,8 +6,7 @@
     username_user VARCHAR(255) NOT NULL,
     user_password VARCHAR(255) NOT NULL,
     2fa_password VARCHAR(16) NOT NULL,
-    inscription_date DATE NOT NULL
-);
+    inscription_date DATE NOT NULL);
   ";
 
   $message_table = "
@@ -31,16 +30,16 @@
   ";
 
   $contact_trigger = "
-CREATE OR REPLACE TRIGGER insert_contact
-AFTER INSERT ON message
-FOR EACH ROW
-BEGIN
-  IF NOT EXISTS (SELECT * FROM contact
-                  WHERE Email_propriate = NEW.Email_user
-                    AND Email_contact = NEW.Email_destination) THEN
-    INSERT INTO contact (Email_propriate, Email_contact)
-    VALUES (NEW.Email_user, NEW.Email_destination);
-  END IF;
-END;
+  CREATE OR REPLACE TRIGGER insert_contact
+  AFTER INSERT ON message
+  FOR EACH ROW
+  BEGIN
+    IF NOT EXISTS (SELECT * FROM contact
+      WHERE Email_propriate = NEW.Email_user
+      AND Email_contact = NEW.Email_destination) THEN
+      INSERT INTO contact (Email_propriate, Email_contact)
+      VALUES (NEW.Email_user, NEW.Email_destination);
+    END IF;
+  END;
   ";
 ?>

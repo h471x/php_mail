@@ -6,6 +6,8 @@
     // Start session
     session_start();
 
+    // unset($_SESSION['cachedEmails']);
+
     // Check if emails are already stored in session cache
     if (!isset($_SESSION['cachedEmails'])) {
         // Gmail IMAP settings
@@ -60,7 +62,7 @@
                     $count++;
 
                     // Break loop if count reaches 10
-                    if ($count >= 10) {
+                    if ($count >= 20) {
                         break;
                     }
                 }
