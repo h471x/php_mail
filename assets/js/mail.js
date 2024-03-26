@@ -1,3 +1,30 @@
+// document.addEventListener("DOMContentLoaded", function() {
+//   var emailRows = document.querySelectorAll('.emailRow');
+//   emailRows.forEach(function(emailRow) {
+//     emailRow.addEventListener('click', function() {
+//       showEmailContent(emailRow);
+//     });
+//   });
+// });
+
+// function showEmailContent(emailRow) {
+//   // var title = emailRow.querySelector('.emailRow__title').textContent;
+//   // var description = emailRow.querySelector('.emailRow__description').textContent;
+//   // var message = emailRow.querySelector('.emailRow__message h4').textContent;
+
+//   var emailContent = emailRow.querySelector('.emailContent');
+
+//   // emailContent.querySelector('.emailContent__title').textContent = title;
+//   // emailContent.querySelector('.emailContent__description').textContent = description;
+//   // emailContent.querySelector('.emailContent__message').textContent = message;
+
+//   if (emailContent.style.visibility === "hidden") {
+//     emailContent.style.visibility = "visible";
+//   } else {
+//     emailContent.style.visibility = "hidden";
+//   }
+// }
+
 // Declare and initialize variables
 let languagePreference = localStorage.getItem('languagePreference') || 'fr';
 const dropdown = document.getElementById('languageDropdown');
@@ -106,7 +133,6 @@ mgLink.addEventListener('click', (event) => {
   changeLanguage('mg');
   hideDropdownWithDelay();
 });
-
 
 // Load the checkmark icons based on initial language preference
 updateCheckmarks();

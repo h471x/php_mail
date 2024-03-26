@@ -53,21 +53,28 @@ $emailRows = [
 // Function to generate email rows
 function generateEmailRows($rows) {
     foreach ($rows as $row) {
-        echo '<div class="emailRow">
-                <div class="emailRow__options">
-                    <!-- <input type="checkbox" name="" id="" /> -->
-                    <!-- <span class="material-icons"> star_border </span> -->
-                    <!-- <span class="material-icons"> label_important </span> -->
-                </div>
-                <h3 class="emailRow__title">' . $row["title"] . '</h3>
-                <div class="emailRow__message">
-                    <h4>' . $row["message"] . '<span class="emailRow__description"> - ' . $row["description"] . '</span></h4>
-                </div>
-                <p class="emailRow__time">' . $row["time"] . '</p>
-            </div>';
+        echo '
+        <div class="emailRow">
+            <div class="emailRow__options">
+                <!-- <input type="checkbox" name="" id="" /> -->
+                <!-- <span class="material-icons"> star_border </span> -->
+                <!-- <span class="material-icons"> label_important </span> -->
+            </div>
+            <h3 class="emailRow__title">' . $row["title"] . '</h3>
+            <div class="emailRow__message">
+                <h4>' . $row["message"] . '<span class="emailRow__description"> - ' . $row["description"] . '</span></h4>
+            </div>
+            <p class="emailRow__time">' . $row["time"] . '</p>
+        </div>
+        <div class="emailContent" style="visibility: hidden;">
+            <button>back</button>
+            <h2 class="emailContent__title">title</h2>
+            <p class="emailContent__description">description</p>
+            <p class="emailContent__message">message</p>
+        </div>
+        ';
     }
 }
-
 ?>
 
 <div class="emailList" id="inbox">

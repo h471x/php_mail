@@ -230,7 +230,7 @@ i{
 
 .input-field{
     font-weight: 500;
-    padding: 0 10px;
+    padding: 0 2.5rem 0 10px;
     font-size: 17px;
     background-color: var(--soft-color);
     transition: all .3s ease-in-out;
@@ -239,6 +239,7 @@ i{
 .input-field:-webkit-autofill{
     background-color: var(--soft-color);
 }
+
 input{
     height: 40px;
     border: 2px solid var(--border-color);
@@ -247,7 +248,7 @@ input{
     outline: none;
 }
 .input-field:focus{
-    border:2px solid #1f6feb;
+    border: 2px solid #1f6feb;
 }
 
 .toggle-user i {

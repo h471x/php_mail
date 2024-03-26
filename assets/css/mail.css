@@ -158,14 +158,13 @@ body{
   left: 50%;
   transform: translateX(-50%); 
   background-color: var(--soft-color);
-  /* background-color: var(--tooltip-color); */
   border: 1px solid var(--border-color);
-  /* box-shadow: var(--shadow-color) 0px 1px 4px; */
   color: var(--primary-color);
   padding: 5px;
   border-radius: 5px;
   visibility: hidden; 
   white-space: nowrap;
+  z-index: 99;
 }
 
 /* Show tooltip on hover */
@@ -423,6 +422,7 @@ input[type="checkbox"]:checked::before {
   overflow: scroll;
   background-color: var(--content-color);
   min-height: 100vh;
+  position: relative;
 }
 
 .emailList__settings {
@@ -549,4 +549,15 @@ input {
 .emailRow__description {
   font-weight: 400;
   color: gray;
+}
+
+.emailContent{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--content-color);
+  color: var(--primary-color);
 }
