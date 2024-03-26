@@ -6,6 +6,7 @@
   --soft-color: #0d1117;
   --sidebar-active: #21262c;
   --sidebar-hover: #1a1f24;
+  --content-header: #121215;
   --hover-color: #21262c;
   --content-color: #010409;
   --scroll-bg: #333;
@@ -30,6 +31,7 @@
   --soft-color: white;
   --sidebar-active: #e4e6e9;
   --sidebar-hover: #f0f2f4;
+  --content-header: #f0f2f4;
   --hover-color: #f0f0f0;
   --content-color: #f6f8fa;
   --scroll-bg: #cac8c8;

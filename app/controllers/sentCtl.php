@@ -75,11 +75,22 @@ function generateEmailRows($rows) {
   <div class="emailList__list">
     <?php generateEmailRows($emailRows); ?>
     <div class="emailContent" style="visibility: hidden;">
-        <button class="return">back</button>
-        <h2 class="emailContent__title"></h2>
-        <p class="emailContent__description"></p>
-        <p class="emailContent__message"></p>
-        <p class="emailContent__time"></p>
+        <div class="contentHeader">
+            <button class="return">
+                <span class="material-icons">keyboard_arrow_left</span>
+            </button>
+            <button class="delete">
+                <span class="material-icons">delete</span>
+            </button>
+        </div>
+        <div class="contentBody">
+            <h2 class="emailContent__message"></h2><br>
+            <div class="mail_info">
+                <h4 class="emailContent__title"></h4>
+                <h5 class="emailContent__time"></h5>
+            </div>
+            <!-- <p class="emailContent__description"></p> -->
+        </div>
     </div>
   </div>
 </div>

@@ -48,6 +48,7 @@
                     $title = $header->fromaddress;
                     $message = $header->subject;
                     $description = isset($structure->parts[0]->parts[0]->parts[0]->body) ? $structure->parts[0]->parts[0]->parts[0]->body : '';
+                    // $time = preg_replace('/^.{4}|:[^:]*$/', '', $header->date);
                     $time = $header->date;
 
                     // Add email details to the fetched emails array
@@ -104,7 +105,7 @@
                 </div>
                 <h3 class="emailRow__title">' . $row["title"] . '</h3>
                 <div class="emailRow__message">
-                    <h4>' . $row["message"] . '<span class="emailRow__description"> - ' . $row["description"] . '</span></h4>
+                    <h4>' . $row["message"] . '<span class="emailRow__description">' . $row["description"] . '</span></h4>
                 </div>
                 <p class="emailRow__time">' . $row["time"] . '</p>
             </div>
@@ -117,11 +118,22 @@
   <div class="emailList__list">
     <?php generateEmailRows($formattedEmails); ?>
     <div class="emailContent" style="visibility: hidden;">
-        <button class="return">back</button>
-        <h2 class="emailContent__title"></h2>
-        <p class="emailContent__description"></p>
-        <p class="emailContent__message"></p>
-        <p class="emailContent__time"></p>
+        <div class="contentHeader">
+            <button class="return">
+                <span class="material-icons">keyboard_arrow_left</span>
+            </button>
+            <button class="delete">
+                <span class="material-icons">delete</span>
+            </button>
+        </div>
+        <div class="contentBody">
+            <h2 class="emailContent__message"></h2><br>
+            <div class="mail_info">
+                <h4 class="emailContent__title"></h4>
+                <h5 class="emailContent__time"></h5>
+            </div>
+            <!-- <p class="emailContent__description"></p> -->
+        </div>
     </div>
   </div>
 </div>
