@@ -142,11 +142,13 @@ function showEmailContent(emailRow) {
   var title = emailRow.querySelector('.emailRow__title').textContent;
   var description = emailRow.querySelector('.emailRow__description').textContent;
   var message = emailRow.querySelector('.emailRow__message h4').textContent;
+  var time = emailRow.querySelector('.emailRow__time').textContent;
 
   // Append the data to the content preview
   document.querySelector('.emailContent__title').textContent = title;
   document.querySelector('.emailContent__description').textContent = description;
   document.querySelector('.emailContent__message').textContent = message;
+  document.querySelector('.emailContent__time').textContent = time;
 
   // Show email content
   toggleEmailContentVisibility();
