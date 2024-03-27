@@ -164,13 +164,23 @@ function showEmailContent(emailRow) {
   var title = emailRow.querySelector('.emailRow__title').textContent;
   // var description = emailRow.querySelector('.emailRow__description').textContent;
   var message = emailRow.querySelector('.emailRow__message h4').textContent;
-  var time = emailRow.querySelector('.emailRow__time').textContent; 
+  var time = emailRow.querySelector('.emailRow__time').textContent;
+  var senderName = emailRow.querySelector('.sender_name').textContent;
+  var senderFormatted = emailRow.querySelector('.sender_formatted').textContent;
+  var senderMail = emailRow.querySelector('.sender_mail').textContent;
+  var receiverName = emailRow.querySelector('.receiver_name').textContent;
+  var receiverMail = emailRow.querySelector('.receiver_mail').textContent;
+  var subject = emailRow.querySelector('.subject').textContent;
+  var body = emailRow.querySelector('.body').innerHTML;
+  var date = emailRow.querySelector('.date').textContent;
+  var datetime = emailRow.querySelector('.date_time').textContent;
 
   // Append the data to the content preview
-  document.querySelector('.emailContent__title').textContent = title;
+  document.querySelector('.emailContent__title').textContent = senderFormatted;
   // document.querySelector('.emailContent__description').textContent = description;
   document.querySelector('.emailContent__message').textContent = message;
-  document.querySelector('.emailContent__time').textContent = time;
+  document.querySelector('.emailContent__time').textContent = datetime;
+  document.querySelector('.emailContent__body').innerHTML = body;
 
   // Show email content
   toggleEmailContentVisibility();
