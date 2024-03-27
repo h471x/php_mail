@@ -115,6 +115,7 @@ updateCheckmarks();
 document.addEventListener('click', function(event) {
   const emailRow = event.target.closest('.emailRow');
   const emailList = document.querySelector('.emailList');
+  const emailContent = document.querySelector('.emailContent');
 
   if (emailRow) {
     // Deactivate all rows
@@ -137,6 +138,7 @@ document.addEventListener('click', function(event) {
 
     // Scroll the emailList to the top
     emailList.scrollTop = 0;
+    emailContent.scrollTop = 0;
   }
 });
 
