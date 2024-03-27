@@ -6,6 +6,41 @@
     // start the session
     session_start();
 
+    // Function to check if an email user exists in the contact table
+    function isContact($email) {
+        global $pdo; // Access the $pdo object defined outside the function
+        $query = "SELECT COUNT(*) FROM contact WHERE email_contact = :email";
+        $statement = $pdo->prepare($query);
+        $statement->bindParam(':email', $email);
+        $statement->execute();
+        $count = $statement->fetchColumn();
+        return $count > 0; // Return true if contact exists, false otherwise
+    }
+
+    // Function to generate email rows
+    function generateEmailRows($rows) {
+        foreach ($rows as $row) {
+            $email = $row["email_user"];
+            $isContact = isContact($email);
+            $buttonStyle = $isContact ? 'background-color: var(--github-blue); visibility: visible;' : ''; // Apply style based on contact existence
+            echo '
+            <div class="contactRow">
+                <div class="emailRow__options">
+                    <span class="material-icons"> label_important </span>
+                </div>
+                <h4 class="contact_mail" style="margin-left: 2rem;">' . $email . '</h4>
+                <div style="margin-left: auto;">
+                    <button class="add_contact" style="' . $buttonStyle . '">
+                        <span class="material-icons" style="color: white;">
+                            person
+                        </span>
+                    </button>
+                </div>
+            </div>
+            ';
+        }
+    }
+
     try {
         // Prepare the SQL query
         $query = "SELECT email_user FROM user WHERE email_user != :session_mail";
@@ -17,51 +52,10 @@
 
         // Fetch email contacts
         $emailRows = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        // Function to generate email rows
-        function generateEmailRows($rows) {
-            // Check if $_SESSION['mail'] is set and not empty
-            if (isset($_SESSION['mail']) && !empty($_SESSION['mail'])) {
-                // Display $_SESSION['mail'] at the first row
-                echo '
-                <div class="contactRow">
-                    <div class="emailRow__options">
-                        <span class="material-icons"
-                            style="color: var(--primary-color);">
-                            star_border
-                        </span>
-                    </div>
-                    <h4 class="contact_mail" style="margin-left: 2rem;">' . $_SESSION['mail'] . '</h4>
-                </div>
-                ';
-            }
-
-            // Display other email rows
-            foreach ($rows as $row) {
-                echo '
-                <div class="contactRow">
-                    <div class="emailRow__options">
-                        <span class="material-icons"> label_important </span>
-                    </div>
-                    <h4 class="contact_mail" style="margin-left: 2rem;">' . $row["email_user"] . '</h4>
-                    <div style="margin-left: auto;">
-                        <button class="add_contact" style="background-color: var(--github-blue); visibility: visible;">
-                            <span class="material-icons" style="color: white;">
-                                person
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                ';
-            }
-        }
     } catch (PDOException $e) {
         // Handle any errors that occur during the process
         echo "Error executing the query: " . $e->getMessage();
     }
-
-    // Close the database connection (optional for PDO, as it's automatically closed when the script ends)
-    //$pdo = null;
 ?>
 
 <div class="contactList" id="contact">

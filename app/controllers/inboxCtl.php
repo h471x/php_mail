@@ -6,7 +6,7 @@
     // Start session
     session_start();
 
-    // unset($_SESSION['cachedEmails']);
+    unset($_SESSION['cachedEmails']);
 
     // Check if emails are already stored in session cache
     if (!isset($_SESSION['cachedEmails'])) {
