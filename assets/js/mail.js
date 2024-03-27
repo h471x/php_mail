@@ -5,6 +5,7 @@ const dropbtn = document.querySelector('.dropbtn');
 const toggleBtn = document.getElementById('languageToggle');
 const tooltip = document.querySelector('.tooltip');
 let emailListScrollPosition = 0;
+let sentListScrollPosition = 0;
 let firstClick = true;
 
 // Declare constants for language links and checkmarks
@@ -183,4 +184,78 @@ function toggleEmailContentVisibility() {
   var emailContent = document.querySelector('.emailContent');
   let isContentHidden = emailContent.style.visibility === "hidden";
   emailContent.style.visibility = (isContentHidden) ? "visible" : "hidden";
+}
+
+// Handle row clicking
+document.addEventListener('click', function(event) {
+  const sentRow = event.target.closest('.sentRow');
+  const sentList = document.querySelector('.sentList');
+  const sentContent = document.querySelector('.sentContent');
+
+  if (sentRow) {
+    // Deactivate all rows
+    document.querySelectorAll('.sentRow').forEach(row => {
+      row.classList.remove('row_active');
+    });
+
+    // Make the clicked row active
+    sentRow.classList.add('row_active');
+
+    // Show the mail content
+    showSentContent(sentRow);
+
+    // Hide the scrollbar
+    sentList.classList.add('hide-scrollbar');
+    sentList.classList.add('disable-scroll');
+
+    // Store the current scroll position
+    sentListScrollPosition = sentList.scrollTop;
+
+    // Scroll the emailList to the top
+    sentList.scrollTop = 0;
+    sentContent.scrollTop = 0;
+  }
+});
+
+// Hide the content when pressing return button
+document.addEventListener('click', function(event) {
+  const SentReturnButton = event.target.closest('.sent_return');
+  const sentList = document.querySelector('.sentList');
+
+  if (SentReturnButton) {
+    // Restore the scroll position
+    sentList.scrollTop = sentListScrollPosition;
+
+    // Show scrollbar
+    sentList.classList.remove('hide-scrollbar');
+    sentList.classList.remove('disable-scroll');
+
+    // Hide the email content
+    toggleSentContentVisibility();
+  }
+});
+
+// Function to show email content
+function showSentContent(sentRow) {
+  // Get the mail data
+  var message = sentRow.querySelector('.sentRow__message h4').textContent;
+  var body = sentRow.querySelector('.sent_body').textContent;
+  var time = sentRow.querySelector('.sentRow__time').textContent;
+  var title = sentRow.querySelector('.sentRow__title').textContent;
+
+  // Append the data to the content preview
+  document.querySelector('.sentContent__title').textContent = title;
+  document.querySelector('.sentContent__message').textContent = message;
+  document.querySelector('.sentContent__time').textContent = time;
+  document.querySelector('.sentContent__body').innerHTML = body;
+
+  // Show email content
+  toggleSentContentVisibility();
+}
+
+// Function to toggle email content visibility
+function toggleSentContentVisibility() {
+  var sentContent = document.querySelector('.sentContent');
+  let isContentHidden = sentContent.style.visibility === "hidden";
+  sentContent.style.visibility = (isContentHidden) ? "visible" : "hidden";
 }

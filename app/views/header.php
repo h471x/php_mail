@@ -4,7 +4,7 @@
     <h1>php-mail</h1>
   </div>
 
-  <form class="header__middle" id="searchForm" style="visibility: hidden;">
+  <form class="header__middle" id="searchForm">
     <button type="submit" id="searchButton">
         <span class="material-icons"> search </span>
     </button>

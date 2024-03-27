@@ -117,7 +117,7 @@ body{
   width: 100%;
 }
 
-.emailList__list {
+.emailList__list, .sentList__list {
   width: 100%;
   background-color: var(--content-color);
   color: var(--primary-color);
@@ -402,7 +402,7 @@ input[type="checkbox"]:checked::before {
 }
 
 /* email list */
-.emailList {
+.emailList, .sentList {
   flex: 1;
   overflow: scroll;
   background-color: var(--content-color);
@@ -486,7 +486,7 @@ input {
   margin: 5px;
 }
 
-.emailRow {
+.emailRow, .sentRow {
   display: flex;
   align-items: center;
   height: 50px;
@@ -497,7 +497,7 @@ input {
   padding-left: 8px;
 }
 
-.emailRow:hover {
+.emailRow:hover, .sentRow:hover {
   background-color: var(--sidebar-active);
   border-bottom: 1px solid var(--soft-color);
 }
@@ -510,7 +510,7 @@ input {
   border-bottom-left-radius: 2px;
 }
 
-.emailRow__message {
+.emailRow__message, .sentRow__message {
   display: flex;
   flex: 0.8;
   align-items: center;
@@ -518,7 +518,7 @@ input {
   color: var(--primary-color);
 }
 
-.emailRow__message h4 {
+.emailRow__message h4, .sentRow__message h4 {
   width: 400px;
   white-space: nowrap;
   overflow: hidden;
@@ -527,14 +527,14 @@ input {
   padding-right: 5px;
 }
 
-.emailRow__title {
+.emailRow__title, .sentRow__title {
   padding-left: 1rem;
   font-size: 13px;
   flex: 0.3;
   color: var(--primary-color);
 }
 
-.emailRow__time {
+.emailRow__time, .sentRow__time {
   padding-right: 15px;
   font-size: 10px;
   font-weight: bold;
@@ -557,7 +557,7 @@ input {
   overflow: hidden !important;
 }
 
-.emailContent{
+.emailContent, .sentContent{
   position: absolute;
   height: 100%;
   width: 100%;
@@ -570,7 +570,7 @@ input {
   flex-direction: column;
 }
 
-.contentHeader{
+.contentHeader, .sentHeader{
   height: 2.5rem;
   position: sticky;
   top: 0;
@@ -584,7 +584,7 @@ input {
   backdrop-filter: blur(5px);
 }
 
-.return, .delete{
+.return, .delete, .sent_return, .sent_delete{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -596,17 +596,17 @@ input {
   user-select: none;
 }
 
-.return:hover, .delete:hover{
+.return:hover, .delete:hover, .sent_return:hover, .sent_delete:hover{
   background-color: var(--sidebar-active);
   border-radius: 8px;
   border: 1px solid var(--border-color);
 }
 
-.contentBody{
+.contentBody, .sentBody{
   padding: 1rem 1rem 15rem 2rem;
 }
 
-.mail_info{
+.mail_info, .sent_info{
   display: flex;
   justify-content: space-between;
   padding-right: 2rem;

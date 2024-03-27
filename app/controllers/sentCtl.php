@@ -1,95 +1,63 @@
 <?php
-$emailRows = [
-    [
-        "title" => "Sent",
-        "message" => "You Got a New Subscriber",
-        "description" => "on Your Channel Future Coders",
-        "time" => "10pm"
-    ],
+// Get the database connection instance
+$basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/";
+require_once $basePath . "config/php/connect.php";
 
-    [
-        "title" => "YouTube",
-        "message" => "You Got a New Subscriber",
-        "description" => "on Your Channel Future Coders",
-        "time" => "10pm"
-    ],
+// Start the session
+session_start();
 
-    [
-        "title" => "YouTube",
-        "message" => "You Got a New Subscriber",
-        "description" => "on Your Channel Future Coders",
-        "time" => "10pm"
-    ],
+// Fetch data from the database
+$query = "SELECT email_destination, objet, contenu, send_time FROM message WHERE email_user = ? ORDER BY send_date DESC";
+$stmt = $pdo->prepare($query);
+$stmt->execute([$_SESSION['mail']]);
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    [
-        "title" => "YouTube",
-        "message" => "You Got a New Subscriber",
-        "description" => "on Your Channel Future Coders",
-        "time" => "10pm"
-    ],
-
-    [
-        "title" => "YouTube",
-        "message" => "You Got a New Subscriber",
-        "description" => "on Your Channel Future Coders",
-        "time" => "10pm"
-    ],
-
-    [
-        "title" => "YouTube",
-        "message" => "You Got a New Subscriber",
-        "description" => "on Your Channel Future Coders",
-        "time" => "10pm"
-    ],
-
-    [
-        "title" => "YouTube Last",
-        "message" => "You Got a New Subscriber",
-        "description" => "on Your Channel Future Coders",
-        "time" => "10pm"
-    ]
-];
+// Map database columns to emailRows keys
+$emailRows = array_map(function($row) {
+    return [
+        "title" => $row["email_destination"],
+        "message" => $row["objet"],
+        "body" => $row["contenu"],
+        "time" => $row["send_time"]
+    ];
+}, $rows);
 
 // Function to generate email rows
 function generateEmailRows($rows) {
     foreach ($rows as $row) {
         echo '
-        <div class="emailRow">
-            <div class="emailRow__options">
-                <!-- <input type="checkbox" name="" id="" /> -->
-                <!-- <span class="material-icons"> star_border </span> -->
-                <!-- <span class="material-icons"> label_important </span> -->
+        <div class="sentRow">
+            <h3 class="sentRow__title">' . $row["title"] . '</h3>
+            <div class="sentRow__message">
+                <h4>' . $row["message"] . '</h4>
             </div>
-            <h3 class="emailRow__title">' . $row["title"] . '</h3>
-            <div class="emailRow__message">
-                <h4>' . $row["message"] . '<span class="emailRow__description"> - ' . $row["description"] . '</span></h4>
-            </div>
-            <p class="emailRow__time">' . $row["time"] . '</p>
+            <p class="sentRow__time">' . $row["time"] . '</p>
+            <div class="sent_body" style="display: none;">' . $row['body'] .'</div>
         </div>
         ';
     }
 }
 ?>
 
-<div class="emailList" id="sent">
-  <div class="emailList__list">
+<div class="sentList" id="sent">
+  <div class="sentList__list">
     <?php generateEmailRows($emailRows); ?>
-    <div class="emailContent" style="visibility: hidden;">
-        <div class="contentHeader">
-            <button class="return">
+    <div class="sentContent" style="visibility: hidden;">
+        <div class="sentHeader">
+            <button class="sent_return">
                 <span class="material-icons">keyboard_arrow_left</span>
             </button>
-            <button class="delete">
+            <button class="sent_delete">
                 <span class="material-icons">delete</span>
             </button>
         </div>
-        <div class="contentBody">
-            <h2 class="emailContent__message"></h2><br>
-            <div class="mail_info">
-                <h4 class="emailContent__title"></h4>
-                <h5 class="emailContent__time"></h5>
+        <div class="sentBody">
+            <h2 class="sentContent__message"></h2><br>
+            <div class="sent_info">
+                <h4 class="sentContent__title"></h4>
+                <h5 class="sentContent__time"></h5>
             </div>
-            <!-- <p class="emailContent__description"></p> -->
+            <div class="sentContent__body" style="margin-top: 2rem;"></div>
         </div>
     </div>
   </div>
