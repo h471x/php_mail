@@ -45,7 +45,7 @@
                     </div>
                     <h4 class="contact_mail" style="margin-left: 2rem;">' . $row["email_user"] . '</h4>
                     <div style="margin-left: auto;">
-                        <button class="add_contact added">
+                        <button class="add_contact" style="background-color: var(--github-blue); visibility: visible;">
                             <span class="material-icons" style="color: white;">
                                 person
                             </span>

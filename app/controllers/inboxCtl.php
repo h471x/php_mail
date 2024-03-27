@@ -24,6 +24,21 @@
         // Get the user 2fa password to send the mail
         $password = $stmt->fetchColumn();
 
+        // Filter messages from php mail users only
+         // Prepare the SQL query
+         $query = "SELECT email_user FROM user WHERE email_user != :session_mail";
+         $statement = $pdo->prepare($query);
+         $statement->bindParam(':session_mail', $_SESSION['mail']);
+
+         // Execute the query
+         $statement->execute();
+
+        // Fetch email contacts
+        $phpmail_users = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        // Add phpmail725@gmail.com as default
+        $phpmail_users[] = array("email_user" => "mailphp725@gmail.com");
+
         // Connect to Gmail's IMAP server
         $connection = imap_open($server, $user_email, $password, null, 1);
 
@@ -114,16 +129,19 @@
     // Adjust the structure of $fetchedEmails array
     $formattedEmails = [];
     foreach ($fetchedEmails as $email) {
-        $formattedEmails[] = [
-            "sender_name" => $email["sender_name"],
-            "sender_mail" => $email["sender_mail"],
-            "receiver_name" => $email["receiver_name"],
-            "receiver_mail" => $email["receiver_mail"],
-            "subject" => $email["subject"],
-            "body" => $email["body"],
-            "date" => $email["date"],
-            "time" => $email["time"]
-        ];
+        // Check if the sender's email is in $phpmail_users
+        if (in_array($email["sender_mail"], array_column($phpmail_users, 'email_user'))) {
+            $formattedEmails[] = [
+                "sender_name" => $email["sender_name"],
+                "sender_mail" => $email["sender_mail"],
+                "receiver_name" => $email["receiver_name"],
+                "receiver_mail" => $email["receiver_mail"],
+                "subject" => $email["subject"],
+                "body" => $email["body"],
+                "date" => $email["date"],
+                "time" => $email["time"]
+            ];
+        }
     }
 
     // Function to generate email rows
