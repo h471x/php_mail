@@ -34,11 +34,15 @@
   AFTER INSERT ON message
   FOR EACH ROW
   BEGIN
-    IF NOT EXISTS (SELECT * FROM contact
-      WHERE Email_propriate = NEW.Email_user
-      AND Email_contact = NEW.Email_destination) THEN
-      INSERT INTO contact (Email_propriate, Email_contact)
-      VALUES (NEW.Email_user, NEW.Email_destination);
+    IF NEW.email_destination != NEW.email_user THEN
+      IF NOT EXISTS (
+        SELECT * FROM contact
+        WHERE email_primary = NEW.email_user
+        AND email_contact = NEW.email_destination
+      ) THEN
+        INSERT INTO contact (email_primary, email_contact)
+        VALUES (NEW.email_user, NEW.email_destination);
+      END IF;
     END IF;
   END;
   ";

@@ -60,15 +60,26 @@
         if ($mail->send()) {
             header("Location: ../../app/views/mail.php?send=true&destination=" . urlencode($destination));
    
-            //Insert into table message
-            $insert_message= "INSERT INTO message (email_destination, objet, contenu ,email_user) VALUES (:destination, :objet, :contenu ,:user)";
-            $insert_mess=$pdo->prepare($insert_message);
-            $insert_mess->bindvalue(':destination',$destination);
-            $insert_mess->bindvalue(':objet',$subject);
-            $insert_mess->bindvalue(':contenu',$message);
-            $insert_mess->bindvalue(':user',$user_mail);
+            // Instanciate php date time class
+            $current_datetime = new DateTime();
+            $current_date = $current_datetime->format('Y-m-d');
+            $current_time = $current_datetime->format('H:i');
+
+            // Insert message query
+            $insert_message = "
+            INSERT INTO message (email_destination, objet, contenu, email_user, send_date, send_time)
+            VALUES (:destination, :objet, :contenu, :user, :date, :time)
+            ";
+
+            // Execute the insert query
+            $insert_mess = $pdo->prepare($insert_message);
+            $insert_mess->bindvalue(':destination', $destination);
+            $insert_mess->bindvalue(':objet', $subject);
+            $insert_mess->bindvalue(':contenu', $message);
+            $insert_mess->bindvalue(':user', $user_mail);
+            $insert_mess->bindvalue(':date', $current_date);
+            $insert_mess->bindvalue(':time', $current_time);
             $insert_mess->execute();
-            
         } else {
             header("Location: ../../app/views/mail.php?send=false&error=" . $mail->ErrorInfo);
         }
