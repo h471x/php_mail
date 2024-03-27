@@ -581,6 +581,7 @@ input {
   border-bottom: 1px solid var(--border-color);
   border-top-left-radius: 8px;
   background-color: var(--content-header);
+  backdrop-filter: blur(5px);
 }
 
 .return, .delete{
@@ -592,11 +593,13 @@ input {
   width: 2.75rem;
   height: 2.75rem;
   font-size: medium;
+  user-select: none;
 }
 
 .return:hover, .delete:hover{
   background-color: var(--sidebar-active);
   border-radius: 8px;
+  border: 1px solid var(--border-color);
 }
 
 .contentBody{

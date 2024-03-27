@@ -56,8 +56,9 @@
                 $sender_email = $header->from[0]->mailbox . "@" . $header->from[0]->host;
                 
                 // Separate date and time
+                $gmt_time = "+3";
                 $date = date("Y-m-d", strtotime($header->date));
-                $time = date("H:i", strtotime($header->date));
+                $time = date("H:i", strtotime($header->date . $gmt_time . " hours"));
                 
                 // Extract subject
                 $subject = $header->subject;
