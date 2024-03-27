@@ -7,7 +7,7 @@ require_once $basePath . "config/php/connect.php";
 session_start();
 
 // Fetch data from the database
-$query = "SELECT email_destination, objet, contenu, send_time FROM message WHERE email_user = ? ORDER BY send_date DESC";
+$query = "SELECT email_destination, objet, contenu, send_time FROM message WHERE email_user = ? ORDER BY send_time DESC";
 $stmt = $pdo->prepare($query);
 $stmt->execute([$_SESSION['mail']]);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
