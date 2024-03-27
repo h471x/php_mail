@@ -1,32 +1,36 @@
 <?php 
   $user_table = "
   CREATE TABLE IF NOT EXISTS user (
-    email_user VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY,
-    fullname_user VARCHAR(255) NOT NULL,
-    username_user VARCHAR(255) NOT NULL,
-    user_password VARCHAR(255) NOT NULL,
-    2fa_password VARCHAR(16) NOT NULL,
-    inscription_date DATE NOT NULL);
-  ";
+  email_user VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY,
+  fullname_user VARCHAR(255) NOT NULL,
+  username_user VARCHAR(255) NOT NULL UNIQUE,
+  user_password VARCHAR(255) NOT NULL,
+  2fa_password VARCHAR(16) NOT NULL,
+  inscription_date DATE NOT NULL
+);
+";
 
   $message_table = "
   CREATE TABLE IF NOT EXISTS message (
-    id_message INT AUTO_INCREMENT PRIMARY KEY,
-    email_destination VARCHAR(255) NULL,
-    objet VARCHAR(255) NOT NULL,
-    contenu TEXT NULL,  
-    email_user VARCHAR(255) NOT NULL,
-    send_date DATE NOT NULL,
-    send_time TIME NOT NULL,
-    was_read TINYINT(1) NOT NULL DEFAULT 0,
-    FOREIGN KEY (email_user) REFERENCES user(email_user));
+  id_message INT AUTO_INCREMENT PRIMARY KEY,
+  email_destination VARCHAR(255) NULL,
+  objet VARCHAR(255) NOT NULL,
+  contenu TEXT NULL,
+  send_date DATE NOT NULL,
+  send_time TIME NOT NULL,
+  was_read TINYINT(1) NOT NULL DEFAULT 0,
+  email_user VARCHAR(255) NOT NULL,
+  CONSTRAINT fk_message_user FOREIGN KEY (email_user) REFERENCES user(email_user)
   ";
 
   $contact_table = "
   CREATE TABLE IF NOT EXISTS contact (
-    id_contact INT AUTO_INCREMENT PRIMARY KEY,
-    email_primary VARCHAR(255) NOT NULL, 
-    email_contact VARCHAR(255) NOT NULL);
+  id_contact INT AUTO_INCREMENT PRIMARY KEY,
+  email_propriate VARCHAR(255) NOT NULL, 
+  email_contact VARCHAR(255) NOT NULL,
+  CONSTRAINT fk_email_contact FOREIGN KEY (email_contact) REFERENCES user(email_user),
+  CONSTRAINT fk_email_propriate FOREIGN KEY (email_propriate) REFERENCES user(email_user)
+);
   ";
 
   $contact_trigger = "
