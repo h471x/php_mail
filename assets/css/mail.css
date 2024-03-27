@@ -117,7 +117,7 @@ body{
   width: 100%;
 }
 
-.emailList__list, .sentList__list {
+.emailList__list, .sentList__list, .contactList__list {
   width: 100%;
   background-color: var(--content-color);
   color: var(--primary-color);
@@ -402,7 +402,7 @@ input[type="checkbox"]:checked::before {
 }
 
 /* email list */
-.emailList, .sentList {
+.emailList, .sentList, .contactList {
   flex: 1;
   overflow: scroll;
   background-color: var(--content-color);
@@ -486,7 +486,7 @@ input {
   margin: 5px;
 }
 
-.emailRow, .sentRow {
+.emailRow, .sentRow, .contactRow {
   display: flex;
   align-items: center;
   height: 50px;
@@ -497,7 +497,32 @@ input {
   padding-left: 8px;
 }
 
-.emailRow:hover, .sentRow:hover {
+.contactRow{
+  padding: 0 3rem 0 2rem;
+  align-items: center;
+}
+
+.contactRow:hover{
+  background-color: var(--sidebar-hover);
+}
+
+.contactRow button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  visibility: hidden;
+  border-radius: 8px;
+}
+
+.contactRow:hover button{
+  background-color: #010409;
+  visibility: visible;
+}
+
+.emailRow:hover, .sentRow:hover{
   background-color: var(--sidebar-active);
   border-bottom: 1px solid var(--soft-color);
 }

@@ -259,3 +259,32 @@ function toggleSentContentVisibility() {
   let isContentHidden = sentContent.style.visibility === "hidden";
   sentContent.style.visibility = (isContentHidden) ? "visible" : "hidden";
 }
+
+// Handle add contact buttons
+document.addEventListener('click', function(event) {
+  const contactBtn = event.target.closest('.add_contact');
+
+  if (contactBtn) {
+    if (!contactBtn.classList.contains('clicked')) {
+      contactBtn.classList.add('clicked');
+      contactBtn.style.backgroundColor = "var(--github-blue)";
+      contactBtn.style.visibility = "visible";
+    } else {
+      contactBtn.classList.remove('clicked');
+      contactBtn.style.backgroundColor = "";
+      contactBtn.style.visibility = "";
+    }
+  }
+});
+
+// // Handle row blur
+// document.addEventListener('blur', function(event) {
+//   const contactList = event.target.closest('.contactList');
+
+//   if (contactList) {
+//     // Deactivate all rows
+//     document.querySelectorAll('.contactRow').forEach(row => {
+//       row.classList.remove('row_active');
+//     });
+//   }
+// });
