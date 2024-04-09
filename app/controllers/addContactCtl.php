@@ -18,10 +18,8 @@
   if ($existingContact) {
     $stmt = $pdo->prepare("DELETE FROM contact WHERE email_propriate = :email_propriate AND email_contact = :email_contact");
     $stmt->execute(['email_propriate' => $email_propriate, 'email_contact' => $email_contact]);
-    echo "Deleted " . $email_contact . " from " . $email_propriate . " contacts.";
   } else {
     $stmt = $pdo->prepare("INSERT INTO contact (email_propriate, email_contact) VALUES (:email_propriate, :email_contact)");
     $stmt->execute(['email_propriate' => $email_propriate, 'email_contact' => $email_contact]);
-    echo "Added " . $email_contact . " to " . $email_propriate . " contacts.";
   }
 ?>

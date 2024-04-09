@@ -240,11 +240,12 @@ function showSentContent(sentRow) {
   // Get the mail data
   var message = sentRow.querySelector('.sentRow__message h4').textContent;
   var body = sentRow.querySelector('.sent_body').textContent;
+  var username = sentRow.querySelector('.sent_username').textContent;
   var time = sentRow.querySelector('.sentRow__time').textContent;
   var title = sentRow.querySelector('.sentRow__title').textContent;
 
   // Append the data to the content preview
-  document.querySelector('.sentContent__title').textContent = title;
+  document.querySelector('.sentContent__title').textContent = username;
   document.querySelector('.sentContent__message').textContent = message;
   document.querySelector('.sentContent__time').textContent = time;
   document.querySelector('.sentContent__body').innerHTML = body;

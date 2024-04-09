@@ -38,7 +38,8 @@ $message = "
 </html>";
 
 // Set additional headers for HTML email
-$headers = "From: Php Mail\r\n";
+$headers = "From: Php Mail <mailphp725@gmail.com>\r\n";
+$headers .= "Reply-To: Php Mail <mailphp725@gmail.com>\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

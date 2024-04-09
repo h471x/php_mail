@@ -156,7 +156,7 @@
                 <p class="emailRow__time">' . (($row["date"] == date('Y-m-d')) ? $row["time"] : $row["date"]) . '</p>
                 <div class="sender_name" style="display: none;">' . $row['sender_name'] .'</div>
                 <div class="sender_mail" style="display: none;">' . $row['sender_mail'] .'</div>
-                <div class="sender_formatted" style="display: none;">' . $row['sender_name'] .'&lt;' . $row['sender_mail'] . '&gt;</div>
+                <div class="sender_formatted" style="display: none;">' . $row['sender_name'] .' &lt;' . $row['sender_mail'] . '&gt;</div>
                 <div class="receiver_name" style="display: none;">' . $row['receiver_name'] .'</div>
                 <div class="receiver_mail" style="display: none;">' . $row['receiver_mail'] .'</div>
                 <div class="subject" style="display: none;">' . $row['subject'] .'</div>

@@ -6,6 +6,7 @@
     // start the session
     session_start();
 
+    // Get the propriate of the contact
     $email_propriate = $_SESSION['mail'];
 
    // Function to check if an email user exists in the contact table

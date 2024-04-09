@@ -7,7 +7,7 @@ require_once $basePath . "config/php/connect.php";
 session_start();
 
 // Fetch data from the database
-$query = "SELECT email_destination, objet, contenu, send_time FROM message WHERE email_user = ? ORDER BY send_time DESC";
+$query = "SELECT email_destination_username, email_destination, objet, contenu, send_time FROM message WHERE email_user = ? ORDER BY send_time DESC";
 $stmt = $pdo->prepare($query);
 $stmt->execute([$_SESSION['mail']]);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -15,7 +15,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Map database columns to emailRows keys
 $emailRows = array_map(function($row) {
     return [
-        "title" => $row["email_destination"],
+        "title" => $row["email_destination_username"],
+        "username" => $row["email_destination"],
         "message" => $row["objet"],
         "body" => $row["contenu"],
         "time" => $row["send_time"]
@@ -33,6 +34,8 @@ function generateEmailRows($rows) {
             </div>
             <p class="sentRow__time">' . $row["time"] . '</p>
             <div class="sent_body" style="display: none;">' . $row['body'] .'</div>
+            <div class="sent_username" style="display: none;">' . $row['username'] .'</div>
+            <div class="sent_mail" style="display: none;">' . $row['title'] .'</div>
         </div>
         ';
     }
