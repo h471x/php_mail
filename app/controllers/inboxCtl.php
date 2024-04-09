@@ -163,7 +163,31 @@
                 <div class="body" style="display: none;">' . $row['body'] .'</div>
                 <div class="date" style="display: none;">' . $row['date'] .'</div>
                 <div class="time" style="display: none;">' . $row['time'] .'</div>
-                <div class="date_time" style="display: none;">' . $row['date'] . " - " . $row['time'] .'</div>
+                <div class="date_time" style="display: none;">' . $row['date'] . ' <span class="time_prepo"></span> ' . $row['time'] .'</div>
+            </div>
+            <div class="emailContent" style="visibility: hidden;">
+                <div class="contentHeader">
+                    <button class="return">
+                        <span class="material-icons">keyboard_arrow_left</span>
+                    </button>
+                    <button class="delete">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </div>
+                <div class="contentBody">
+                    <h2 class="emailContent__message"></h2><br>
+                    <div class="mail_info">
+                        <div style="display: flex; flex-direction: column;">
+                            <div style="display: flex; flex-direction: flex-start;">
+                                <span class="sender_info"></span>&nbsp;
+                                <h4 class="emailContent__title"></h4>
+                            </div>
+                            <div class="sender_destination" style="margin-top: 0.25rem;"></div>
+                        </div>
+                        <h5 class="emailContent__time">' . $row['date'] . ' <span class="time_prepo"></span> ' . $row['time'] .'</h5>
+                    </div>
+                    <div class="emailContent__body" style="margin-top: 2rem;"></div>
+                </div>
             </div>
             ';
         }
@@ -173,23 +197,5 @@
 <div class="emailList" id="inbox">
   <div class="emailList__list">
     <?php generateEmailRows($formattedEmails); ?>
-    <div class="emailContent" style="visibility: hidden;">
-        <div class="contentHeader">
-            <button class="return">
-                <span class="material-icons">keyboard_arrow_left</span>
-            </button>
-            <button class="delete">
-                <span class="material-icons">delete</span>
-            </button>
-        </div>
-        <div class="contentBody">
-            <h2 class="emailContent__message"></h2><br>
-            <div class="mail_info">
-                <h4 class="emailContent__title"></h4>
-                <h5 class="emailContent__time"></h5>
-            </div>
-            <div class="emailContent__body" style="margin-top: 2rem;"></div>
-        </div>
-    </div>
   </div>
 </div>

@@ -29,14 +29,38 @@ function generateEmailRows($rows) {
     foreach ($rows as $row) {
         echo '
         <div class="sentRow">
-            <h3 class="sentRow__title">' . $row["username"] . '</h3>
+            <h3 class="sentRow__title"<span class="receiver_info"></span>&nbsp;' . $row["username"] . '</h3>
             <div class="sentRow__message">
                 <h4>' . $row["message"] . '</h4>
             </div>
             <p class="sentRow__time">' . (($row["date"] == date('Y-m-d')) ? $row["time"] : $row["date"]) . '</p>
             <div class="sent_body" style="display: none;">' . $row['body'] .'</div>
             <div class="sent_sender" style="display: none;">' . $row['username'] .' &lt;' . $row['mail'] . '&gt;</div>
-            <div class="sent_date_time" style="display: none;">' . $row['date'] . " - " . $row['time'] .'</div>
+            <div class="sent_date_time" style="display: none;">' . $row['date'] . ' <span class="time_prepo"></span> ' . $row['time'] .'</div>
+        </div>
+        <div class="sentContent" style="visibility: hidden;">
+            <div class="sentHeader">
+                <button class="sent_return">
+                    <span class="material-icons">keyboard_arrow_left</span>
+                </button>
+                <button class="sent_delete">
+                    <span class="material-icons">delete</span>
+                </button>
+            </div>
+            <div class="sentBody">
+                <h2 class="sentContent__message"></h2><br>
+                <div class="sent_info">
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="receiver_destination" style="margin-top: 0.25rem;"></div>
+                        <div style="display: flex; flex-direction: flex-start;">
+                            <span class="receiver_info"></span>&nbsp;
+                            <h4 class="sentContent__title"></h4>
+                        </div>
+                    </div>
+                    <h5 class="sentContent__time">' . $row['date'] . ' <span class="time_prepo"></span> ' . $row['time'] .'</h5>
+                </div>
+                <div class="sentContent__body" style="margin-top: 2rem;"></div>
+            </div>
         </div>
         ';
     }
@@ -46,23 +70,5 @@ function generateEmailRows($rows) {
 <div class="sentList" id="sent">
   <div class="sentList__list">
     <?php generateEmailRows($emailRows); ?>
-    <div class="sentContent" style="visibility: hidden;">
-        <div class="sentHeader">
-            <button class="sent_return">
-                <span class="material-icons">keyboard_arrow_left</span>
-            </button>
-            <button class="sent_delete">
-                <span class="material-icons">delete</span>
-            </button>
-        </div>
-        <div class="sentBody">
-            <h2 class="sentContent__message"></h2><br>
-            <div class="sent_info">
-                <h4 class="sentContent__title"></h4>
-                <h5 class="sentContent__time"></h5>
-            </div>
-            <div class="sentContent__body" style="margin-top: 2rem;"></div>
-        </div>
-    </div>
   </div>
 </div>

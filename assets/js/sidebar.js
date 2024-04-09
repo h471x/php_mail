@@ -14,6 +14,24 @@ document.querySelectorAll('.sidebarOption').forEach(option => {
       'contactsOption': '/php_mail/app/controllers/contactCtl.php'
     };
 
+    const updateLabels = (languageDict) => {
+      document.querySelectorAll(".sender_info").forEach(function(element) {
+        element.textContent = languageDict.sender_info;
+      });
+      document.querySelectorAll(".sender_destination").forEach(function(element) {
+        element.textContent = languageDict.sender_destination;
+      });
+      document.querySelectorAll(".receiver_destination").forEach(function(element) {
+        element.textContent = languageDict.receiver_destination;
+      });
+      document.querySelectorAll(".receiver_info").forEach(function(element) {
+        element.textContent = languageDict.receiver_info;
+      });
+      document.querySelectorAll(".time_prepo").forEach(function(element) {
+        element.textContent = languageDict.time_prepo;
+      });
+    };
+
     // Fetch content from the corresponding URL and update the .content div
     fetch(urlMap[id])
       .then(response => {
@@ -24,6 +42,18 @@ document.querySelectorAll('.sidebarOption').forEach(option => {
       })
       .then(data => {
         document.querySelector('.content').innerHTML = data;
+        // Function to load language labels based on preference
+        const loadLanguageLabels = (language) => {
+          if (languageDictionaries[language]) {
+            updateLabels(languageDictionaries[language]);
+            localStorage.setItem('languagePreference', language);
+          } else {
+            console.error('Language dictionary not found for:', language);
+          }
+        };
+
+        // Load the language labels if the language preference is set
+        languagePreference && loadLanguageLabels(languagePreference);
       })
       .catch(error => {
         console.error('There was a problem with the fetch operation:', error);

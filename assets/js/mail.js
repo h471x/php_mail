@@ -22,6 +22,21 @@ const updateLabels = (languageDict) => {
   document.getElementById("new").textContent = languageDict.new;
   document.getElementById("inbox").textContent = languageDict.inbox;
   document.getElementById("sent").textContent = languageDict.sent;
+  document.querySelectorAll(".sender_info").forEach(function(element) {
+    element.textContent = languageDict.sender_info;
+  });
+  document.querySelectorAll(".receiver_info").forEach(function(element) {
+    element.textContent = languageDict.receiver_info;
+  });
+  document.querySelectorAll(".sender_destination").forEach(function(element) {
+    element.textContent = languageDict.sender_destination;
+  });
+  document.querySelectorAll(".receiver_destination").forEach(function(element) {
+    element.textContent = languageDict.receiver_destination;
+  });
+  document.querySelectorAll(".time_prepo").forEach(function(element) {
+    element.textContent = languageDict.time_prepo;
+  });
   document.getElementById("contacts").textContent = languageDict.contacts;
   document.getElementById("language").textContent = languageDict.language;
   document.getElementById("composetitle").textContent = languageDict.composetitle;
@@ -172,7 +187,7 @@ function showEmailContent(emailRow) {
   // Append the data to the content preview
   document.querySelector('.emailContent__title').textContent = senderFormatted;
   document.querySelector('.emailContent__message').textContent = message;
-  document.querySelector('.emailContent__time').textContent = datetime;
+  // document.querySelector('.emailContent__time').textContent = datetime;
   document.querySelector('.emailContent__body').innerHTML = body;
 
   // Show email content
@@ -247,7 +262,7 @@ function showSentContent(sentRow) {
   // Append the data to the content preview
   document.querySelector('.sentContent__title').textContent = sender;
   document.querySelector('.sentContent__message').textContent = message;
-  document.querySelector('.sentContent__time').textContent = datetime;
+  // document.querySelector('.sentContent__time').textContent = datetime;
   document.querySelector('.sentContent__body').innerHTML = body;
 
   // Show email content
