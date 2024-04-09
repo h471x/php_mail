@@ -11,7 +11,7 @@ if(!isset($_SESSION['username'])){
   <head>
     <link rel="stylesheet" href="/php_mail/assets/css/mail.css" />
     <link rel="stylesheet" href="/php_mail/assets/css/compose.css" />
-    <link rel="icon" href="/php_mail/assets/images/mail_white.png">
+    <link rel="icon" href="/php_mail/assets/images/mail_white.png" />
     <title>Php Mail</title>
   </head>
   <body>
