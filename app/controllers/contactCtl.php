@@ -18,7 +18,7 @@
     }
 
     // Function to generate email rows
-    function generateEmailRows($rows, $pdo) {
+    function generateEmailRows($rows, $email_propriate, $pdo) {
         foreach ($rows as $row) {
             $email_contact = $row["email_user"];
             $isContact = isContact($email_contact, $email_propriate, $pdo);
@@ -61,6 +61,6 @@
 
 <div class="contactList" id="contact">
   <div class="contactList__list">
-    <?php generateEmailRows($emailRows, $pdo); ?>
+    <?php generateEmailRows($emailRows, $email_propriate, $pdo); ?>
   </div>
 </div>
