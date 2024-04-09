@@ -22,21 +22,22 @@
         foreach ($rows as $row) {
             $email = $row["email_user"];
             $isContact = isContact($email);
-            $buttonStyle = $isContact ? 'background-color: var(--github-blue); visibility: visible;' : ''; // Apply style based on contact existence
+            $buttonStyle = $isContact ? 'background-color: var(--github-blue); visibility: visible;' : '';
             echo '
-            <div class="contactRow">
+            <form class="contactRow" method="post" action="/php_mail/app/controllers/addContactCtl.php">
                 <div class="emailRow__options">
                     <span class="material-icons"> label_important </span>
                 </div>
                 <h4 class="contact_mail" style="margin-left: 2rem;">' . $email . '</h4>
+                <input type="text" name="email_contact" value="' . $email . '" style="visibility: hidden;">
                 <div style="margin-left: auto;">
-                    <button class="add_contact" style="' . $buttonStyle . '">
+                    <button type="submit" class="add_contact" style="' . $buttonStyle . '">
                         <span class="material-icons" style="color: white;">
                             person
                         </span>
                     </button>
                 </div>
-            </div>
+            </form>
             ';
         }
     }

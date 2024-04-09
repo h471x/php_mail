@@ -263,8 +263,30 @@ function toggleSentContentVisibility() {
 // Handle add contact buttons
 document.addEventListener('click', function(event) {
   const contactBtn = event.target.closest('.add_contact');
+  const contactForm = event.target.closest(".contactRow");
 
   if (contactBtn) {
+    event.preventDefault();
+    // contactForms.submit();
+
+    // Serialize form data
+    const formData = new FormData(contactForm);
+
+    // Create AJAX request
+    const xhr = new XMLHttpRequest();
+    xhr.open(contactForm.method, contactForm.action, true);
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          console.log(xhr.responseText);
+        } else {
+          console.error('Error adding contact:', xhr.statusText);
+        }
+      }
+    };
+    xhr.send(formData);
+
     if (!contactBtn.classList.contains('clicked')) {
       if(contactBtn.style.backgroundColor == "var(--github-blue)"){
         contactBtn.style.backgroundColor = "";
