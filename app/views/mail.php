@@ -1,10 +1,10 @@
 <?php
-$basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/";
-session_start();
-// If we're not logged in redirect to index.php
-if(!isset($_SESSION['username'])){
-  header("Location: ../../index.php");
-}
+  $basePath = $_SERVER['DOCUMENT_ROOT'] . "/php_mail/";
+  session_start();
+  // If we're not logged in redirect to index.php
+  if(!isset($_SESSION['username'])){
+    header("Location: ../../index.php");
+  }
 ?>
 
 <html>
