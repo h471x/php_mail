@@ -6,30 +6,30 @@
     // start the session
     session_start();
 
-    // Function to check if an email user exists in the contact table
-    function isContact($email) {
-        global $pdo; // Access the $pdo object defined outside the function
-        $query = "SELECT COUNT(*) FROM contact WHERE email_contact = :email";
+    $email_propriate = $_SESSION['mail'];
+
+   // Function to check if an email user exists in the contact table
+    function isContact($email_contact, $email_propriate, $pdo) {
+        $query = "SELECT COUNT(*) FROM contact WHERE email_contact = :email_contact AND email_propriate = :email_propriate";
         $statement = $pdo->prepare($query);
-        $statement->bindParam(':email', $email);
-        $statement->execute();
+        $statement->execute([':email_contact' => $email_contact, ':email_propriate' => $email_propriate]);
         $count = $statement->fetchColumn();
-        return $count > 0; // Return true if contact exists, false otherwise
+        return $count > 0;
     }
 
     // Function to generate email rows
-    function generateEmailRows($rows) {
+    function generateEmailRows($rows, $pdo) {
         foreach ($rows as $row) {
-            $email = $row["email_user"];
-            $isContact = isContact($email);
+            $email_contact = $row["email_user"];
+            $isContact = isContact($email_contact, $email_propriate, $pdo);
             $buttonStyle = $isContact ? 'background-color: var(--github-blue); visibility: visible;' : '';
             echo '
             <form class="contactRow" method="post" action="/php_mail/app/controllers/addContactCtl.php">
                 <div class="emailRow__options">
                     <span class="material-icons"> label_important </span>
                 </div>
-                <h4 class="contact_mail" style="margin-left: 2rem;">' . $email . '</h4>
-                <input type="text" name="email_contact" value="' . $email . '" style="visibility: hidden;">
+                <h4 class="contact_mail" style="margin-left: 2rem;">' . $email_contact . '</h4>
+                <input type="text" name="email_contact" value="' . $email_contact . '" style="visibility: hidden;">
                 <div style="margin-left: auto;">
                     <button type="submit" class="add_contact" style="' . $buttonStyle . '">
                         <span class="material-icons" style="color: white;">
@@ -61,6 +61,6 @@
 
 <div class="contactList" id="contact">
   <div class="contactList__list">
-    <?php generateEmailRows($emailRows); ?>
+    <?php generateEmailRows($emailRows, $pdo); ?>
   </div>
 </div>

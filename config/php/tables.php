@@ -6,7 +6,8 @@
     username_user VARCHAR(255) NOT NULL,
     user_password VARCHAR(255) NOT NULL,
     2fa_password VARCHAR(16) NOT NULL,
-    inscription_date DATE NOT NULL);
+    inscription_date DATE NOT NULL
+  );
   ";
 
   $message_table = "
@@ -25,7 +26,6 @@
 
   $contact_table = "
   CREATE TABLE IF NOT EXISTS contact (
-    id_contact INT AUTO_INCREMENT PRIMARY KEY,
     email_propriate VARCHAR(255) NOT NULL,
     email_contact VARCHAR(255) NOT NULL,
     CONSTRAINT fk_email_contact FOREIGN KEY (email_contact) REFERENCES user(email_user),

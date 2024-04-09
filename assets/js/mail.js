@@ -267,7 +267,6 @@ document.addEventListener('click', function(event) {
 
   if (contactBtn) {
     event.preventDefault();
-    // contactForms.submit();
 
     // Serialize form data
     const formData = new FormData(contactForm);

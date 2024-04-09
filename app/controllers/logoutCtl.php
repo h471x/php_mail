@@ -7,6 +7,8 @@
       unset($_SESSION['username']);
   }
 
+  unset($_SESSION['cachedEmails']);
+
   // Redirect to login page
   header("Location: /php_mail/app/views/login.php");
 ?>
