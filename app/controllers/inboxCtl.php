@@ -6,7 +6,7 @@
     // Start session
     session_start();
 
-    unset($_SESSION['cachedEmails']);
+    // unset($_SESSION['cachedEmails']);
 
     // Check if emails are already stored in session cache
     if (!isset($_SESSION['cachedEmails'])) {
@@ -116,32 +116,32 @@
             // Close the connection
             imap_close($connection);
 
+            // Adjust the structure of $fetchedEmails array
+            $formattedEmails = [];
+            foreach ($fetchedEmails as $email) {
+                // Check if the sender's email is in $phpmail_users
+                if (in_array($email["sender_mail"], array_column($phpmail_users, 'email_user'))) {
+                    $formattedEmails[] = [
+                        "sender_name" => $email["sender_name"],
+                        "sender_mail" => $email["sender_mail"],
+                        "receiver_name" => $email["receiver_name"],
+                        "receiver_mail" => $email["receiver_mail"],
+                        "subject" => $email["subject"],
+                        "body" => $email["body"],
+                        "date" => $email["date"],
+                        "time" => $email["time"]
+                    ];
+                }
+            }
+
             // Store fetched emails in session cache
-            $_SESSION['cachedEmails'] = $fetchedEmails;
+            $_SESSION['cachedEmails'] = $formattedEmails;
         } else {
             echo "Failed to connect to Gmail's IMAP server: " . imap_last_error() . "\n";
         }
-    } else {
+    } else  if (isset($_SESSION['cachedEmails'])){
         // Retrieve cached emails from session cache
-        $fetchedEmails = $_SESSION['cachedEmails'];
-    }
-
-    // Adjust the structure of $fetchedEmails array
-    $formattedEmails = [];
-    foreach ($fetchedEmails as $email) {
-        // Check if the sender's email is in $phpmail_users
-        if (in_array($email["sender_mail"], array_column($phpmail_users, 'email_user'))) {
-            $formattedEmails[] = [
-                "sender_name" => $email["sender_name"],
-                "sender_mail" => $email["sender_mail"],
-                "receiver_name" => $email["receiver_name"],
-                "receiver_mail" => $email["receiver_mail"],
-                "subject" => $email["subject"],
-                "body" => $email["body"],
-                "date" => $email["date"],
-                "time" => $email["time"]
-            ];
-        }
+        $formattedEmails = $_SESSION['cachedEmails'];
     }
 
     // Function to generate email rows
@@ -170,4 +170,26 @@
     }
 ?>
 
-<?php generateEmailRows($formattedEmails); ?>
+<div class="emailList" id="inbox">
+  <div class="emailList__list">
+    <?php generateEmailRows($formattedEmails); ?>
+    <div class="emailContent" style="visibility: hidden;">
+        <div class="contentHeader">
+            <button class="return">
+                <span class="material-icons">keyboard_arrow_left</span>
+            </button>
+            <button class="delete">
+                <span class="material-icons">delete</span>
+            </button>
+        </div>
+        <div class="contentBody">
+            <h2 class="emailContent__message"></h2><br>
+            <div class="mail_info">
+                <h4 class="emailContent__title"></h4>
+                <h5 class="emailContent__time"></h5>
+            </div>
+            <div class="emailContent__body" style="margin-top: 2rem;"></div>
+        </div>
+    </div>
+  </div>
+</div>

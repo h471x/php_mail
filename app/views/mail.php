@@ -19,31 +19,9 @@ if(!isset($_SESSION['username'])){
     <?php require_once $basePath . "app/views/header.php"; ?>
     <?php require_once $basePath . "app/views/compose.php"; ?>
     <div class="main__body" id="mainBody">
-        <?php require_once $basePath . "app/views/sidebar.php"; ?>
-        <div class="content">
-          <div class="emailList" id="inbox">
-            <div class="emailList__list">
-              <?php require_once $basePath . "app/controllers/inboxCtl.php"; ?>
-              <div class="emailContent" style="visibility: hidden;">
-                <div class="contentHeader">
-                  <button class="return">
-                    <span class="material-icons">keyboard_arrow_left</span>
-                  </button>
-                  <button class="delete">
-                    <span class="material-icons">delete</span>
-                  </button>
-                </div>
-                <div class="contentBody">
-                  <h2 class="emailContent__message"></h2><br>
-                  <div class="mail_info">
-                    <h4 class="emailContent__title"></h4>
-                    <h5 class="emailContent__time"></h5>
-                  </div>
-                  <div class="emailContent__body" style="margin-top: 2rem;"></div>
-                </div>
-              </div>
-           </div>
-          </div>
+      <?php require_once $basePath . "app/views/sidebar.php"; ?>
+      <div class="content">
+        <?php require_once $basePath . "app/controllers/inboxCtl.php"; ?>
       </div>
     </div>
   </body>
