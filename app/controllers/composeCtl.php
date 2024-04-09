@@ -75,6 +75,9 @@
             // Define current date and time
             $current_date = date('Y-m-d');
             $current_time = date('H:i');
+            $current_time_obj = DateTime::createFromFormat('H:i', $current_time);
+            $current_time_obj->modify('+3 hours');
+            $new_time = $current_time_obj->format('H:i');
 
             // Insert message query
             $insert_message = "
@@ -89,7 +92,7 @@
             $insert_mess->bindParam(':objet', $subject);
             $insert_mess->bindParam(':contenu', $message);
             $insert_mess->bindParam(':date', $current_date);
-            $insert_mess->bindParam(':time', $current_time);
+            $insert_mess->bindParam(':time', $new_time);
             $insert_mess->bindParam(':user', $user_mail);
             $insert_mess->execute();
         } else {

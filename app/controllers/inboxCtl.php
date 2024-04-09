@@ -148,7 +148,7 @@
     function generateEmailRows($rows) {
         foreach ($rows as $row) {
             echo '
-            <div class="emailRow">
+            <div class="emailRow"> 
                 <h3 class="emailRow__title">' . ($row["sender_name"] ? $row["sender_name"] : substr($row["sender_mail"], 0, strpos($row["sender_mail"], "@"))) . '</h3>
                 <div class="emailRow__message">
                     <h4>' . $row["subject"] . '</h4>
@@ -163,7 +163,7 @@
                 <div class="body" style="display: none;">' . $row['body'] .'</div>
                 <div class="date" style="display: none;">' . $row['date'] .'</div>
                 <div class="time" style="display: none;">' . $row['time'] .'</div>
-                <div class="date_time" style="display: none;">' . $row['date'] . " / " . $row['time'] .'</div>
+                <div class="date_time" style="display: none;">' . $row['date'] . " - " . $row['time'] .'</div>
             </div>
             ';
         }

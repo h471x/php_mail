@@ -242,11 +242,12 @@ function showSentContent(sentRow) {
   var body = sentRow.querySelector('.sent_body').textContent;
   var sender = sentRow.querySelector('.sent_sender').textContent;
   var time = sentRow.querySelector('.sentRow__time').textContent;
+  var datetime = sentRow.querySelector('.sent_date_time').textContent;
 
   // Append the data to the content preview
   document.querySelector('.sentContent__title').textContent = sender;
   document.querySelector('.sentContent__message').textContent = message;
-  document.querySelector('.sentContent__time').textContent = time;
+  document.querySelector('.sentContent__time').textContent = datetime;
   document.querySelector('.sentContent__body').innerHTML = body;
 
   // Show email content
@@ -278,7 +279,7 @@ document.addEventListener('click', function(event) {
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
-          console.log(xhr.responseText);
+          xhr.responseText;
         } else {
           console.error('Error adding contact:', xhr.statusText);
         }

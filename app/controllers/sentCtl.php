@@ -7,7 +7,7 @@ require_once $basePath . "config/php/connect.php";
 session_start();
 
 // Fetch data from the database
-$query = "SELECT email_destination_username, email_destination, objet, contenu, send_time FROM message WHERE email_user = ? ORDER BY send_time DESC";
+$query = "SELECT email_destination_username, email_destination, objet, contenu, send_time, send_date FROM message WHERE email_user = ? ORDER BY send_time DESC";
 $stmt = $pdo->prepare($query);
 $stmt->execute([$_SESSION['mail']]);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -19,7 +19,8 @@ $emailRows = array_map(function($row) {
         "mail" => $row["email_destination"],
         "message" => $row["objet"],
         "body" => $row["contenu"],
-        "time" => $row["send_time"]
+        "time" => $row["send_time"],
+        "date" => $row["send_date"]
     ];
 }, $rows);
 
@@ -32,9 +33,10 @@ function generateEmailRows($rows) {
             <div class="sentRow__message">
                 <h4>' . $row["message"] . '</h4>
             </div>
-            <p class="sentRow__time">' . $row["time"] . '</p>
+            <p class="sentRow__time">' . (($row["date"] == date('Y-m-d')) ? $row["time"] : $row["date"]) . '</p>
             <div class="sent_body" style="display: none;">' . $row['body'] .'</div>
             <div class="sent_sender" style="display: none;">' . $row['username'] .' &lt;' . $row['mail'] . '&gt;</div>
+            <div class="sent_date_time" style="display: none;">' . $row['date'] . " - " . $row['time'] .'</div>
         </div>
         ';
     }

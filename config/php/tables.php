@@ -18,7 +18,7 @@
     objet VARCHAR(255) NOT NULL,
     contenu TEXT NULL,
     send_date DATE NOT NULL,
-    send_time TIME NOT NULL,
+    send_time VARCHAR(5) NOT NULL,
     was_read TINYINT(1) NOT NULL DEFAULT 0,
     email_user VARCHAR(255) NOT NULL,
     CONSTRAINT fk_message_user FOREIGN KEY (email_user) REFERENCES user(email_user)
