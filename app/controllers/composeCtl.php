@@ -39,7 +39,7 @@
     $dest->bindParam($bind_destination, $destination);
     $dest->execute();
 
-    // Get the user 2fa password to send the mail
+    // Get the username to send the mail
     $destination_username = $dest->fetchColumn();
 
      // Mail infos

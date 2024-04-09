@@ -15,8 +15,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Map database columns to emailRows keys
 $emailRows = array_map(function($row) {
     return [
-        "title" => $row["email_destination_username"],
-        "username" => $row["email_destination"],
+        "username" => $row["email_destination_username"],
+        "mail" => $row["email_destination"],
         "message" => $row["objet"],
         "body" => $row["contenu"],
         "time" => $row["send_time"]
@@ -28,14 +28,13 @@ function generateEmailRows($rows) {
     foreach ($rows as $row) {
         echo '
         <div class="sentRow">
-            <h3 class="sentRow__title">' . $row["title"] . '</h3>
+            <h3 class="sentRow__title">' . $row["username"] . '</h3>
             <div class="sentRow__message">
                 <h4>' . $row["message"] . '</h4>
             </div>
             <p class="sentRow__time">' . $row["time"] . '</p>
             <div class="sent_body" style="display: none;">' . $row['body'] .'</div>
-            <div class="sent_username" style="display: none;">' . $row['username'] .'</div>
-            <div class="sent_mail" style="display: none;">' . $row['title'] .'</div>
+            <div class="sent_sender" style="display: none;">' . $row['username'] .' &lt;' . $row['mail'] . '&gt;</div>
         </div>
         ';
     }
