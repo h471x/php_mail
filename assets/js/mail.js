@@ -266,9 +266,14 @@ document.addEventListener('click', function(event) {
 
   if (contactBtn) {
     if (!contactBtn.classList.contains('clicked')) {
-      contactBtn.classList.add('clicked');
-      contactBtn.style.backgroundColor = "var(--github-blue)";
-      contactBtn.style.visibility = "visible";
+      if(contactBtn.style.backgroundColor == "var(--github-blue)"){
+        contactBtn.style.backgroundColor = "";
+        contactBtn.style.visibility = "";
+      }else{
+        contactBtn.classList.add('clicked');
+        contactBtn.style.backgroundColor = "var(--github-blue)";
+        contactBtn.style.visibility = "visible";
+      }
     } else {
       contactBtn.classList.remove('clicked');
       contactBtn.style.backgroundColor = "";
@@ -276,15 +281,3 @@ document.addEventListener('click', function(event) {
     }
   }
 });
-
-// // Handle row blur
-// document.addEventListener('blur', function(event) {
-//   const contactList = event.target.closest('.contactList');
-
-//   if (contactList) {
-//     // Deactivate all rows
-//     document.querySelectorAll('.contactRow').forEach(row => {
-//       row.classList.remove('row_active');
-//     });
-//   }
-// });
