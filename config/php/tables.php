@@ -13,7 +13,7 @@
   $message_table = "
   CREATE TABLE IF NOT EXISTS message (
     id_message INT AUTO_INCREMENT PRIMARY KEY,
-    email_destination_username VARCHAR(255) NULL,
+    email_destination_fullname VARCHAR(255) NULL,
     email_destination VARCHAR(255) NULL,
     objet VARCHAR(255) NOT NULL,
     contenu TEXT NULL,

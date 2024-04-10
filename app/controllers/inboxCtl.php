@@ -184,7 +184,7 @@
                             </div>
                             <div class="sender_destination" style="margin-top: 0.25rem;"></div>
                         </div>
-                        <h5 class="emailContent__time">' . $row['date'] . ' <span class="time_prepo"></span> ' . $row['time'] .'</h5>
+                        <h5 class="emailContent__time"></h5>
                     </div>
                     <div class="emailContent__body" style="margin-top: 2rem;"></div>
                 </div>

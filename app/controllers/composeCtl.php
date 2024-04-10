@@ -33,14 +33,14 @@
     $destination = $_POST['destination'];
 
     // Retrieve the contact username from database
-    $destination_query = "SELECT username_user FROM user WHERE email_user = :email_destination";
+    $destination_query = "SELECT fullname_user FROM user WHERE email_user = :email_destination";
     $bind_destination = ':email_destination';
     $dest = $pdo->prepare($destination_query);
     $dest->bindParam($bind_destination, $destination);
     $dest->execute();
 
     // Get the username to send the mail
-    $destination_username = $dest->fetchColumn();
+    $destination_fullname = $dest->fetchColumn();
 
      // Mail infos
     $subject = $_POST['subject'];
@@ -61,7 +61,7 @@
 
         // Sender & Receiver
         $mail->setFrom($user_mail, $user_name); // Sender's email and name
-        $mail->addAddress($destination, $destination_username); // Receiver's email and name
+        $mail->addAddress($destination, $destination_fullname); // Receiver's email and name
 
         // Content
         $mail->isHTML(true);
@@ -81,14 +81,14 @@
 
             // Insert message query
             $insert_message = "
-                INSERT INTO message (email_destination_username, email_destination, objet, contenu, send_date, send_time, email_user)
-                VALUES (:destination_username, :destination, :objet, :contenu, :date, :time, :user)
+                INSERT INTO message (email_destination_fullname, email_destination, objet, contenu, send_date, send_time, email_user)
+                VALUES (:destination_fullname, :destination, :objet, :contenu, :date, :time, :user)
             ";
 
             // Execute the insert query
             $insert_mess = $pdo->prepare($insert_message);
             $insert_mess->bindParam(':destination', $destination);
-            $insert_mess->bindParam(':destination_username', $destination_username);
+            $insert_mess->bindParam(':destination_fullname', $destination_fullname);
             $insert_mess->bindParam(':objet', $subject);
             $insert_mess->bindParam(':contenu', $message);
             $insert_mess->bindParam(':date', $current_date);

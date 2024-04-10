@@ -30,14 +30,15 @@
   <form method="post" action="/php_mail/app/controllers/composeCtl.php" class="composeForm">
       <div class="newContainer">
         <div class="destination">
-          <select id="destinationUser" name="destination" class="destination">
+          <!-- <select id="destinationUser" name="destination" class="destination">
             <option value=""class="select_title" id="select_title" disabled select></option>
             <?php
               foreach ($contacts as $contact) {
                 echo '<option value="' . $contact['email_contact'] . '">' . $contact['email_contact'] . '</option>';
               }
             ?>
-          </select>
+          </select> -->
+          <input type="text" placeholder="" class="destination" id="destinationUser" spellcheck="false" autocomplete="off" name="destination">
         </div>
 
         <div class="subject">
