@@ -43,7 +43,7 @@ const updateLabels = (languageDict) => {
   document.getElementById("lang").textContent = languageDict.lang;
   document.getElementById("send_compose").value = languageDict.send_compose;
   document.getElementById("searchInput").placeholder = languageDict.search;
-  document.getElementById("destinationUser").placeholder = languageDict.destination;
+  document.getElementById("select_title").textContent = languageDict.destination;
   document.getElementById("subject").placeholder = languageDict.subject;
   document.getElementById("mailmessage").placeholder = languageDict.mailmessage;
 };
@@ -182,12 +182,10 @@ function showEmailContent(emailRow) {
   var message = emailRow.querySelector('.emailRow__message h4').textContent;
   var senderFormatted = emailRow.querySelector('.sender_formatted').textContent;
   var body = emailRow.querySelector('.body').innerHTML;
-  var datetime = emailRow.querySelector('.date_time').textContent;
 
   // Append the data to the content preview
   document.querySelector('.emailContent__title').textContent = senderFormatted;
   document.querySelector('.emailContent__message').textContent = message;
-  // document.querySelector('.emailContent__time').textContent = datetime;
   document.querySelector('.emailContent__body').innerHTML = body;
 
   // Show email content
@@ -257,12 +255,10 @@ function showSentContent(sentRow) {
   var body = sentRow.querySelector('.sent_body').textContent;
   var sender = sentRow.querySelector('.sent_sender').textContent;
   var time = sentRow.querySelector('.sentRow__time').textContent;
-  var datetime = sentRow.querySelector('.sent_date_time').textContent;
 
   // Append the data to the content preview
   document.querySelector('.sentContent__title').textContent = sender;
   document.querySelector('.sentContent__message').textContent = message;
-  // document.querySelector('.sentContent__time').textContent = datetime;
   document.querySelector('.sentContent__body').innerHTML = body;
 
   // Show email content
