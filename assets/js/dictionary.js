@@ -125,7 +125,7 @@ var languageDictionaries = {
     "logout" : "Déconnexion",
     "new" : "Nouveau Mail",
     "inbox" : "Boîte de réception",
-    "sent" : "Mails Envoyés",
+    "sent" : "Boîte d'Envoi",
     "sender_info" : "De : ",
     "sender_destination" : "A moi",
     "receiver_destination" : "Moi",

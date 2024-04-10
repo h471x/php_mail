@@ -3,6 +3,13 @@
   require_once $basePath . "config/php/connect.php";
   session_start();
   $email_propriate = $_SESSION['mail'];
+
+  // Prepare and execute the query to fetch contacts
+  $contact_query = "SELECT email_contact FROM contact WHERE email_propriate = :email_propriate";
+  $contact = $pdo->prepare($contact_query);
+  $contact->bindParam(':email_propriate', $email_propriate);
+  $contact->execute();
+  $contacts = $contact->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="composeContainer" id="composeContainer" style="visibility: hidden;">
@@ -26,13 +33,6 @@
           <select id="destinationUser" name="destination" class="destination">
             <option value=""class="select_title" id="select_title" disabled select></option>
             <?php
-              $contact_query="SELECT email_contact FROM contact WHERE email_propriate = :email_propriate";
-              $contact = $pdo->prepare($contact_query);
-              $contact->bindParam(':email_propriate', $email_propriate);
-              $contact->execute();
-              $contacts = $contact->fetchAll(PDO::FETCH_ASSOC);
-
-              // Populate select options with fetched data
               foreach ($contacts as $contact) {
                 echo '<option value="' . $contact['email_contact'] . '">' . $contact['email_contact'] . '</option>';
               }
