@@ -1,2 +1,2 @@
 # PHP Mail Web Application
-Using <a href="https://github.com/PHPMailer/PHPMailer">PHPMailer</a>
+Using [PHP Mailer](https://github.com/PHPMailer/PHPMailer)
