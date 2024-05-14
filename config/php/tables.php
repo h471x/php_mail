@@ -1,4 +1,4 @@
-<?php 
+<?php
   $user_table = "
   CREATE TABLE IF NOT EXISTS user (
     email_user VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY,
