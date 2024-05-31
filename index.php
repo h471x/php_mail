@@ -9,12 +9,12 @@ $userCount = $stmt->fetchColumn();
 
 // If there are no users, redirect to register.php
 if ($userCount === 0) {
-    header("Location: ../../php_mail/app/views/register.php");
-    exit;
+  header("Location: ../../php_mail/app/views/register.php");
+  exit;
 } else {
-    // If there are users, redirect to signin.php
-    header("Location: ../../php_mail/app/views/login.php");
-    exit;
+  // If there are users, redirect to signin.php
+  header("Location: ../../php_mail/app/views/login.php");
+  exit;
 }
 
 // Close the connection
