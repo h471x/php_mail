@@ -3,8 +3,8 @@
   // Here we don't specify the database name
   // so we will use a custom one for our own
   $database = "mysql:host=localhost";
-  $username = 'root';
-  $password = '';
+  $username = 'phpmail';
+  $password = 'mail';
 
   // Set PDO options
   $options = [
