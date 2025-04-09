@@ -2,7 +2,7 @@
   // Database credentials
   // Here we don't specify the database name
   // so we will use a custom one for our own
-  $database = "mysql:host=localhost";
+  $database = "mysql:host=localhost;dbname=mail";
   $username = 'phpmail';
   $password = 'mail';
 
