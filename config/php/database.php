@@ -12,9 +12,4 @@
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_EMULATE_PREPARES => false,
   ];
-
-  $mail_database = "
-  CREATE DATABASE IF NOT EXISTS mail;
-  USE mail;
-  ";
 ?>
